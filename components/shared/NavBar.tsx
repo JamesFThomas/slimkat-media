@@ -1,8 +1,15 @@
+import Image from 'next/image';
+
 export const NavBar = () => {
   return (
-    <nav className='bg-gray-800 text-white p-4'>
+    <nav className='bg-gray-200 p-4 border-b border-black'>
       <div className='container mx-auto'>
-        <div className='text-xl font-bold'>SlimKat Media</div>
+        <Image
+          src='/logo/SlimKat_Logo.png'
+          alt='SlimKat Media Logo'
+          width={200}
+          height={100}
+        />
       </div>
     </nav>
   );
