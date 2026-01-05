@@ -8,8 +8,8 @@ export const LandingPage = () => {
       <NavBar />
       <main className='flex flex-col grow container items-center mx-auto p-4 gap-4'>
         <section id='Greeting' className='flex flex-col text-center gap-2 p-4'>
-          <h1>Jackson Metro’s newest podcast studio</h1>
-          <span>
+          <h1 className='text-5xl'>Jackson Metro’s newest podcast studio</h1>
+          <span className='text-xl text font-bold p-2'>
             Curious about pricing? Sign up to be the first to know when our
             studio opens for business!
           </span>
@@ -34,7 +34,7 @@ export const LandingPage = () => {
         </section>
         <section
           id='Biography'
-          className='flex flex-col items-center gap-2 p-4'
+          className='flex flex-col items-center gap-4 p-4'
         >
           <Image
             src='/headshot/KaylaThomas_Headshot.jpg'
@@ -42,34 +42,36 @@ export const LandingPage = () => {
             width={500}
             height={400}
           />
-          <div>
-            While the job titles have changed over the years, my nearly 15-year
+          <p className='max-w-xl text-center font-semibold'>
+            {`While the job titles have changed over the years, my nearly 15-year
             career in local television has been centered around two things in
-            one way or another: growing viewership or growing revenue.
-          </div>
+            one way or another: growing viewership or growing revenue.`}
+          </p>
 
-          <div>
-            This has consisted of everything from producing promotional
+          <p className='max-w-xl text-center font-semibold'>
+            {`This has consisted of everything from producing promotional
             materials, TV commercials, sponsored segments, and special interest
             TV programs, to showrunner, executive producer, media sales and
-            marketing.
-          </div>
+            marketing.`}
+          </p>
 
-          <div>
-            Additionally an independent filmmaker, I’ve been able to secure
+          <p className='max-w-xl text-center font-semibold'>
+            {`Additionally an independent filmmaker, I’ve been able to secure
             distribution for my debut documentary, Farming Freedom, which is
-            available beginning in 2026.
-          </div>
+            available beginning in 2026.`}
+          </p>
 
-          <div>
-            With more than a decade’s experience of managing projects from
+          <p className='max-w-xl text-center font-semibold'>
+            {`With more than a decade’s experience of managing projects from
             inception to launch, I look forward to bringing that very experience
             to Jackson Metro’s newest podcast studio for anyone seeking to
             produce professional shows that are distribution ready for any
-            platform.
-          </div>
+            platform.`}
+          </p>
 
-          <span>-Kayla Turner Thomas, Television Executive</span>
+          <span className='max-w-xl text-center font-semibold'>
+            {`-Kayla Turner Thomas, Television Executive`}
+          </span>
           {/* SubscriptionForm Component will go here */}
         </section>
       </main>
