@@ -1,18 +1,18 @@
 {
   "LandingPage": {
     "greeting": {
-      "title": "Jackson Metro’s newest podcast studio",
-      "subtitle": "Curious about pricing? Sign up to be the first to know when our studio opens for business!",
-      "studioImage1Alt": "Podcast Studio Image 1",
-      "studioImage2Alt": "Podcast Studio Image 2"
+      "title": "Le tout nouveau studio de podcast de Jackson Metro",
+      "subtitle": "Vous souhaitez connaître nos tarifs ? Inscrivez-vous pour être parmi les premiers informés de l'ouverture de notre studio !",
+      "studioImage1Alt": "Image 1 du studio de podcast",
+      "studioImage2Alt": "Image 2 du studio de podcast"
     },
     "biography": {
-      "headShotAlt": "Headshot of Kayla Turner Thomas",
-      "bioParagraph1": "While the job titles have changed over the years, my nearly 15-year career in local television has been centered around two things in one way or another: growing viewership or growing revenue.",
-      "bioParagraph2": "This has consisted of everything from producing promotional materials, TV commercials, sponsored segments, and special interest TV programs, to showrunner, executive producer, media sales and marketing.",
-      "bioParagraph3": "Additionally an independent filmmaker, I’ve been able to secure distribution for my debut documentary, Farming Freedom, which is available beginning in 2026.",
-      "bioParagraph4": "With more than a decade's experience of managing projects from inception to launch, I look forward to bringing that very experience to Jackson Metro's newest podcast studio for anyone seeking to produce professional shows that are distribution ready for any platform.",
-      "signature": "-Kayla Turner Thomas, Television Executive"
+      "headShotAlt": "Portrait de Kayla Turner Thomas",
+      "bioParagraph1": "Bien que les intitulés de poste aient changé au fil des ans, ma carrière de près de 15 ans dans la télévision locale s'est concentrée d'une manière ou d'une autre sur deux choses : augmenter l'audience ou augmenter les revenus.",
+      "bioParagraph2": "Cela a consisté en tout, depuis la production de matériel promotionnel, de publicités télévisées, de segments sponsorisés et d'émissions télévisées spécialisées, jusqu'à la direction d'émission, la production exécutive, la vente de médias et le marketing.",
+      "bioParagraph3": "En tant que cinéaste indépendant, j'ai réussi à obtenir la distribution de mon premier documentaire, Farming Freedom, qui sera disponible à partir de 2026.",
+      "bioParagraph4": "Fort d'une expérience de plus de dix ans dans la gestion de projets, de leur conception à leur lancement, je suis impatient de mettre cette expérience au service du tout nouveau studio de podcast de Jackson Metro pour tous ceux qui souhaitent produire des émissions professionnelles prêtes à être diffusées sur n'importe quelle plateforme.",
+      "signature": "-Kayla Turner Thomas, responsable de la télévision"
     }
   }
 }
