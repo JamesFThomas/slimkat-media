@@ -1,6 +1,7 @@
 import { NavBar } from '../shared/NavBar';
 import { Footer } from '../shared/Footer';
 import Image from 'next/image';
+import { SubscriptionForm } from '../shared/SubscriptionForm';
 
 export const LandingPage = () => {
   return (
@@ -13,7 +14,10 @@ export const LandingPage = () => {
             Curious about pricing? Sign up to be the first to know when our
             studio opens for business!
           </span>
-          {/* SubscriptionForm Component will go here */}
+          <div className='flex flex-row justify-center '>
+            <SubscriptionForm />
+          </div>
+
           <div
             id='studio-images'
             className='flex flex-row justify-center gap-4'
@@ -73,7 +77,7 @@ export const LandingPage = () => {
           <span className='max-w-xl text-center font-medium leading-7'>
             {`-Kayla Turner Thomas, Television Executive`}
           </span>
-          {/* SubscriptionForm Component will go here */}
+          <SubscriptionForm />
         </section>
       </main>
       <Footer />
