@@ -2,13 +2,16 @@ import { NavBar } from '../shared/NavBar';
 import { Footer } from '../shared/Footer';
 import Image from 'next/image';
 import { SubscriptionForm } from '../shared/SubscriptionForm';
+import { useTranslations } from 'next-intl';
 
 export const LandingPage = () => {
+  const t = useTranslations('LandingPage');
   return (
     <div className='flex flex-col min-h-screen'>
       <NavBar />
       <main className='flex flex-col grow w-full items-center mx-auto gap-4'>
         <section id='Greeting' className='flex flex-col text-center gap-2 p-4'>
+          <h1>{t('greeting')}</h1>
           <h1 className='text-5xl'>Jackson Metro’s newest podcast studio</h1>
           <span className='text-xl text font-bold p-2'>
             Curious about pricing? Sign up to be the first to know when our
