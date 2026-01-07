@@ -1,0 +1,18 @@
+{
+  "LandingPage": {
+    "greeting": {
+      "title": "Le tout nouveau studio de podcast de Jackson Metro",
+      "subtitle": "Vous souhaitez connaître nos tarifs ? Inscrivez-vous pour être parmi les premiers informés de l'ouverture de notre studio !",
+      "studioImage1Alt": "Image 1 du studio de podcast",
+      "studioImage2Alt": "Image 2 du studio de podcast"
+    },
+    "biography": {
+      "headShotAlt": "Portrait de Kayla Turner Thomas",
+      "bioParagraph1": "Bien que les intitulés de poste aient changé au fil des ans, ma carrière de près de 15 ans dans la télévision locale s'est concentrée d'une manière ou d'une autre sur deux choses : augmenter l'audience ou augmenter les revenus.",
+      "bioParagraph2": "Cela a consisté en tout, depuis la production de matériel promotionnel, de publicités télévisées, de segments sponsorisés et d'émissions télévisées spécialisées, jusqu'à la direction d'émission, la production exécutive, la vente de médias et le marketing.",
+      "bioParagraph3": "En tant que cinéaste indépendant, j'ai réussi à obtenir la distribution de mon premier documentaire, Farming Freedom, qui sera disponible à partir de 2026.",
+      "bioParagraph4": "Fort d'une expérience de plus de dix ans dans la gestion de projets, de leur conception à leur lancement, je suis impatient de mettre cette expérience au service du tout nouveau studio de podcast de Jackson Metro pour tous ceux qui souhaitent produire des émissions professionnelles prêtes à être diffusées sur n'importe quelle plateforme.",
+      "signature": "-Kayla Turner Thomas, responsable de la télévision"
+    }
+  }
+}
