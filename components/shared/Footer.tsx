@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export const Footer = () => {
   return (
-    <footer className='bg-gray-200 p-4 mt-auto border-t border-black'>
+    <footer className='bg-[var(--chrome)] text-[var(--foreground)] p-4 mt-auto border-t border-[var(--border)]'>
       <div className='container mx-auto'>
         <Image
           src='/logo/SlimKat_Logo.png'

@@ -1,8 +1,11 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --surface: #f7f3ef; /* bio background for light mode */
+  --chrome: #e5e7eb; /* replaces bg-gray-200 */
+  --border: #000000;
 }
 
 @theme inline {
@@ -16,6 +19,9 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --surface: #141414; /* bio background for dark mode */
+    --chrome: #2a2520; /* nav + footer in dark mode */
+    --border: #ffffff4d; /* subtle light border */
   }
 }
 
