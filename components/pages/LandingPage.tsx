@@ -49,9 +49,10 @@ export const LandingPage = () => {
             </div>
           </div>
         </section>
+
         <section
           id='Biography'
-          className='flex flex-col grow items-center gap-5 p-4 w-full bg-[#f7f3ef]'
+          className='flex flex-col grow items-center gap-5 p-4 w-full bg-[var(--surface)] text-[var(--foreground)]'
         >
           <div
             id='headshot-wrapper'

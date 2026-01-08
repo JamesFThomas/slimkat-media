@@ -11,7 +11,7 @@ export const NavBar = () => {
   const nextLocalePath = locale === 'en' ? '/fr' : '/';
 
   return (
-    <nav className='bg-gray-200 p-4 border-b border-black'>
+    <nav className='bg-[var(--chrome)] text-[var(--foreground)] p-4 border-b border-[var(--border)]'>
       <div className='container mx-auto w-full flex flex-row justify-between'>
         <Image
           src='/logo/SlimKat_Logo.png'
@@ -21,7 +21,7 @@ export const NavBar = () => {
         />
         <Link
           aria-label='Toggle language'
-          className='flex-col justify-center items-center border-2 border-b-black p-2 rounded-md hover:bg-gray-300'
+          className='flex-col justify-center items-center border-2 border-[var(--border)] p-1 rounded-md hover:bg-[var(--surface)]'
           href={`${nextLocalePath}`}
         >
           <span
