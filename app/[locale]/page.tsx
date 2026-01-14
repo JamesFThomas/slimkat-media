@@ -1,4 +1,4 @@
-import { LandingPage } from '@/components/pages/LandingPage';
+import { LandingPage } from '@/components/pages/LandingPage/LandingPage';
 import { setRequestLocale } from 'next-intl/server';
 
 export default async function Home({
