@@ -1,9 +1,9 @@
 'use client';
 
-import { NavBar } from '../shared/NavBar';
-import { Footer } from '../shared/Footer';
+import { NavBar } from '../../shared/NavBar';
+import { Footer } from '../../shared/Footer';
 import Image from 'next/image';
-import { SubscriptionForm } from '../shared/SubscriptionForm';
+import { SubscriptionForm } from '../../shared/SubscriptionForm';
 import { useTranslations } from 'next-intl';
 
 export const LandingPage = () => {
