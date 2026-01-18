@@ -60,10 +60,19 @@ export const SubscriptionForm = () => {
         />
         <button
           id='subscribe button'
-          className='bg-black text-white p-2 rounded-r-md border-l-0 hover:cursor-pointer'
           type='submit'
           disabled={!valuesAreValid}
           onClick={handleSubmit}
+          className='
+            p-2
+            rounded-r-md
+            border-l-0
+            text-white
+            bg-black
+            hover:cursor-pointer
+            disabled:bg-gray-400
+            disabled:cursor-not-allowed
+          '
         >
           Subscribe
         </button>
