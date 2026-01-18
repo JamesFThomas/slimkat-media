@@ -8,7 +8,7 @@ export const SubscriptionForm = () => {
   });
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const valuesAreValid = !emailError && email !== '';
+  const valuesAreValid = !emailError && emailPattern.test(email);
 
   const validateEmail = (email: string) => {
     let validated = true;
@@ -25,13 +25,18 @@ export const SubscriptionForm = () => {
     return validated;
   };
 
-  const handleBlur = (field: string) => {
-    setTouched((prev) => ({ ...prev, [field]: true }));
+  const handleBlur = () => {
+    setTouched((prev) => ({ ...prev, email: true }));
     validateEmail(email);
   };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
+    const value = e.target.value;
+    setEmail(value);
+
+    if (touched.email) {
+      validateEmail(value);
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -54,7 +59,7 @@ export const SubscriptionForm = () => {
           type='email'
           value={email}
           onChange={handleEmailChange}
-          onBlur={() => handleBlur('email')}
+          onBlur={() => handleBlur()}
           onFocus={() => setTouched((prev) => ({ ...prev, email: true }))}
           placeholder='Enter your email'
         />
