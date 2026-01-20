@@ -10,7 +10,7 @@ export const SubscriptionForm = () => {
   });
 
   const [submitStatus, setSubmitStatus] = useState<
-    'idle' | 'success' | 'error'
+    'idle' | 'success' | 'error' | 'loading'
   >('idle');
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -65,6 +65,8 @@ export const SubscriptionForm = () => {
     if (!validated) return;
 
     try {
+      setSubmitStatus('loading');
+
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -92,6 +94,12 @@ export const SubscriptionForm = () => {
       }
     } catch (error) {
       console.error('Error submitting form:', error);
+
+      clearForm();
+
+      setSubmitStatus('error');
+
+      resetSubmitStatus();
     }
   };
 
@@ -112,7 +120,7 @@ export const SubscriptionForm = () => {
           <button
             id='subscribe button'
             type='submit'
-            disabled={!valuesAreValid}
+            disabled={!valuesAreValid || submitStatus === 'loading'}
             className='
             p-2
             rounded-r-md
@@ -133,6 +141,10 @@ export const SubscriptionForm = () => {
           )}
         </div>
       </form>
+
+      {submitStatus === 'loading' && (
+        <p className='mt-2 text-sm text-blue-700'>Submitting...</p>
+      )}
 
       {submitStatus === 'success' && (
         <p className='mt-2 text-sm text-green-700'>Thanks for subscribing!</p>
