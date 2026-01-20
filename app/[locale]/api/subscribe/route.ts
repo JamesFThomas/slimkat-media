@@ -5,7 +5,7 @@ type GoogleSheetsResponse = {
 };
 
 const googleSheetsEndpoint =
-  'https://script.google.com/macros/s/AKfycbwNkUrUt_Fl4KZ_f1pPD42nnk6jqjzVWQcSaqMy38zNV-g7-_V_sAicNPeU4uOHRMatMA/exec';
+  'https://script.google.com/macros/s/AKfycbwuPl7Vdv4G7GwnYlxPSf6oJjcEJWn9_itdt7YXH3baeoS4WS8XIhu9gkqTKxPqgvPH6A/exec';
 
 export async function POST(request: NextRequest) {
   try {

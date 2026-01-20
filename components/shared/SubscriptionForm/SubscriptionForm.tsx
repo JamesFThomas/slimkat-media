@@ -8,12 +8,26 @@ export const SubscriptionForm = () => {
   const [touched, setTouched] = useState({
     email: false,
   });
+
+  const [submitStatus, setSubmitStatus] = useState<
+    'idle' | 'success' | 'error'
+  >('idle');
+
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const valuesAreValid = !emailError && emailPattern.test(email);
 
-  const googleSheetsEndpoint =
-    'https://script.google.com/macros/s/AKfycbwNkUrUt_Fl4KZ_f1pPD42nnk6jqjzVWQcSaqMy38zNV-g7-_V_sAicNPeU4uOHRMatMA/exec';
+  const resetSubmitStatus = () => {
+    setTimeout(() => {
+      setSubmitStatus('idle');
+    }, 5000);
+  };
+
+  const clearForm = () => {
+    setEmail('');
+    setEmailError('');
+    setTouched({ email: false });
+  };
 
   const validateEmail = (email: string) => {
     let validated = true;
@@ -62,15 +76,19 @@ export const SubscriptionForm = () => {
       if (response.ok && result.status === 'success') {
         console.log('Form submitted successfully:', result);
 
-        window.alert(`Form submitted successfully: ${JSON.stringify(result)}`);
+        setSubmitStatus('success');
 
-        // clear only on success
-        setEmail('');
-        setTouched({ email: false });
+        resetSubmitStatus();
+
+        clearForm();
       } else {
         console.error('Form submission failed:', result);
 
-        window.alert(`Form submission failed: ${JSON.stringify(result)}`);
+        clearForm();
+
+        setSubmitStatus('error');
+
+        resetSubmitStatus();
       }
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -78,23 +96,24 @@ export const SubscriptionForm = () => {
   };
 
   return (
-    <form className='flex flex-col' onSubmit={handleSubmit}>
-      <div id='form-input-container' className='flex flex-row w-full'>
-        <input
-          id='email input'
-          className='p-2 border border-black grow rounded-l-md border-r-0 hover:cursor-pointer'
-          type='email'
-          value={email}
-          onChange={handleEmailChange}
-          onBlur={() => handleBlur()}
-          onFocus={() => setTouched((prev) => ({ ...prev, email: true }))}
-          placeholder='Enter your email'
-        />
-        <button
-          id='subscribe button'
-          type='submit'
-          disabled={!valuesAreValid}
-          className='
+    <div className='flex flex-col'>
+      <form className='flex flex-col' onSubmit={handleSubmit}>
+        <div id='form-input-container' className='flex flex-row w-full'>
+          <input
+            id='email input'
+            className='p-2 border border-black grow rounded-l-md border-r-0 hover:cursor-pointer'
+            type='email'
+            value={email}
+            onChange={handleEmailChange}
+            onBlur={() => handleBlur()}
+            onFocus={() => setTouched((prev) => ({ ...prev, email: true }))}
+            placeholder='Enter your email'
+          />
+          <button
+            id='subscribe button'
+            type='submit'
+            disabled={!valuesAreValid}
+            className='
             p-2
             rounded-r-md
             border-l-0
@@ -103,16 +122,27 @@ export const SubscriptionForm = () => {
             hover:cursor-pointer
             disabled:bg-gray-400
             disabled:cursor-not-allowed
-          '
-        >
-          Subscribe
-        </button>
-      </div>
-      <div id='email-error-container'>
-        {touched.email && emailError && (
-          <p className='text-red-800 font-bold text-sm mt-1'>{emailError}</p>
-        )}
-      </div>
-    </form>
+            '
+          >
+            Subscribe
+          </button>
+        </div>
+        <div id='email-error-container'>
+          {touched.email && emailError && (
+            <p className='text-red-800 font-bold text-sm mt-1'>{emailError}</p>
+          )}
+        </div>
+      </form>
+
+      {submitStatus === 'success' && (
+        <p className='mt-2 text-sm text-green-700'>Thanks for subscribing!</p>
+      )}
+
+      {submitStatus === 'error' && (
+        <p className='mt-2 text-sm text-red-700'>
+          Something went wrong. Please try again.
+        </p>
+      )}
+    </div>
   );
 };
