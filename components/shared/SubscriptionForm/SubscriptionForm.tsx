@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 
 export const SubscriptionForm = () => {
@@ -9,6 +11,9 @@ export const SubscriptionForm = () => {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const valuesAreValid = !emailError && emailPattern.test(email);
+
+  const googleSheetsEndpoint =
+    'https://script.google.com/macros/s/AKfycbwNkUrUt_Fl4KZ_f1pPD42nnk6jqjzVWQcSaqMy38zNV-g7-_V_sAicNPeU4uOHRMatMA/exec';
 
   const validateEmail = (email: string) => {
     let validated = true;
@@ -39,19 +44,41 @@ export const SubscriptionForm = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     const validated = validateEmail(email);
-    if (validated) {
-      // Submit form logic here
-      console.log('Form submitted with email:', email);
-      setEmail('');
-      setTouched({ email: false });
+    if (!validated) return;
+
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.status === 'success') {
+        console.log('Form submitted successfully:', result);
+
+        window.alert(`Form submitted successfully: ${JSON.stringify(result)}`);
+
+        // clear only on success
+        setEmail('');
+        setTouched({ email: false });
+      } else {
+        console.error('Form submission failed:', result);
+
+        window.alert(`Form submission failed: ${JSON.stringify(result)}`);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
     }
   };
 
   return (
-    <form className='flex flex-col'>
+    <form className='flex flex-col' onSubmit={handleSubmit}>
       <div id='form-input-container' className='flex flex-row w-full'>
         <input
           id='email input'
@@ -67,7 +94,6 @@ export const SubscriptionForm = () => {
           id='subscribe button'
           type='submit'
           disabled={!valuesAreValid}
-          onClick={handleSubmit}
           className='
             p-2
             rounded-r-md
