@@ -83,6 +83,8 @@ export const SubscriptionForm = () => {
         resetSubmitStatus();
 
         clearForm();
+
+        // TODO: trigger confirmation email API call here
       } else {
         console.error('Form submission failed:', result);
 
