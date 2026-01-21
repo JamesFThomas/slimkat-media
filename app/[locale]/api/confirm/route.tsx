@@ -2,23 +2,30 @@ import { ConfirmationEmail } from '@/components/shared/ConfirmationEmail/Confirm
 import { Resend } from 'resend';
 import path from 'path';
 import fs from 'fs';
+import { NextRequest } from 'next/server';
 
 export const runtime = 'nodejs';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const filePath = path.join(process.cwd(), 'public', 'logo', 'SlimKat_Logo.png');
 
-// const filepath = `${__dirname}/public/logo/SlimKat_Logo.png`;
 const attachment = fs.readFileSync(filePath).toString('base64');
 
-// add import type { NextRequest } from 'next/server'; after tests are passing
-export async function POST() {
+export async function POST(request: NextRequest) {
   try {
+    const body = await request.json().catch(() => null);
+    const email = body?.email;
+
+    // guard for missing email
+    if (!email) {
+      return Response.json({ error: 'Email is required' }, { status: 400 });
+    }
+
     const { data, error } = await resend.emails.send({
       from: 'SlimKat Media LLC. <onboarding@resend.dev>',
       to: 'jamesfeltonthomas@gmail.com', // replace with user email after tests are passing
       subject: 'Subscription Confirmation',
-      html: ConfirmationEmail('john@example.com', 'SlimKat_Logo'),
+      html: ConfirmationEmail(email, 'SlimKat_Logo'),
       attachments: [
         {
           content: attachment,

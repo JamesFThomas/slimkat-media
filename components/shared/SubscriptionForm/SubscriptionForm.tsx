@@ -84,7 +84,12 @@ export const SubscriptionForm = () => {
 
         clearForm();
 
-        // TODO: trigger confirmation email API call here
+        // trigger confirmation email API call here
+        await fetch('/api/confirm', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
       } else {
         console.error('Form submission failed:', result);
 
