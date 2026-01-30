@@ -22,8 +22,8 @@ export async function POST(request: NextRequest) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'SlimKat Media LLC. <onboarding@resend.dev>',
-      to: 'jamesfeltonthomas@gmail.com', // replace with user email after tests are passing
+      from: 'SlimKat Media LLC. <no-reply@slimkatmedia.com>',
+      to: email, // replace with user email after tests are passing
       subject: 'Subscription Confirmation',
       html: ConfirmationEmail(email, 'SlimKat_Logo'),
       attachments: [
