@@ -1,7 +1,4 @@
 'use client';
-
-import { NavBar } from '../../shared/NavBar/NavBar';
-import { Footer } from '../../shared/Footer/Footer';
 import { SubscriptionForm } from '../../shared/SubscriptionForm/SubscriptionForm';
 
 import Image from 'next/image';
@@ -10,8 +7,7 @@ import { useTranslations } from 'next-intl';
 export const LandingPage = () => {
   const t = useTranslations('LandingPage');
   return (
-    <div className='flex flex-col min-h-screen'>
-      <NavBar />
+    <div>
       <main className='flex flex-col grow w-full items-center mx-auto gap-4'>
         <section id='Greeting' className='flex flex-col text-center gap-2 p-4'>
           <h1 id='title' className='text-5xl'>
@@ -105,7 +101,6 @@ export const LandingPage = () => {
           <SubscriptionForm />
         </section>
       </main>
-      <Footer />
     </div>
   );
 };
