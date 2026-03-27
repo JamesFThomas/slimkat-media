@@ -35,19 +35,25 @@ export const PageLinks = ({ links }: { links: PageLinkProps[] }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div id='nav-pageLinks-container' className='flex flex-row '>
+    <section
+      id='pageLinks-container'
+      aria-label='Page links'
+      className='flex flex-row '
+    >
       {/* Desktop Links */}
-      <div id='desktop-links' className='hidden md:flex gap-2 items-center'>
+      <ul id='desktop-links' className='hidden md:flex gap-2 items-center'>
         {links.map((link) => (
-          <Link
-            key={link.id}
-            className='text-lg hover:underline'
-            href={link.href}
-          >
-            {link.name}
-          </Link>
+          <li key={link.id}>
+            <Link
+              // key={link.id}
+              className='text-lg hover:underline'
+              href={link.href}
+            >
+              {link.name}
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
 
       {/* Mobile Links */}
       <div id='mobile-links' className='relative flex items-center md:hidden'>
@@ -61,20 +67,21 @@ export const PageLinks = ({ links }: { links: PageLinkProps[] }) => {
 
         {/* Dropdown */}
         {open && (
-          <div className='absolute top-full mt-2 flex flex-col gap-2 border border-[var(--border)] bg-[var(--chrome)] p-3 rounded-md'>
+          <ul className='absolute top-full mt-2 flex flex-col gap-2 border border-[var(--border)] bg-[var(--chrome)] p-3 rounded-md'>
             {links.map((link) => (
-              <Link
-                key={link.id}
-                href={link.href}
-                className='text-lg hover:underline'
-                onClick={() => setOpen(false)}
-              >
-                {link.name}
-              </Link>
+              <li key={link.id}>
+                <Link
+                  href={link.href}
+                  className='text-lg hover:underline'
+                  onClick={() => setOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         )}
       </div>
-    </div>
+    </section>
   );
 };
