@@ -34,11 +34,11 @@ export const NavBar = () => {
         {/* Language toggle */}
         <Link
           aria-label='Toggle language'
-          className='flex-col justify-center items-center border-2 border-[var(--border)] p-1 rounded-md hover:bg-[var(--surface)]'
+          className='flex items-center justify-center h-10 px-3 rounded-md border border-[var(--border)] hover:bg-[var(--surface)] text-lg leading-none'
           href={`${nextLocalePath}`}
         >
           <span
-            className={`text-lg ${
+            className={`${
               shouldUnderlineEnglish ? 'underline' : 'no-underline'
             }`}
           >
@@ -46,7 +46,7 @@ export const NavBar = () => {
           </span>{' '}
           |{' '}
           <span
-            className={`text-lg ${
+            className={`${
               !shouldUnderlineEnglish ? 'underline' : 'no-underline'
             }`}
           >
