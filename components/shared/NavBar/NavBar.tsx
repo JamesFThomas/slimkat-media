@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
+import { links, PageLinks } from './components/PageLinks';
 
 export const NavBar = () => {
   const locale = useLocale();
@@ -11,14 +12,26 @@ export const NavBar = () => {
   const nextLocalePath = locale === 'en' ? '/fr' : '/';
 
   return (
-    <nav className='bg-[var(--chrome)] text-[var(--foreground)] p-4 border-b border-[var(--border)]'>
-      <div className='container mx-auto w-full flex flex-row justify-between'>
+    <nav
+      id='navbar-container'
+      className='bg-[var(--chrome)] text-[var(--foreground)] p-4 border-b border-[var(--border)]'
+    >
+      <div
+        id='navbar-content'
+        className='container mx-auto w-full flex flex-row justify-between'
+      >
+        {/* Slim Kat logo */}
         <Image
           src='/logo/SlimKat_Logo.png'
           alt='SlimKat Media Logo'
           width={200}
           height={100}
         />
+
+        {/* Page links */}
+        <PageLinks links={links} />
+
+        {/* Language toggle */}
         <Link
           aria-label='Toggle language'
           className='flex-col justify-center items-center border-2 border-[var(--border)] p-1 rounded-md hover:bg-[var(--surface)]'

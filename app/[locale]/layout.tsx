@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'SlimKat Media',
   description:
-    'An upcoming podcast studio offering professional recording space, resources, and updates for creators.',
+    'SlimKat Media is a creative media platform focused on documentary storytelling, film production, and community-driven initiatives through the James & Kayla Thomas Foundation.',
 };
 
 export default async function RootLayout({
