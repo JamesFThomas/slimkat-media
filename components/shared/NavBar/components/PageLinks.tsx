@@ -6,7 +6,7 @@ export const links = [
   {
     id: 1,
     name: 'Documentaries',
-    href: '/',
+    href: '/documentaries',
   },
   {
     id: 2,

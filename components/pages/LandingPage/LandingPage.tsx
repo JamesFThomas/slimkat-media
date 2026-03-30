@@ -9,12 +9,12 @@ export const LandingPage = () => {
   return (
     <div>
       <main className='flex flex-col grow w-full items-center mx-auto gap-4'>
-        <section id='Greeting' className='flex flex-col text-center gap-2 p-4'>
+        <section id='header' className='flex flex-col text-center gap-2 p-4'>
           <h1 id='title' className='text-5xl'>
-            {t('greeting.title')}
+            {t('header.title')}
           </h1>
           <span id='subtitle' className='text-xl text font-bold p-2'>
-            {t('greeting.subtitle')}
+            {t('header.subtitle')}
           </span>
           <div className='flex flex-row justify-center '>
             <SubscriptionForm />
@@ -29,7 +29,7 @@ export const LandingPage = () => {
                 id='studio-image-1'
                 className='w-full h-auto'
                 src='/podcast/PodcastRoom1.png'
-                alt={t('greeting.studioImage1Alt')}
+                alt={t('header.studioImage1Alt')}
                 width={300}
                 height={200}
               />
@@ -39,7 +39,7 @@ export const LandingPage = () => {
                 id='studio-image-2'
                 className='w-full h-auto'
                 src='/podcast/PodcastRoom2.png'
-                alt={t('greeting.studioImage2Alt')}
+                alt={t('header.studioImage2Alt')}
                 width={300}
                 height={200}
               />
