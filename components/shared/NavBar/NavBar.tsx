@@ -2,14 +2,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
+import { usePathname } from 'next/navigation';
 import { links, PageLinks } from './components/PageLinks';
 
 export const NavBar = () => {
   const locale = useLocale();
+  const pathname = usePathname();
 
   const shouldUnderlineEnglish = locale === 'en' ? true : false;
 
-  const nextLocalePath = locale === 'en' ? '/fr' : '/';
+  const nextLocalePath =
+    locale === 'en' ? `/fr${pathname}` : pathname.replace(/^\/fr/, '') || '/';
 
   return (
     <nav
@@ -21,12 +24,14 @@ export const NavBar = () => {
         className='container mx-auto w-full flex flex-row justify-between'
       >
         {/* Slim Kat logo */}
-        <Image
-          src='/logo/SlimKat_Logo.png'
-          alt='SlimKat Media Logo'
-          width={200}
-          height={100}
-        />
+        <Link href={`/${locale}`} aria-label='Go to landing page'>
+          <Image
+            src='/logo/SlimKat_Logo.png'
+            alt='SlimKat Media Logo'
+            width={200}
+            height={100}
+          />
+        </Link>
 
         {/* Page links */}
         <PageLinks links={links} />
