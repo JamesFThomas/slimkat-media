@@ -15,9 +15,27 @@
       "signature": "-Kayla Turner Thomas, responsable de la télévision"
     }
   },
-  "DocumentariesPage":{
-    "header":{
+  "DocumentariesPage": {
+    "header": {
       "title": "Documentaries Page French side",
+      "subtitle": "Page content coming soon! O la la"
+    }
+  },
+  "ProductionsPage": {
+    "header": {
+      "title": "Productions Page French side",
+      "subtitle": "Page content coming soon! O la la"
+    }
+  },
+  "FoundationPage": {
+    "header": {
+      "title": "Foundation Page French side",
+      "subtitle": "Page content coming soon! O la la"
+    }
+  },
+  "ContactPage": {
+    "header": {
+      "title": "Contact Page French side",
       "subtitle": "Page content coming soon! O la la"
     }
   }

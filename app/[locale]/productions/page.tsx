@@ -1,7 +1,7 @@
-import { DocumentariesPage } from '@/components/pages/Documentaries/DocumentariesPage';
 import { setRequestLocale } from 'next-intl/server';
+import { ProductionsPage } from '@/components/pages/Productions/ProductionsPage';
 
-export default async function Documentaries({
+export default async function Productions({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -9,5 +9,5 @@ export default async function Documentaries({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <DocumentariesPage />;
+  return <ProductionsPage />;
 }

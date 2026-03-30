@@ -15,9 +15,27 @@
       "signature": "-Kayla Turner Thomas, Television Executive"
     }
   },
-  "DocumentariesPage":{
-    "header":{
+  "DocumentariesPage": {
+    "header": {
       "title": "Documentaries Page",
+      "subtitle": "Page content coming soon!"
+    }
+  },
+  "ProductionsPage": {
+    "header": {
+      "title": "Productions Page",
+      "subtitle": "Page content coming soon!"
+    }
+  },
+  "FoundationPage": {
+    "header": {
+      "title": "Foundation Page",
+      "subtitle": "Page content coming soon!"
+    }
+  },
+  "ContactPage": {
+    "header": {
+      "title": "Contact Page",
       "subtitle": "Page content coming soon!"
     }
   }

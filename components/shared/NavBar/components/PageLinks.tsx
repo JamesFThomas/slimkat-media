@@ -11,17 +11,17 @@ export const links = [
   {
     id: 2,
     name: 'Productions',
-    href: '/',
+    href: '/productions',
   },
   {
     id: 3,
     name: 'Foundation',
-    href: '/',
+    href: '/foundation',
   },
   {
     id: 4,
     name: 'Contact',
-    href: '/',
+    href: '/contact',
   },
 ];
 

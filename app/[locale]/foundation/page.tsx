@@ -1,7 +1,7 @@
-import { DocumentariesPage } from '@/components/pages/Documentaries/DocumentariesPage';
 import { setRequestLocale } from 'next-intl/server';
+import { FoundationPage } from '@/components/pages/Foundation/FoundationPage';
 
-export default async function Documentaries({
+export default async function Foundation({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -9,5 +9,5 @@ export default async function Documentaries({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <DocumentariesPage />;
+  return <FoundationPage />;
 }
