@@ -21,9 +21,9 @@ export const NavBar = () => {
     >
       <div
         id='navbar-content'
-        className='container mx-auto w-full flex flex-row justify-between'
+        className='mx-auto w-full flex flex-row justify-between'
       >
-        {/* Slim Kat logo */}
+        {/* Slim Kat logo
         <Link href={`/${locale}`} aria-label='Go to landing page'>
           <Image
             src='/logo/SlimKat_Logo.png'
@@ -31,9 +31,9 @@ export const NavBar = () => {
             width={200}
             height={100}
           />
-        </Link>
+        </Link> */}
 
-        {/* Page links */}
+        {/* Page links & Button */}
         <PageLinks links={links} />
 
         {/* Language toggle */}

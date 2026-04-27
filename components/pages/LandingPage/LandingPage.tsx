@@ -34,6 +34,7 @@ export const LandingPage = () => {
                 height={200}
               />
             </div>
+            {/* Replace with Logo image */}
             <div id='image-2-wrapper' className='w-full max-w-[520px] md:w-1/2'>
               <Image
                 id='studio-image-2'
