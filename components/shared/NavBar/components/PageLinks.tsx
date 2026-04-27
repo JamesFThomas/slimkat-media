@@ -5,33 +5,43 @@ import { useState } from 'react';
 export const links = [
   {
     id: 1,
+    name: 'Home',
+    href: '/',
+  },
+  {
+    id: 2,
     name: 'Documentaries',
     href: '/documentaries',
   },
   {
-    id: 2,
+    id: 3,
     name: 'Productions',
     href: '/productions',
   },
   {
-    id: 3,
+    id: 4,
     name: 'Foundation',
     href: '/foundation',
   },
   {
-    id: 4,
+    id: 5,
     name: 'Contact',
     href: '/contact',
   },
 ];
 
-type PageLinkProps = {
+type PageLinkObject = {
   id: number;
   name: string;
   href: string;
 };
 
-export const PageLinks = ({ links }: { links: PageLinkProps[] }) => {
+type PageLinkProps = {
+  links: PageLinkObject[];
+  pathname: string;
+};
+
+export const PageLinks = ({ links, pathname }: PageLinkProps) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -45,9 +55,11 @@ export const PageLinks = ({ links }: { links: PageLinkProps[] }) => {
         {links.map((link) => (
           <li key={link.id}>
             <Link
-              // key={link.id}
               className='text-lg hover:underline'
               href={link.href}
+              style={{
+                textDecoration: pathname === link.href ? 'underline' : 'none',
+              }}
             >
               {link.name}
             </Link>
@@ -74,6 +86,10 @@ export const PageLinks = ({ links }: { links: PageLinkProps[] }) => {
                   href={link.href}
                   className='text-lg hover:underline'
                   onClick={() => setOpen(false)}
+                  style={{
+                    textDecoration:
+                      pathname === link.href ? 'underline' : 'none',
+                  }}
                 >
                   {link.name}
                 </Link>

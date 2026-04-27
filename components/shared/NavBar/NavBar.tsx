@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
@@ -10,6 +9,8 @@ export const NavBar = () => {
   const pathname = usePathname();
 
   const shouldUnderlineEnglish = locale === 'en' ? true : false;
+
+  console.log(pathname);
 
   const nextLocalePath =
     locale === 'en' ? `/fr${pathname}` : pathname.replace(/^\/fr/, '') || '/';
@@ -24,7 +25,7 @@ export const NavBar = () => {
         className='mx-auto w-full flex flex-row justify-between'
       >
         {/* Page links & Button */}
-        <PageLinks links={links} />
+        <PageLinks links={links} pathname={pathname} />
 
         {/* Language toggle */}
         <Link
