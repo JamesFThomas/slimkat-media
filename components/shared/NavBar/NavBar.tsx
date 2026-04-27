@@ -2,30 +2,48 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
+import { usePathname } from 'next/navigation';
+import { links, PageLinks } from './components/PageLinks';
 
 export const NavBar = () => {
   const locale = useLocale();
+  const pathname = usePathname();
 
   const shouldUnderlineEnglish = locale === 'en' ? true : false;
 
-  const nextLocalePath = locale === 'en' ? '/fr' : '/';
+  const nextLocalePath =
+    locale === 'en' ? `/fr${pathname}` : pathname.replace(/^\/fr/, '') || '/';
 
   return (
-    <nav className='bg-[var(--chrome)] text-[var(--foreground)] p-4 border-b border-[var(--border)]'>
-      <div className='container mx-auto w-full flex flex-row justify-between'>
-        <Image
-          src='/logo/SlimKat_Logo.png'
-          alt='SlimKat Media Logo'
-          width={200}
-          height={100}
-        />
+    <nav
+      id='navbar-container'
+      className='bg-[var(--chrome)] text-[var(--foreground)] p-4 border-b border-[var(--border)]'
+    >
+      <div
+        id='navbar-content'
+        className='container mx-auto w-full flex flex-row justify-between'
+      >
+        {/* Slim Kat logo */}
+        <Link href={`/${locale}`} aria-label='Go to landing page'>
+          <Image
+            src='/logo/SlimKat_Logo.png'
+            alt='SlimKat Media Logo'
+            width={200}
+            height={100}
+          />
+        </Link>
+
+        {/* Page links */}
+        <PageLinks links={links} />
+
+        {/* Language toggle */}
         <Link
           aria-label='Toggle language'
-          className='flex-col justify-center items-center border-2 border-[var(--border)] p-1 rounded-md hover:bg-[var(--surface)]'
+          className='flex items-center justify-center h-10 px-3 rounded-md border border-[var(--border)] hover:bg-[var(--surface)] text-lg leading-none'
           href={`${nextLocalePath}`}
         >
           <span
-            className={`text-lg ${
+            className={`${
               shouldUnderlineEnglish ? 'underline' : 'no-underline'
             }`}
           >
@@ -33,7 +51,7 @@ export const NavBar = () => {
           </span>{' '}
           |{' '}
           <span
-            className={`text-lg ${
+            className={`${
               !shouldUnderlineEnglish ? 'underline' : 'no-underline'
             }`}
           >

@@ -1,6 +1,6 @@
 {
   "LandingPage": {
-    "greeting": {
+    "header": {
       "title": "Jackson Metro's newest podcast studio",
       "subtitle": "Curious about pricing? Sign up to be the first to know when our studio opens for business!",
       "studioImage1Alt": "Podcast Studio Image 1",
@@ -13,6 +13,30 @@
       "bioParagraph3": "Additionally an independent filmmaker, I’ve been able to secure distribution for my debut documentary, Farming Freedom, which is available beginning in 2026.",
       "bioParagraph4": "With more than a decade's experience of managing projects from inception to launch, I look forward to bringing that very experience to Jackson Metro's newest podcast studio for anyone seeking to produce professional shows that are distribution ready for any platform.",
       "signature": "-Kayla Turner Thomas, Television Executive"
+    }
+  },
+  "DocumentariesPage": {
+    "header": {
+      "title": "Documentaries Page",
+      "subtitle": "Page content coming soon!"
+    }
+  },
+  "ProductionsPage": {
+    "header": {
+      "title": "Productions Page",
+      "subtitle": "Page content coming soon!"
+    }
+  },
+  "FoundationPage": {
+    "header": {
+      "title": "Foundation Page",
+      "subtitle": "Page content coming soon!"
+    }
+  },
+  "ContactPage": {
+    "header": {
+      "title": "Contact Page",
+      "subtitle": "Page content coming soon!"
     }
   }
 }
