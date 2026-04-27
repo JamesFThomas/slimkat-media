@@ -23,16 +23,6 @@ export const NavBar = () => {
         id='navbar-content'
         className='mx-auto w-full flex flex-row justify-between'
       >
-        {/* Slim Kat logo
-        <Link href={`/${locale}`} aria-label='Go to landing page'>
-          <Image
-            src='/logo/SlimKat_Logo.png'
-            alt='SlimKat Media Logo'
-            width={200}
-            height={100}
-          />
-        </Link> */}
-
         {/* Page links & Button */}
         <PageLinks links={links} />
 
