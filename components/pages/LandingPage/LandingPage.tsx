@@ -3,6 +3,7 @@ import { SubscriptionForm } from '../../shared/SubscriptionForm/SubscriptionForm
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { CarouselItem } from './components/Carousel/CarouselItem';
 
 export const LandingPage = () => {
   const t = useTranslations('LandingPage');
@@ -26,6 +27,12 @@ export const LandingPage = () => {
           >
             {t('header.title')}
           </span>
+
+          <div id='carousel-wrapper' className='w-full flex justify-center'>
+            <div id='carousel' className='w-full max-w-[800px]'>
+              <CarouselItem />
+            </div>
+          </div>
         </section>
 
         <section
