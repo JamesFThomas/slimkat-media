@@ -4,7 +4,12 @@
       "title": "Jackson Metro's newest podcast studio",
       "subtitle": "Curious about pricing? Sign up to be the first to know when our studio opens for business!",
       "studioImage1Alt": "Podcast Studio Image 1",
-      "studioImage2Alt": "Podcast Studio Image 2"
+      "studioImage2Alt": "Podcast Studio Image 2",
+      "description": "We’re SlimKat Media — a creative studio delivering high-quality productions, branded content, and family documentaries designed to inform, inspire, and endure.",
+      "aboutLine1": "We’re SlimKat Media — a creative studio",
+      "aboutLine2": "delivering high-quality productions,",
+      "aboutLine3": "branded content, and family documentaries",
+      "aboutLine4": "designed to inform, inspire, and endure."
     },
     "biography": {
       "headShotAlt": "Headshot of Kayla Turner Thomas",

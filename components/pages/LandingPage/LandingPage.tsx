@@ -37,6 +37,16 @@ export const LandingPage = () => {
         </section>
 
         <section
+          id='description'
+          className='py-24 md:py-32 text-center max-w-4xl mx-auto text-4xl font-semibold leading-tight space-y-1'
+        >
+          <p>{t('header.aboutLine1')}</p>
+          <p>{t('header.aboutLine2')}</p>
+          <p>{t('header.aboutLine3')}</p>
+          <p>{t('header.aboutLine4')}</p>
+        </section>
+
+        <section
           id='Biography'
           className='flex flex-col grow items-center gap-5 p-4 w-full bg-[var(--surface)] text-[var(--foreground)]'
         >
