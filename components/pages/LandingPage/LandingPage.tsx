@@ -10,10 +10,13 @@ export const LandingPage = () => {
   return (
     <div>
       <main className='flex flex-col grow w-full items-center mx-auto gap-4'>
-        <section id='header' className='flex flex-col items-center text-center w-full gap-2 p-4'>
+        <section
+          id='header'
+          className='flex flex-col items-center text-center w-full gap-2 px-4 pt-8 md:pt-12'
+        >
           <div id='slimKatLogo-image-wrapper' className='max-w-[700px]'>
             <Image
-              id='studio-image-2'
+              id='SlimKat_Logo'
               className='w-full h-auto'
               src='/logo/SlimKat_Logo.png'
               alt={t('header.studioImage2Alt')}
