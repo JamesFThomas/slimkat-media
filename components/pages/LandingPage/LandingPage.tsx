@@ -3,14 +3,14 @@ import { SubscriptionForm } from '../../shared/SubscriptionForm/SubscriptionForm
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { CarouselItem } from './components/Carousel/CarouselItem';
+import { Carousel } from './components/Carousel/Carousel';
 
 export const LandingPage = () => {
   const t = useTranslations('LandingPage');
   return (
     <div>
       <main className='flex flex-col grow w-full items-center mx-auto gap-4'>
-        <section id='header' className='flex flex-col text-center gap-2 p-4'>
+        <section id='header' className='flex flex-col items-center text-center w-full gap-2 p-4'>
           <div id='slimKatLogo-image-wrapper' className='max-w-[700px]'>
             <Image
               id='studio-image-2'
@@ -28,11 +28,7 @@ export const LandingPage = () => {
             {t('header.title')}
           </span>
 
-          <div id='carousel-wrapper' className='w-full flex justify-center'>
-            <div id='carousel' className='w-full max-w-[800px]'>
-              <CarouselItem />
-            </div>
-          </div>
+          <Carousel />
         </section>
 
         <section
