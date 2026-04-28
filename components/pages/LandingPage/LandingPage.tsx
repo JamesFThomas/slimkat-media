@@ -12,7 +12,7 @@ export const LandingPage = () => {
       <main className='flex flex-col grow w-full items-center mx-auto gap-4'>
         <section
           id='header'
-          className='flex flex-col items-center text-center w-full pt-32 py-12 min-h-[100vh] justify-between'
+          className='flex flex-col items-center text-center w-full pt-32 py-12 min-h-[100vh] justify-evenly'
         >
           <div className='flex flex-col items-center'>
             <div id='slimKatLogo-image-wrapper' className='max-w-[700px]'>
