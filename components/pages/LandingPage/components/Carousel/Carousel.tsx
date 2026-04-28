@@ -47,7 +47,10 @@ export const Carousel = () => {
   ];
 
   return (
-    <div id='carousel-wrapper' className='w-full overflow-hidden py-8 md:py-12'>
+    <div
+      id='carousel-wrapper'
+      className='w-full overflow-hidden py-8 md:py-12 mt-8 md:mt-12'
+    >
       <div
         id='carousel-track'
         className='flex w-max flex-nowrap gap-4 animate-[marquee_35s_linear_infinite]'

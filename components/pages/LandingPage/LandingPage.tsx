@@ -12,24 +12,26 @@ export const LandingPage = () => {
       <main className='flex flex-col grow w-full items-center mx-auto gap-4'>
         <section
           id='header'
-          className='flex flex-col items-center text-center w-full gap-2 px-4 pt-8 md:pt-12'
+          className='flex flex-col items-center text-center w-full pt-32 py-12 min-h-[100vh] justify-between'
         >
-          <div id='slimKatLogo-image-wrapper' className='max-w-[700px]'>
-            <Image
-              id='SlimKat_Logo'
-              className='w-full h-auto'
-              src='/logo/SlimKat_Logo.png'
-              alt={t('header.studioImage2Alt')}
-              width={700}
-              height={200}
-            />
+          <div className='flex flex-col items-center'>
+            <div id='slimKatLogo-image-wrapper' className='max-w-[700px]'>
+              <Image
+                id='SlimKat_Logo'
+                className='w-full h-auto'
+                src='/logo/SlimKat_Logo.png'
+                alt={t('header.studioImage2Alt')}
+                width={700}
+                height={200}
+              />
+            </div>
+            <span
+              id='subtitle'
+              className='text-lg md:text-2xl font-normal text-[var(--muted-foreground)]'
+            >
+              {t('header.title')}
+            </span>
           </div>
-          <span
-            id='subtitle'
-            className='text-lg md:text-2xl font-normal text-[var(--muted-foreground)]'
-          >
-            {t('header.title')}
-          </span>
 
           <Carousel />
         </section>
@@ -45,7 +47,7 @@ export const LandingPage = () => {
             <Image
               id='biography-headshot'
               className='w-full h-auto'
-              src='/headshot/KaylaThomas_Headshot.jpg'
+              src='/images/headshot/KaylaThomas_Headshot.jpg'
               alt={t('biography.headShotAlt')}
               width={500}
               height={400}
