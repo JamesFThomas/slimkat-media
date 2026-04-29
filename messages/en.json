@@ -1,10 +1,12 @@
 {
   "LandingPage": {
-    "header": {
+    "hero": {
       "title": "Stories That Inform, Inspire, and Endure",
       "subtitle": "Curious about pricing? Sign up to be the first to know when our studio opens for business!",
       "studioImage1Alt": "Podcast Studio Image 1",
-      "studioImage2Alt": "Podcast Studio Image 2",
+      "studioImage2Alt": "Podcast Studio Image 2"
+    },
+    "about": {
       "aboutLine1": "We’re SlimKat Media — a studio",
       "aboutLine2": "producing high-quality documentaries",
       "aboutLine3": "and developing content creators."

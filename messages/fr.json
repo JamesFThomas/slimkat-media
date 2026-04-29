@@ -1,10 +1,15 @@
 {
   "LandingPage": {
-    "header": {
+    "hero": {
       "title": "Le tout nouveau studio de podcast de Jackson Metro",
       "subtitle": "Vous souhaitez connaître nos tarifs ? Inscrivez-vous pour être parmi les premiers informés de l'ouverture de notre studio !",
       "studioImage1Alt": "Image 1 du studio de podcast",
       "studioImage2Alt": "Image 2 du studio de podcast"
+    },
+    "about": {
+      "aboutLine1": "Nous sommes SlimKat Media — un studio",
+      "aboutLine2": "qui produit des documentaires de haute qualité",
+      "aboutLine3": "et accompagne les créateurs de contenu."
     },
     "biography": {
       "headShotAlt": "Portrait de Kayla Turner Thomas",

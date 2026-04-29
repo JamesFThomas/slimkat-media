@@ -11,7 +11,7 @@ export const LandingPage = () => {
     <div>
       <main className='flex flex-col grow w-full items-center mx-auto gap-4'>
         <section
-          id='header'
+          id='hero'
           className='flex flex-col items-center text-center w-full pt-32 py-12 min-h-[100vh] justify-evenly'
         >
           <div className='flex flex-col items-center'>
@@ -23,7 +23,7 @@ export const LandingPage = () => {
                 id='SlimKat_Logo'
                 className='w-full h-auto'
                 src='/logo/SlimKat_Logo.png'
-                alt={t('header.studioImage2Alt')}
+                alt={t('hero.studioImage2Alt')}
                 width={700}
                 height={200}
               />
@@ -32,7 +32,7 @@ export const LandingPage = () => {
               id='subtitle'
               className='text-base sm:text-xl md:text-2xl font-normal text-[var(--muted-foreground)]'
             >
-              {t('header.title')}
+              {t('hero.title')}
             </span>
           </div>
 
@@ -43,9 +43,56 @@ export const LandingPage = () => {
           id='description'
           className=' pb-24 md:pb-32 text-center max-w-4xl mx-auto text-4xl font-semibold leading-tight space-y-1'
         >
-          <p>{t('header.aboutLine1')}</p>
-          <p>{t('header.aboutLine2')}</p>
-          <p>{t('header.aboutLine3')}</p>
+          <p>{t('about.aboutLine1')}</p>
+          <p>{t('about.aboutLine2')}</p>
+          <p>{t('about.aboutLine3')}</p>
+        </section>
+
+        {/* Services Section */}
+        <section id='services'>
+          <div
+            id='services-wrapper'
+            className='flex flex-col items-center gap-4 p-4 w-full text-[var(--foreground)]'
+          >
+            <div
+              id='services-header-wrapper'
+              className='flex flex-col items-center gap-4'
+            >
+              <h1
+                id='services-header'
+                className='text-5xl md:text-7xl font-bold'
+              >
+                Services We Provide
+              </h1>
+
+              <p
+                id='services-description'
+                className='text-center text-xl font-medium max-w-2xl mx-auto'
+              >
+                Here, we tell meaningful stories, producing powerful
+                documentaries and creating content that informs, inspires, and
+                endures.
+              </p>
+            </div>
+            <div
+              id='services-list-grid'
+              className='grid grid-cols-1 md:grid-cols-6 gap-10 m-3 w-full max-w-[1200px]'
+            >
+              <div
+                id='services-images'
+                className='hidden md:block md:col-span-2 bg-red-50 h-[500px]'
+              >
+                Images{' '}
+              </div>
+              <div
+                id='services-list'
+                className='md:col-span-4 bg-blue-50 h-[500px]'
+              >
+                {' '}
+                Services List
+              </div>
+            </div>
+          </div>
         </section>
 
         <section
