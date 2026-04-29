@@ -15,7 +15,10 @@ export const LandingPage = () => {
           className='flex flex-col items-center text-center w-full pt-32 py-12 min-h-[100vh] justify-evenly'
         >
           <div className='flex flex-col items-center'>
-            <div id='slimKatLogo-image-wrapper' className='max-w-[700px]'>
+            <div
+              id='slimKatLogo-image-wrapper'
+              className='max-w-[700px] px-4 sm:px-0'
+            >
               <Image
                 id='SlimKat_Logo'
                 className='w-full h-auto'
@@ -27,7 +30,7 @@ export const LandingPage = () => {
             </div>
             <span
               id='subtitle'
-              className='text-lg md:text-2xl font-normal text-[var(--muted-foreground)]'
+              className='text-base sm:text-xl md:text-2xl font-normal text-[var(--muted-foreground)]'
             >
               {t('header.title')}
             </span>
@@ -38,12 +41,11 @@ export const LandingPage = () => {
 
         <section
           id='description'
-          className='py-24 md:py-32 text-center max-w-4xl mx-auto text-4xl font-semibold leading-tight space-y-1'
+          className=' pb-24 md:pb-32 text-center max-w-4xl mx-auto text-4xl font-semibold leading-tight space-y-1'
         >
           <p>{t('header.aboutLine1')}</p>
           <p>{t('header.aboutLine2')}</p>
           <p>{t('header.aboutLine3')}</p>
-          <p>{t('header.aboutLine4')}</p>
         </section>
 
         <section
