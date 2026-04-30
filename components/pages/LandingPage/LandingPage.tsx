@@ -103,7 +103,7 @@ export const LandingPage = () => {
           </div>
         </section>
 
-        <section
+        {/* <section
           id='Biography'
           className='flex flex-col grow items-center gap-5 p-4 w-full bg-[var(--surface)] text-[var(--foreground)]'
         >
@@ -155,7 +155,7 @@ export const LandingPage = () => {
             {t('biography.signature')}
           </span>
           <SubscriptionForm />
-        </section>
+        </section> */}
       </main>
     </div>
   );

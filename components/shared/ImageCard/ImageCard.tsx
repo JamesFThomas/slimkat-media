@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+// import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 export type ImageCardData = {
@@ -14,17 +14,19 @@ export const ImageCard = ({
   description,
   imageUrl,
 }: ImageCardData) => {
-  const t = useTranslations('ImageCard');
+  // const t = useTranslations('ImageCard');
 
   return (
     <div id='imageCard-wrapper' className='w-full max-w-[280px]'>
       <Image
         id={`imageCard-image-${id}`}
-        className='w-full aspect-[4/3] rounded-xl bg-purple-100'
+        className='w-full aspect-[4/3] rounded-xl'
         src={imageUrl}
-        alt={t('imageAlt', { title })}
-        width={290}
-        height={240}
+        // alt={t('imageAlt', { title })}
+        alt={''}
+        width={560}
+        height={420}
+        sizes='(min-width: 768px) 280px, 100vw'
       />
 
       <div id={`imageCard-description-${id}`} className='pt-4'>
