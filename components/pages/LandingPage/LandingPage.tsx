@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Carousel } from './components/Carousel/Carousel';
 import { ServicesLinks } from './components/Services/ServicesLinks';
+import { ServicesImageList } from './components/Services/ServicesImageList';
 
 export const LandingPage = () => {
   const t = useTranslations('LandingPage');
@@ -81,9 +82,9 @@ export const LandingPage = () => {
             >
               <div
                 id='services-images'
-                className='hidden md:block md:col-span-2 bg-red-50'
+                className='hidden md:block md:col-span-2'
               >
-                Images{' '}
+                <ServicesImageList />
               </div>
               <div id='services-list' className='md:col-span-4'>
                 <ServicesLinks />
