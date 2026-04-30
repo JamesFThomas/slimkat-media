@@ -4,6 +4,7 @@ import { SubscriptionForm } from '../../shared/SubscriptionForm/SubscriptionForm
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Carousel } from './components/Carousel/Carousel';
+import { ServicesLinks } from './components/Services/ServicesLinks';
 
 export const LandingPage = () => {
   const t = useTranslations('LandingPage');
@@ -52,7 +53,7 @@ export const LandingPage = () => {
         <section id='services'>
           <div
             id='services-wrapper'
-            className='flex flex-col items-center gap-4 p-4 w-full text-[var(--foreground)]'
+            className='flex flex-col items-center gap-4 px-4 py-16 md:py-24 w-full text-[var(--foreground)]'
           >
             <div
               id='services-header-wrapper'
@@ -67,7 +68,7 @@ export const LandingPage = () => {
 
               <p
                 id='services-description'
-                className='text-center text-xl font-medium max-w-2xl mx-auto'
+                className='text-center text-xl font-medium max-w-2xl mx-auto text-[var(--foreground)]/70'
               >
                 Here, we tell meaningful stories, producing powerful
                 documentaries and creating content that informs, inspires, and
@@ -80,16 +81,12 @@ export const LandingPage = () => {
             >
               <div
                 id='services-images'
-                className='hidden md:block md:col-span-2 bg-red-50 h-[500px]'
+                className='hidden md:block md:col-span-2 bg-red-50'
               >
                 Images{' '}
               </div>
-              <div
-                id='services-list'
-                className='md:col-span-4 bg-blue-50 h-[500px]'
-              >
-                {' '}
-                Services List
+              <div id='services-list' className='md:col-span-4'>
+                <ServicesLinks />
               </div>
             </div>
           </div>
