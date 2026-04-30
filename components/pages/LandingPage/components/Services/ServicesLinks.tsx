@@ -4,24 +4,24 @@ import { useTranslations } from 'next-intl';
 
 export type ServiceLinkObject = {
   id: number;
-  name: string;
+  nameKey: string;
   href: string;
 };
 
 const linkObjects: ServiceLinkObject[] = [
   {
     id: 1,
-    name: 'Legacy Documentaries',
+    nameKey: 'services.links.legacyDocumentaries',
     href: '/documentaries',
   },
   {
     id: 2,
-    name: 'The Foundation',
+    nameKey: 'services.links.foundation',
     href: '/foundation',
   },
   {
     id: 3,
-    name: 'Our Work',
+    nameKey: 'services.links.ourWork',
     href: '/productions',
   },
 ];
@@ -50,7 +50,7 @@ export const ServicesLinks = ({
             href={link.href}
             className='block text-3xl md:text-5xl font-semibold tracking-wide text-[var(--foreground)]/70 hover:text-[var(--foreground)] transition-colors duration-200'
           >
-            {link.name}
+            {t(link.nameKey)}
           </Link>
         </li>
       ))}

@@ -18,6 +18,32 @@
       "bioParagraph3": "En tant que cinéaste indépendant, j'ai réussi à obtenir la distribution de mon premier documentaire, Farming Freedom, qui sera disponible à partir de 2026.",
       "bioParagraph4": "Fort d'une expérience de plus de dix ans dans la gestion de projets, de leur conception à leur lancement, je suis impatient de mettre cette expérience au service du tout nouveau studio de podcast de Jackson Metro pour tous ceux qui souhaitent produire des émissions professionnelles prêtes à être diffusées sur n'importe quelle plateforme.",
       "signature": "-Kayla Turner Thomas, responsable de la télévision"
+    },
+    "services": {
+      "header": "Nos services",
+      "description": "Ici, nous racontons des histoires porteuses de sens, produisant des documentaires puissants et créant des contenus qui informent, inspirent et perdurent.",
+      "links": {
+        "legacyDocumentaries": "Documentaires sur l'héritage",
+        "foundation": "La Fondation",
+        "ourWork": "Notre Travail"
+      }
+    },
+    "imageCards": {
+      "legacyDocumentaries": {
+        "title": "Documentaires sur l'héritage",
+        "description": "Découvrez nos documentaires impactants qui préserve l'histoire et inspire le changement.",
+        "imageAlt": " Cinéaste interviewant un aîné pour un documentaire sur l'héritage"
+      },
+      "foundation": {
+        "title": "La Fondation",
+        "description": "Découvrez la mission de notre fondation de soutien aux cinéastes émergents et aux conteurs.",
+        "imageAlt": "Mentor guidant des cinéastes ambitieux lors d'un atelier"
+      },
+      "ourWork": {
+        "title": "Notre Travail",
+        "description": "Découvrez les productions qui touchent les audiences à travers des histoires significatives.",
+        "imageAlt": "Membre du public regardant une séance de documentaire émouvant"
+      }
     }
   },
   "DocumentariesPage": {

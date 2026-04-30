@@ -12,24 +12,24 @@ type ServicesImageListProps = {
 const imagesList: ImageCardData[] = [
   {
     id: 1,
-    title: 'Legacy Documentaries',
-    description:
-      'Discover our impactful documentaries that preserve history and inspire change.',
+    title: 'imageCards.legacyDocumentaries.title',
+    description: 'imageCards.legacyDocumentaries.description',
     imageUrl: '/images/services/legacy-documentaries.png',
+    imageAlt: 'imageCards.legacyDocumentaries.imageAlt',
   },
   {
     id: 2,
-    title: 'The Foundation',
-    description:
-      'Learn about our foundation’s mission to support emerging filmmakers and storytellers.',
+    title: 'imageCards.foundation.title',
+    description: 'imageCards.foundation.description',
     imageUrl: '/images/services/the-foundation.png',
+    imageAlt: 'imageCards.foundation.imageAlt',
   },
   {
     id: 3,
-    title: 'Our Work',
-    description:
-      'Explore our diverse portfolio of productions that captivate audiences worldwide.',
+    title: 'imageCards.ourWork.title',
+    description: 'imageCards.ourWork.description',
     imageUrl: '/images/services/our-work2.png',
+    imageAlt: 'imageCards.ourWork.imageAlt',
   },
 ];
 

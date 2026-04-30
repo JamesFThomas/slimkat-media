@@ -18,6 +18,32 @@
       "bioParagraph3": "Additionally an independent filmmaker, I’ve been able to secure distribution for my debut documentary, Farming Freedom, which is available beginning in 2026.",
       "bioParagraph4": "With more than a decade's experience of managing projects from inception to launch, I look forward to bringing that very experience to Jackson Metro's newest podcast studio for anyone seeking to produce professional shows that are distribution ready for any platform.",
       "signature": "-Kayla Turner Thomas, Television Executive"
+    },
+    "services": {
+      "header": "Services We Provide",
+      "description": " Here, we tell meaningful stories, producing powerful documentaries and creating content that informs, inspires, and endures.",
+      "links": {
+        "legacyDocumentaries": "Legacy Documentaries",
+        "foundation": "The Foundation",
+        "ourWork": "Our Work"
+      }
+    },
+    "imageCards": {
+      "legacyDocumentaries": {
+        "title": "Legacy Documentaries",
+        "description": "Discover our impactful documentaries that preserve history and inspire change.",
+        "imageAlt": "Filmmaker interviewing an elder for a legacy documentary"
+      },
+      "foundation": {
+        "title": "The Foundation",
+        "description": "Learn about our foundation’s mission to support emerging filmmakers and storytellers.",
+        "imageAlt": "Mentor guiding aspiring filmmakers in a workshop"
+      },
+      "ourWork": {
+        "title": "Our Work",
+        "description": "Explore productions that connect with audiences through meaningful stories.",
+        "imageAlt": "Audience member watching an emotional documentary screening"
+      }
     }
   },
   "DocumentariesPage": {
