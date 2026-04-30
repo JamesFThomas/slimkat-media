@@ -5,6 +5,7 @@ import {
 
 type ServicesImageListProps = {
   images?: ImageCardData[];
+  activeImageId: number;
 };
 
 // All test needs to be localized once testing is done
@@ -34,11 +35,19 @@ const imagesList: ImageCardData[] = [
 
 export const ServicesImageList = ({
   images = imagesList,
+  activeImageId,
 }: ServicesImageListProps) => {
   return (
-    <div id='servicesImageList-wrapper' className='w-full flex flex-col gap-6'>
+    <div
+      id='servicesImageList-wrapper'
+      className='w-full flex flex-col gap-6 md:mt-8'
+    >
       {images?.map((image) => (
-        <div key={image.id} className='w-full max-w-[280px]'>
+        <div
+          key={image.id}
+          hidden={image.id !== activeImageId}
+          className='w-full max-w-[280px] animate-in fade-in duration-300'
+        >
           <ImageCard {...image} />
         </div>
       ))}

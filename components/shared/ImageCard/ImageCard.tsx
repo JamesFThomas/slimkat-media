@@ -33,7 +33,7 @@ export const ImageCard = ({
         </h3>
         <p
           id={`imageCard-text-${id}`}
-          className='text-[var(--muted-foreground)]'
+          className='text-sm leading-6 text-[var(--muted-foreground)]'
         >
           {description}
         </p>

@@ -8,10 +8,6 @@ export type ServiceLinkObject = {
   href: string;
 };
 
-type ServicesLinksProps = {
-  links?: ServiceLinkObject[];
-};
-
 const linkObjects: ServiceLinkObject[] = [
   {
     id: 1,
@@ -30,7 +26,15 @@ const linkObjects: ServiceLinkObject[] = [
   },
 ];
 
-export const ServicesLinks = ({ links = linkObjects }: ServicesLinksProps) => {
+type ServicesLinksProps = {
+  links?: ServiceLinkObject[];
+  handleServiceLinkHover: (id: number) => void;
+};
+
+export const ServicesLinks = ({
+  links = linkObjects,
+  handleServiceLinkHover,
+}: ServicesLinksProps) => {
   const t = useTranslations('LandingPage');
 
   return (
@@ -38,6 +42,7 @@ export const ServicesLinks = ({ links = linkObjects }: ServicesLinksProps) => {
       {links.map((link) => (
         <li
           id='servicesLink-item'
+          onMouseEnter={() => handleServiceLinkHover(link.id)}
           key={link.id}
           className='w-full border-b border-[var(--muted-foreground)]/30 py-6'
         >

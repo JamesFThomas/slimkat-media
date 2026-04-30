@@ -6,9 +6,17 @@ import { useTranslations } from 'next-intl';
 import { Carousel } from './components/Carousel/Carousel';
 import { ServicesLinks } from './components/Services/ServicesLinks';
 import { ServicesImageList } from './components/Services/ServicesImageList';
+import { useState } from 'react';
 
 export const LandingPage = () => {
   const t = useTranslations('LandingPage');
+
+  const [activeServiceId, setActiveServiceId] = useState<number>(1);
+
+  const handleServiceLinkHover = (id: number) => {
+    setActiveServiceId(id);
+  };
+
   return (
     <div>
       <main className='flex flex-col grow w-full items-center mx-auto gap-4'>
@@ -84,10 +92,12 @@ export const LandingPage = () => {
                 id='services-images'
                 className='hidden md:block md:col-span-2'
               >
-                <ServicesImageList />
+                <ServicesImageList activeImageId={activeServiceId} />
               </div>
               <div id='services-list' className='md:col-span-4'>
-                <ServicesLinks />
+                <ServicesLinks
+                  handleServiceLinkHover={handleServiceLinkHover}
+                />
               </div>
             </div>
           </div>
