@@ -28,6 +28,14 @@
         "ourWork": "Our Work"
       }
     },
+    "projects": {
+      "header": "Our Projects",
+      "description": "Explore the stories we’ve brought to life—crafted to engage audiences and leave a lasting impact.",
+      "project1": {
+        "title": "FARMING FREEDOM",
+        "description": "2025 - Educational Documentary"
+      }
+    },
     "imageCards": {
       "legacyDocumentaries": {
         "title": "Legacy Documentaries",

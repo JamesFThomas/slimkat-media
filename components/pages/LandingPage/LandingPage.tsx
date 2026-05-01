@@ -19,6 +19,7 @@ export const LandingPage = () => {
   return (
     <div>
       <main className='flex flex-col grow w-full items-center mx-auto gap-4'>
+        {/* Hero Section */}
         <section
           id='hero'
           className='flex flex-col items-center text-center w-full pt-32 py-12 min-h-[100vh] justify-evenly'
@@ -48,6 +49,7 @@ export const LandingPage = () => {
           <Carousel />
         </section>
 
+        {/* Description Section */}
         <section
           id='description'
           className=' pb-24 md:pb-32 text-center max-w-4xl mx-auto text-4xl font-semibold leading-tight space-y-1'
@@ -100,7 +102,35 @@ export const LandingPage = () => {
           </div>
         </section>
 
-        {/* Our Work Section Below Here*/}
+        {/* Projects Section */}
+        <section id='projects'>
+          <div
+            id='projects-wrapper'
+            className='flex flex-col items-center gap-4 py-16 md:py-24 w-full max-w-[1280px] mx-auto'
+          >
+            <h1
+              id='projects-header'
+              className='text-5xl md:text-6xl xl:text-8xl font-bold text-center'
+            >
+              {t('projects.header')}
+            </h1>
+
+            <p
+              id='projects-description'
+              className='text-center text-xl font-medium max-w-2xl mx-auto text-[var(--foreground)]/70'
+            >
+              {t('projects.description')}
+            </p>
+
+            <div
+              id='projects-cards'
+              className='w-full mt-12 flex flex-col items-center gap-12'
+            >
+              {/* Placeholder for Project Cards */}
+              {/* Placeholder for Project Press Links */}
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
