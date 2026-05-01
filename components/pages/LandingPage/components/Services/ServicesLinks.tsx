@@ -48,7 +48,7 @@ export const ServicesLinks = ({
         >
           <Link
             href={link.href}
-            className='block text-3xl md:text-5xl font-semibold tracking-wide text-[var(--foreground)]/70 hover:text-[var(--foreground)] transition-colors duration-200'
+            className='block text-4xl md:text-5xl xl:text-7xl font-semibold tracking-wide text-[var(--foreground)]/70 hover:text-[var(--foreground)] transition-colors duration-200'
           >
             {t(link.nameKey)}
           </Link>

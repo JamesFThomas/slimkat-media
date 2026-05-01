@@ -69,7 +69,7 @@ export const LandingPage = () => {
             >
               <h1
                 id='services-header'
-                className='text-5xl md:text-7xl font-bold'
+                className='text-5xl md:text-6xl xl:text-8xl font-bold'
               >
                 {t('services.header')}
               </h1>
@@ -83,7 +83,7 @@ export const LandingPage = () => {
             </div>
             <div
               id='services-list-grid'
-              className='grid grid-cols-1 lg:grid-cols-7 gap-10 m-3 w-full max-w-[1400px] mx-auto'
+              className='grid grid-cols-1 lg:grid-cols-7 gap-16 m-3 w-full max-w-[1400px] mx-auto'
             >
               <div
                 id='services-images'
