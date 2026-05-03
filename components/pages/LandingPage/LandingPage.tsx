@@ -7,6 +7,7 @@ import { ServicesLinks } from './components/Services/ServicesLinks';
 import { ServicesImageList } from './components/Services/ServicesImageList';
 import { useState } from 'react';
 import { ProjectCardList } from './components/Projects/ProjectCardList';
+import { ProjectLinks } from './components/Projects/ProjectLinks';
 
 export const LandingPage = () => {
   const t = useTranslations('LandingPage');
@@ -130,6 +131,9 @@ export const LandingPage = () => {
               {/* Placeholder for Project Cards */}
               <ProjectCardList />
               {/* Placeholder for Project Press Links */}
+              <div id='projects-press-wrapper'>
+                <ProjectLinks />
+              </div>
             </div>
           </div>
         </section>

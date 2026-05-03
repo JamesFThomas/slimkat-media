@@ -34,17 +34,38 @@
       "project1": {
         "title": "FARMING FREEDOM",
         "description": "2025 - Educational Documentary",
-        "imageAlt": "Farming Freedom Documentary Poster"
+        "imageAlt": "Farming Freedom Documentary Poster",
+        "links": {
+          "NPR": {
+            "label": "The story of black land loss in the american south",
+            "url": "https://www.npr.org/sections/codeswitch/2025/01/15/1099981234/farming-freedom-documentary-explores-the-legacy-of-sharecropping",
+            "info": "NPR | January 10, 2026"
+          }
+        }
       },
       "project2": {
-        "title": "PROJECT 2",
+        "title": "Powerful Project",
         "description": "2025 - Documentary in Development",
-        "imageAlt": "Project 2 Documentary Poster"
+        "imageAlt": "Project 2 Documentary Poster",
+        "links": {
+          "WashingtonPost": {
+            "label": "A powerful look into untold stories that shape our understanding of history and culture.",
+            "url": "https://www.washingtonpost.com/arts-entertainment/2025/11/20/project-2-documentary-development/",
+            "info": "Washington Post | November 20, 2025"
+          }
+        }
       },
       "project3": {
-        "title": "PROJECT 3",
+        "title": "Inspiring Project",
         "description": "2025 - Documentary in Development",
-        "imageAlt": "Project 3 Documentary Poster"
+        "imageAlt": "Project 3 Documentary Poster",
+        "links": {
+          "NewYorkTimes": {
+            "label": "A wonderful project that captures the essence of storytelling and the power of documentaries.",
+            "url": "https://www.nytimes.com/2025/10/05/movies/project-3-documentary-development.html",
+            "info": "New York Times | October 5, 2025"
+          }
+        }
       }
     },
     "imageCards": {
