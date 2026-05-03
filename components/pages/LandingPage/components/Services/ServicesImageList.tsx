@@ -3,12 +3,7 @@ import {
   ImageCardData,
 } from '@/components/shared/ImageCard/ImageCard';
 
-type ServicesImageListProps = {
-  images?: ImageCardData[];
-  activeImageId: number;
-};
-
-// All test needs to be localized once testing is done
+// All text needs to be localized once testing is done
 const imagesList: ImageCardData[] = [
   {
     id: 1,
@@ -32,6 +27,11 @@ const imagesList: ImageCardData[] = [
     imageAlt: 'imageCards.ourWork.imageAlt',
   },
 ];
+
+type ServicesImageListProps = {
+  images?: ImageCardData[];
+  activeImageId: number;
+};
 
 export const ServicesImageList = ({
   images = imagesList,

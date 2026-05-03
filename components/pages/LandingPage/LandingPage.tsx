@@ -6,6 +6,7 @@ import { Carousel } from './components/Carousel/Carousel';
 import { ServicesLinks } from './components/Services/ServicesLinks';
 import { ServicesImageList } from './components/Services/ServicesImageList';
 import { useState } from 'react';
+import { ProjectCardList } from './components/Projects/ProjectCardList';
 
 export const LandingPage = () => {
   const t = useTranslations('LandingPage');
@@ -103,10 +104,10 @@ export const LandingPage = () => {
         </section>
 
         {/* Projects Section */}
-        <section id='projects'>
+        <section id='projects' className='w-full'>
           <div
             id='projects-wrapper'
-            className='flex flex-col items-center gap-4 py-16 md:py-24 w-full max-w-[1280px] mx-auto'
+            className='flex flex-col items-center gap-4 px-4 py-16 md:py-24 w-full mx-auto'
           >
             <h1
               id='projects-header'
@@ -124,9 +125,10 @@ export const LandingPage = () => {
 
             <div
               id='projects-cards'
-              className='w-full mt-12 flex flex-col items-center gap-12'
+              className='w-full mt-12 flex fit-content justify-center'
             >
               {/* Placeholder for Project Cards */}
+              <ProjectCardList />
               {/* Placeholder for Project Press Links */}
             </div>
           </div>

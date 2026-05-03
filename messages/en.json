@@ -33,7 +33,18 @@
       "description": "Explore the stories we’ve brought to life—crafted to engage audiences and leave a lasting impact.",
       "project1": {
         "title": "FARMING FREEDOM",
-        "description": "2025 - Educational Documentary"
+        "description": "2025 - Educational Documentary",
+        "imageAlt": "Farming Freedom Documentary Poster"
+      },
+      "project2": {
+        "title": "PROJECT 2",
+        "description": "2025 - Documentary in Development",
+        "imageAlt": "Project 2 Documentary Poster"
+      },
+      "project3": {
+        "title": "PROJECT 3",
+        "description": "2025 - Documentary in Development",
+        "imageAlt": "Project 3 Documentary Poster"
       }
     },
     "imageCards": {

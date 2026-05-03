@@ -19,11 +19,11 @@ export const ProjectCard = ({
 }: ProjectCardData) => {
   const t = useTranslations('LandingPage');
   return (
-    <div id='projectCard-wrapper' className='w-full max-w-[400px] h-[627px]'>
+    <div id='projectCard-wrapper' className='w-full'>
       <Image
         src={imageUrl}
         alt={t(imageAlt)}
-        className='w-full rounded-xl'
+        className='w-full aspect-[875/436] lg:aspect-[400/538] object-cover rounded-xl'
         width={400}
         height={538}
       />
