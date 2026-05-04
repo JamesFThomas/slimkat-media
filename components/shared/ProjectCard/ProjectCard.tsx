@@ -43,9 +43,18 @@ export const ProjectCard = ({
       />
 
       <div id={`projectCard-description-${id}`} className='pt-4'>
-        <h3 id={`projectCard-title-${id}`} className='text-2xl font-bold pb-4'>
-          {t(title)}
-        </h3>
+        <div
+          id='projectCard-title-wrapper'
+          className='flex items-center gap-2 pb-4'
+        >
+          <span
+            id='projectCard-title-decoration'
+            className='h-4 w-4 rounded-full bg-[var(--accent-link)]'
+          />
+          <h3 id={`projectCard-title-${id}`} className='text-xl font-bold'>
+            {t(title)}
+          </h3>
+        </div>
         <p
           id={`projectCard-text-${id}`}
           className='text-xl leading-6 text-[var(--muted-foreground)]'

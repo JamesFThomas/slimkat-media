@@ -54,9 +54,16 @@ export const ProjectCardList = ({
         return (
           <div
             key={project.id}
-            className='w-full max-w-[875px] lg:max-w-none flex flex-col lg:flex-row items-start justify-center gap-8'
+            className='w-full max-w-[875px] lg:max-w-none flex flex-col lg:flex-row items-start justify-center gap-8 transition-all duration-500 ease-out'
           >
-            <div className='w-full lg:max-w-[400px]'>
+            <div
+              id='projectCardList-inactiveCard-wrapper'
+              className={`w-full lg:max-w-[400px] transition-all duration-500 ease-out ${
+                isActiveCard
+                  ? '-translate-y-8 lg:translate-y-0 lg:-translate-x-8'
+                  : 'translate-x-0 translate-y-0'
+              }`}
+            >
               <ProjectCard
                 {...project}
                 handleProjectCardClick={handleProjectCardClick}
@@ -64,7 +71,10 @@ export const ProjectCardList = ({
             </div>
 
             {isActiveCard && (
-              <div className='w-full lg:max-w-[520px]'>
+              <div
+                id='projectCardList-activeCard-wrapper'
+                className='w-full lg:max-w-[520px] animate-[slideFadeIn_500ms_ease-out]'
+              >
                 <ProjectLinks activeCardId={activeCardId} />
               </div>
             )}

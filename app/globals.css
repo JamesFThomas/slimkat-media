@@ -42,3 +42,30 @@ body {
     transform: translateX(-50%);
   }
 }
+
+/* Controls for project card animation */
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1024px) {
+  @keyframes slideFadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(4rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
