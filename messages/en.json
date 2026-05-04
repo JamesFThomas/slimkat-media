@@ -1,10 +1,15 @@
 {
   "LandingPage": {
-    "header": {
-      "title": "Jackson Metro's newest podcast studio",
+    "hero": {
+      "title": "Stories That Inform, Inspire, and Endure",
       "subtitle": "Curious about pricing? Sign up to be the first to know when our studio opens for business!",
       "studioImage1Alt": "Podcast Studio Image 1",
       "studioImage2Alt": "Podcast Studio Image 2"
+    },
+    "about": {
+      "aboutLine1": "We’re SlimKat Media — a studio",
+      "aboutLine2": "producing high-quality documentaries",
+      "aboutLine3": "and developing content creators."
     },
     "biography": {
       "headShotAlt": "Headshot of Kayla Turner Thomas",
@@ -13,6 +18,88 @@
       "bioParagraph3": "Additionally an independent filmmaker, I’ve been able to secure distribution for my debut documentary, Farming Freedom, which is available beginning in 2026.",
       "bioParagraph4": "With more than a decade's experience of managing projects from inception to launch, I look forward to bringing that very experience to Jackson Metro's newest podcast studio for anyone seeking to produce professional shows that are distribution ready for any platform.",
       "signature": "-Kayla Turner Thomas, Television Executive"
+    },
+    "services": {
+      "header": "Services We Provide",
+      "description": " Here, we tell meaningful stories, producing powerful documentaries and creating content that informs, inspires, and endures.",
+      "links": {
+        "legacyDocumentaries": "Legacy Documentaries",
+        "foundation": "The Foundation",
+        "ourWork": "Our Work"
+      }
+    },
+    "projects": {
+      "header": "Our Projects",
+      "description": "Explore the stories we’ve brought to life—crafted to engage audiences and leave a lasting impact.",
+      "projectLinksHeader": "PRESS HIGHLIGHTS",
+      "project1": {
+        "title": "FARMING FREEDOM",
+        "description": "2025 - Educational Documentary",
+        "imageAlt": "Farming Freedom Documentary Poster",
+        "links": {
+          "NPR": {
+            "label": "The story of black land loss in the american south",
+            "url": "https://www.npr.org/sections/codeswitch/2025/01/15/1099981234/farming-freedom-documentary-explores-the-legacy-of-sharecropping",
+            "info": "NPR | January 10, 2026"
+          },
+          "CNBC": {
+            "label": "Shedding light on black land loss.",
+            "url": "https://www.cnbc.com",
+            "info": "CNBC | December 1, 2025"
+          }
+        }
+      },
+      "project2": {
+        "title": "Powerful Project",
+        "description": "2025 - Documentary in Development",
+        "imageAlt": "Project 2 Documentary Poster",
+        "links": {
+          "WashingtonPost": {
+            "label": "A powerful look into untold stories that shape our understanding of history and culture.",
+            "url": "https://www.washingtonpost.com/arts-entertainment/2025/11/20/project-2-documentary-development/",
+            "info": "Washington Post | November 20, 2025"
+          },
+          "MBP": {
+            "label": "A story of a MS family keeping the legacy of their land alive.",
+            "url": "https://www.mbp.com",
+            "info": "MBP | November 25, 2025"
+          }
+        }
+      },
+      "project3": {
+        "title": "Inspiring Project",
+        "description": "2025 - Documentary in Development",
+        "imageAlt": "Project 3 Documentary Poster",
+        "links": {
+          "NewYorkTimes": {
+            "label": "A wonderful project that captures the essence of storytelling and the power of documentaries.",
+            "url": "https://www.nytimes.com",
+            "info": "New York Times | October 5, 2025"
+          },
+          "RollingStone": {
+            "label": "An inspiring project that delves into the heart of storytelling and the impact of documentaries.",
+            "url": "https://www.rollingstone.com",
+            "info": "Rolling Stone | October 10, 2025"
+          }
+        }
+      }
+    },
+    "imageCards": {
+      "legacyDocumentaries": {
+        "title": "Legacy Documentaries",
+        "description": "Discover our impactful documentaries that preserve history and inspire change.",
+        "imageAlt": "Filmmaker interviewing an elder for a legacy documentary"
+      },
+      "foundation": {
+        "title": "The Foundation",
+        "description": "Learn about our foundation’s mission to support emerging filmmakers and storytellers.",
+        "imageAlt": "Mentor guiding aspiring filmmakers in a workshop"
+      },
+      "ourWork": {
+        "title": "Our Work",
+        "description": "Explore productions that connect with audiences through meaningful stories.",
+        "imageAlt": "Audience member watching an emotional documentary screening"
+      }
     }
   },
   "DocumentariesPage": {

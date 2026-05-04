@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
@@ -11,6 +10,8 @@ export const NavBar = () => {
 
   const shouldUnderlineEnglish = locale === 'en' ? true : false;
 
+  console.log(pathname);
+
   const nextLocalePath =
     locale === 'en' ? `/fr${pathname}` : pathname.replace(/^\/fr/, '') || '/';
 
@@ -21,20 +22,10 @@ export const NavBar = () => {
     >
       <div
         id='navbar-content'
-        className='container mx-auto w-full flex flex-row justify-between'
+        className='mx-auto w-full flex flex-row justify-between'
       >
-        {/* Slim Kat logo */}
-        <Link href={`/${locale}`} aria-label='Go to landing page'>
-          <Image
-            src='/logo/SlimKat_Logo.png'
-            alt='SlimKat Media Logo'
-            width={200}
-            height={100}
-          />
-        </Link>
-
-        {/* Page links */}
-        <PageLinks links={links} />
+        {/* Page links & Button */}
+        <PageLinks links={links} pathname={pathname} />
 
         {/* Language toggle */}
         <Link

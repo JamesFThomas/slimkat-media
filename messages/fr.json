@@ -1,10 +1,15 @@
 {
   "LandingPage": {
-    "header": {
+    "hero": {
       "title": "Le tout nouveau studio de podcast de Jackson Metro",
       "subtitle": "Vous souhaitez connaître nos tarifs ? Inscrivez-vous pour être parmi les premiers informés de l'ouverture de notre studio !",
       "studioImage1Alt": "Image 1 du studio de podcast",
       "studioImage2Alt": "Image 2 du studio de podcast"
+    },
+    "about": {
+      "aboutLine1": "Nous sommes SlimKat Media — un studio",
+      "aboutLine2": "qui produit des documentaires de haute qualité",
+      "aboutLine3": "et accompagne les créateurs de contenu."
     },
     "biography": {
       "headShotAlt": "Portrait de Kayla Turner Thomas",
@@ -13,6 +18,88 @@
       "bioParagraph3": "En tant que cinéaste indépendant, j'ai réussi à obtenir la distribution de mon premier documentaire, Farming Freedom, qui sera disponible à partir de 2026.",
       "bioParagraph4": "Fort d'une expérience de plus de dix ans dans la gestion de projets, de leur conception à leur lancement, je suis impatient de mettre cette expérience au service du tout nouveau studio de podcast de Jackson Metro pour tous ceux qui souhaitent produire des émissions professionnelles prêtes à être diffusées sur n'importe quelle plateforme.",
       "signature": "-Kayla Turner Thomas, responsable de la télévision"
+    },
+    "services": {
+      "header": "Nos services",
+      "description": "Ici, nous racontons des histoires porteuses de sens, produisant des documentaires puissants et créant des contenus qui informent, inspirent et perdurent.",
+      "links": {
+        "legacyDocumentaries": "Documentaires sur l'héritage",
+        "foundation": "La Fondation",
+        "ourWork": "Notre Travail"
+      }
+    },
+    "projects": {
+      "header": "Nos Projets",
+      "description": "Explore les histoires que nous avons donnée vie—conçues pour engager les audiences et laisser un impact durable.",
+      "projectLinksHeader": "POINTS FORTS DE LA PRESSE",
+      "project1": {
+        "title": "FARMING FREEDOM",
+        "description": "2025 - Documentaire Éducatif",
+        "imageAlt": "Affiche du documentaire Farming Freedom",
+        "links": {
+          "NPR": {
+            "label": "L'histoire de la perte de terres agricoles par les noirs dans le sud américain",
+            "url": "https://www.npr.org/sections/codeswitch/2025/01/15/1099981234/farming-freedom-documentary-explores-the-legacy-of-sharecropping",
+            "info": "NPR | January 10, 2026"
+          },
+          "CNBC": {
+            "label": "Éclairant la perte de terres agricoles par les noirs.",
+            "url": "https://www.cnbc.com",
+            "info": "CNBC | December 1, 2025"
+          }
+        }
+      },
+      "project2": {
+        "title": "Powerful Project",
+        "description": "2025 - Documentaire en développement",
+        "imageAlt": "Project 2 Affiche du documentaire",
+        "links": {
+          "WashingtonPost": {
+            "label": "Un regard puissant sur des histoires méconnues qui façonnent notre compréhension de l'histoire et de la culture.",
+            "url": "https://www.washingtonpost.com",
+            "info": "Washington Post | November 20, 2025"
+          },
+          "MBP": {
+            "label": "Une histoire d'une famille MS conservant le legs de leur terre en vie.",
+            "url": "https://www.mbp.com",
+            "info": "MBP | November 25, 2025"
+          }
+        }
+      },
+      "project3": {
+        "title": "Inspiring Project",
+        "description": "2025 - Documentaire en développement",
+        "imageAlt": "Project 3 Affiche du documentaire",
+        "links": {
+          "NewYorkTimes": {
+            "label": "Un projet merveilleux qui capture l'essence du récit et le pouvoir des documentaires.",
+            "url": "https://www.nytimes.com",
+            "info": "New York Times | October 5, 2025"
+          },
+          "RollingStone": {
+            "label": "Un projet inspirant qui plonge dans le cœur du récit et l'impact des documentaires.",
+            "url": "https://www.rollingstone.com",
+            "info": "Rolling Stone | October 10, 2025"
+          }
+        }
+      }
+    },
+    "imageCards": {
+      "legacyDocumentaries": {
+        "title": "Documentaires sur l'héritage",
+        "description": "Découvrez nos documentaires impactants qui préserve l'histoire et inspire le changement.",
+        "imageAlt": " Cinéaste interviewant un aîné pour un documentaire sur l'héritage"
+      },
+      "foundation": {
+        "title": "La Fondation",
+        "description": "Découvrez la mission de notre fondation de soutien aux cinéastes émergents et aux conteurs.",
+        "imageAlt": "Mentor guidant des cinéastes ambitieux lors d'un atelier"
+      },
+      "ourWork": {
+        "title": "Notre Travail",
+        "description": "Découvrez les productions qui touchent les audiences à travers des histoires significatives.",
+        "imageAlt": "Membre du public regardant une séance de documentaire émouvant"
+      }
     }
   },
   "DocumentariesPage": {
