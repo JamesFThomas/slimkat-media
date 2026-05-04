@@ -18,16 +18,34 @@ const pressLinkObjects: PressLinkObject[] = [
     info: 'projects.project1.links.NPR.info',
   },
   {
+    id: 1,
+    title: 'projects.project1.links.CNBC.label',
+    href: 'https://www.cnbc.com/',
+    info: 'projects.project1.links.CNBC.info',
+  },
+  {
     id: 2,
     title: 'projects.project2.links.WashingtonPost.label',
     href: 'https://www.washingtonpost.com/',
     info: 'projects.project2.links.WashingtonPost.info',
   },
   {
+    id: 2,
+    title: 'projects.project2.links.MBP.label',
+    href: 'https://www.mbp.com/',
+    info: 'projects.project2.links.MBP.info',
+  },
+  {
     id: 3,
     title: 'projects.project3.links.NewYorkTimes.label',
     href: 'https://www.nytco.com/',
     info: 'projects.project3.links.NewYorkTimes.info',
+  },
+  {
+    id: 3,
+    title: 'projects.project3.links.RollingStone.label',
+    href: 'https://www.rollingstone.com/',
+    info: 'projects.project3.links.RollingStone.info',
   },
 ];
 
@@ -51,7 +69,7 @@ export const ProjectLinks = ({
         id='projectLinks-header'
         className='font-semibold text-[var(--foreground)]/70 text-center text-3xl'
       >
-        <h1>PRESS HIGHLIGHTS</h1>
+        <h1>{t('projects.projectLinksHeader')}</h1>
       </div>
       {links.map((link) => (
         <li

@@ -31,9 +31,57 @@
     "projects": {
       "header": "Nos Projets",
       "description": "Explore les histoires que nous avons donnée vie—conçues pour engager les audiences et laisser un impact durable.",
+      "projectLinksHeader": "POINTS FORTS DE LA PRESSE",
       "project1": {
         "title": "FARMING FREEDOM",
-        "description": "2025 - Documentaire Éducatif"
+        "description": "2025 - Documentaire Éducatif",
+        "imageAlt": "Affiche du documentaire Farming Freedom",
+        "links": {
+          "NPR": {
+            "label": "L'histoire de la perte de terres agricoles par les noirs dans le sud américain",
+            "url": "https://www.npr.org/sections/codeswitch/2025/01/15/1099981234/farming-freedom-documentary-explores-the-legacy-of-sharecropping",
+            "info": "NPR | January 10, 2026"
+          },
+          "CNBC": {
+            "label": "Éclairant la perte de terres agricoles par les noirs.",
+            "url": "https://www.cnbc.com",
+            "info": "CNBC | December 1, 2025"
+          }
+        }
+      },
+      "project2": {
+        "title": "Powerful Project",
+        "description": "2025 - Documentaire en développement",
+        "imageAlt": "Project 2 Affiche du documentaire",
+        "links": {
+          "WashingtonPost": {
+            "label": "Un regard puissant sur des histoires méconnues qui façonnent notre compréhension de l'histoire et de la culture.",
+            "url": "https://www.washingtonpost.com",
+            "info": "Washington Post | November 20, 2025"
+          },
+          "MBP": {
+            "label": "Une histoire d'une famille MS conservant le legs de leur terre en vie.",
+            "url": "https://www.mbp.com",
+            "info": "MBP | November 25, 2025"
+          }
+        }
+      },
+      "project3": {
+        "title": "Inspiring Project",
+        "description": "2025 - Documentaire en développement",
+        "imageAlt": "Project 3 Affiche du documentaire",
+        "links": {
+          "NewYorkTimes": {
+            "label": "Un projet merveilleux qui capture l'essence du récit et le pouvoir des documentaires.",
+            "url": "https://www.nytimes.com",
+            "info": "New York Times | October 5, 2025"
+          },
+          "RollingStone": {
+            "label": "Un projet inspirant qui plonge dans le cœur du récit et l'impact des documentaires.",
+            "url": "https://www.rollingstone.com",
+            "info": "Rolling Stone | October 10, 2025"
+          }
+        }
       }
     },
     "imageCards": {

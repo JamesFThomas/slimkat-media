@@ -31,6 +31,7 @@
     "projects": {
       "header": "Our Projects",
       "description": "Explore the stories we’ve brought to life—crafted to engage audiences and leave a lasting impact.",
+      "projectLinksHeader": "PRESS HIGHLIGHTS",
       "project1": {
         "title": "FARMING FREEDOM",
         "description": "2025 - Educational Documentary",
@@ -40,6 +41,11 @@
             "label": "The story of black land loss in the american south",
             "url": "https://www.npr.org/sections/codeswitch/2025/01/15/1099981234/farming-freedom-documentary-explores-the-legacy-of-sharecropping",
             "info": "NPR | January 10, 2026"
+          },
+          "CNBC": {
+            "label": "Shedding light on black land loss.",
+            "url": "https://www.cnbc.com",
+            "info": "CNBC | December 1, 2025"
           }
         }
       },
@@ -52,6 +58,11 @@
             "label": "A powerful look into untold stories that shape our understanding of history and culture.",
             "url": "https://www.washingtonpost.com/arts-entertainment/2025/11/20/project-2-documentary-development/",
             "info": "Washington Post | November 20, 2025"
+          },
+          "MBP": {
+            "label": "A story of a MS family keeping the legacy of their land alive.",
+            "url": "https://www.mbp.com",
+            "info": "MBP | November 25, 2025"
           }
         }
       },
@@ -62,8 +73,13 @@
         "links": {
           "NewYorkTimes": {
             "label": "A wonderful project that captures the essence of storytelling and the power of documentaries.",
-            "url": "https://www.nytimes.com/2025/10/05/movies/project-3-documentary-development.html",
+            "url": "https://www.nytimes.com",
             "info": "New York Times | October 5, 2025"
+          },
+          "RollingStone": {
+            "label": "An inspiring project that delves into the heart of storytelling and the impact of documentaries.",
+            "url": "https://www.rollingstone.com",
+            "info": "Rolling Stone | October 10, 2025"
           }
         }
       }
