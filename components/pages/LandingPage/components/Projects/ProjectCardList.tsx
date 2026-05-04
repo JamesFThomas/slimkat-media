@@ -3,6 +3,8 @@ import {
   ProjectCardData,
 } from '@/components/shared/ProjectCard/ProjectCard';
 
+import { ProjectLinks } from './ProjectLinks';
+
 const projectsList: ProjectCardData[] = [
   {
     id: 1,
@@ -29,27 +31,46 @@ const projectsList: ProjectCardData[] = [
 
 type ProjectCardListProps = {
   projects?: ProjectCardData[];
-  // activeProjectId: number;
+  activeCardId: number | null;
+  handleProjectCardClick: (id: number) => void;
 };
 
 export const ProjectCardList = ({
   projects = projectsList,
-  // activeProjectId,
+  activeCardId,
+  handleProjectCardClick,
 }: ProjectCardListProps) => {
   return (
     <div
       id='projectCardList-wrapper'
-      className='w-full flex flex-col lg:flex-row items-center justify-center gap-6 md:mt-8'
+      className='w-full max-w-[1280px] flex flex-col lg:flex-row items-center justify-center gap-10 md:mt-8'
     >
-      {projects?.map((project) => (
-        <div
-          key={project.id}
-          // hidden={project.id !== activeProjectId}
-          className='w-full max-w-[875px] lg:max-w-[400px]'
-        >
-          <ProjectCard {...project} />
-        </div>
-      ))}
+      {projects.map((project) => {
+        const hasActiveCard = activeCardId !== null;
+        const isActiveCard = project.id === activeCardId;
+
+        if (hasActiveCard && !isActiveCard) return null;
+
+        return (
+          <div
+            key={project.id}
+            className='w-full max-w-[875px] lg:max-w-none flex flex-col lg:flex-row items-start justify-center gap-8'
+          >
+            <div className='w-full lg:max-w-[400px]'>
+              <ProjectCard
+                {...project}
+                handleProjectCardClick={handleProjectCardClick}
+              />
+            </div>
+
+            {isActiveCard && (
+              <div className='w-full lg:max-w-[520px]'>
+                <ProjectLinks activeCardId={activeCardId} />
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 };

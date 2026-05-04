@@ -6,6 +6,8 @@
   --surface: #f7f3ef; /* bio background for light mode */
   --chrome: #e5e7eb; /* replaces bg-gray-200 */
   --border: #000000;
+  --accent-link: #3aafa0;
+  --accent-link-hover: #1f6f67;
 }
 
 @theme inline {

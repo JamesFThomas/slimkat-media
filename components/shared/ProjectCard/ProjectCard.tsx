@@ -10,16 +10,30 @@ export type ProjectCardData = {
   imageAlt: string;
 };
 
+type ProjectCardProps = {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  imageAlt: string;
+  handleProjectCardClick: (id: number) => void;
+};
+
 export const ProjectCard = ({
   id,
   title,
   description,
   imageUrl,
   imageAlt,
-}: ProjectCardData) => {
+  handleProjectCardClick,
+}: ProjectCardProps) => {
   const t = useTranslations('LandingPage');
   return (
-    <div id='projectCard-wrapper' className='w-full'>
+    <div
+      id='projectCard-wrapper'
+      className='w-full'
+      onClick={() => handleProjectCardClick(id)}
+    >
       <Image
         src={imageUrl}
         alt={t(imageAlt)}
@@ -29,12 +43,12 @@ export const ProjectCard = ({
       />
 
       <div id={`projectCard-description-${id}`} className='pt-4'>
-        <h3 id={`projectCard-title-${id}`} className='text-xl font-bold pb-4'>
+        <h3 id={`projectCard-title-${id}`} className='text-2xl font-bold pb-4'>
           {t(title)}
         </h3>
         <p
           id={`projectCard-text-${id}`}
-          className='text-sm leading-6 text-[var(--muted-foreground)]'
+          className='text-xl leading-6 text-[var(--muted-foreground)]'
         >
           {t(description)}
         </p>

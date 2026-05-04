@@ -33,37 +33,43 @@ const pressLinkObjects: PressLinkObject[] = [
 
 type ProjectLinksProps = {
   links?: PressLinkObject[];
-  // handleProjectLinkHover: (id: number) => void;
+  activeCardId: number | null;
 };
 
 export const ProjectLinks = ({
   links = pressLinkObjects,
-  // handleProjectLinkHover,
+  activeCardId,
 }: ProjectLinksProps) => {
   const t = useTranslations('LandingPage');
 
   return (
     <ul
       id='projectLinks-list'
-      className='w-full flex flex-col gap-4 mt-8 list-disc'
+      className='w-full flex flex-col gap-4 mt-8 list-disc pl-6'
     >
+      <div
+        id='projectLinks-header'
+        className='font-semibold text-[var(--foreground)]/70 text-center text-3xl'
+      >
+        <h1>PRESS HIGHLIGHTS</h1>
+      </div>
       {links.map((link) => (
-          <li
-            id='projectLink-item'
-            // onMouseEnter={() => handleProjectLinkHover(link.id)}
-            key={link.id}
-            className='w-full border-[var(--muted-foreground)]/30 py-4'
+        <li
+          id='projectLink-item'
+          hidden={link.id !== activeCardId}
+          key={link.id}
+          className='w-full border-[var(--muted-foreground)]/30 py-4'
+        >
+          <Link
+            href={link.href}
+            className='block text-lg font-semibold tracking-wide text-[var(--accent-link)] hover:text-[color:var(--accent-link-hover)] transition-colors duration-300 ease-out hover:underline underline-offset-4'
           >
-            <Link
-              href={link.href}
-              className='block text-lg font-semibold tracking-wide text-[var(--foreground)]/70 hover:text-[var(--foreground)] transition-colors duration-200'
-            >
-              {t(link.title)}
-            </Link>
-          <p className='text-sm leading-6 text-[var(--muted-foreground)] mt-1'>
+            {t(link.title)}
+          </Link>
+          <p className='text-md leading-6 text-[var(--muted-foreground)] mt-1'>
             {t(link.info)}
           </p>
-          </li>
+        </li>
       ))}
     </ul>
   );

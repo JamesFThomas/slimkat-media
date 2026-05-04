@@ -7,15 +7,20 @@ import { ServicesLinks } from './components/Services/ServicesLinks';
 import { ServicesImageList } from './components/Services/ServicesImageList';
 import { useState } from 'react';
 import { ProjectCardList } from './components/Projects/ProjectCardList';
-import { ProjectLinks } from './components/Projects/ProjectLinks';
 
 export const LandingPage = () => {
   const t = useTranslations('LandingPage');
 
   const [activeServiceId, setActiveServiceId] = useState<number>(1);
 
+  const [activeProjectId, setActiveProjectId] = useState<number | null>(null);
+
   const handleServiceLinkHover = (id: number) => {
     setActiveServiceId(id);
+  };
+
+  const handleProjectCardClick = (id: number) => {
+    setActiveProjectId((prev) => (prev === id ? null : id));
   };
 
   return (
@@ -128,12 +133,10 @@ export const LandingPage = () => {
               id='projects-cards'
               className='w-full mt-12 flex fit-content justify-center'
             >
-              {/* Placeholder for Project Cards */}
-              <ProjectCardList />
-              {/* Placeholder for Project Press Links */}
-              <div id='projects-press-wrapper'>
-                <ProjectLinks />
-              </div>
+              <ProjectCardList
+                activeCardId={activeProjectId}
+                handleProjectCardClick={handleProjectCardClick}
+              />
             </div>
           </div>
         </section>
