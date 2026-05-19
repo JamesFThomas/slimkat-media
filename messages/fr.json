@@ -122,8 +122,47 @@
   },
   "ContactPage": {
     "header": {
-      "title": "Contact Page French side",
-      "subtitle": "Page content coming soon! O la la"
+      "title": "Contactez-nous",
+      "subtitle": "Nous serions ravis de vous entendre. Remplissez le formulaire ci-dessous et nous vous contacterons."
+    }
+  },
+  "ContactForm": {
+    "labels": {
+      "fullName": "Nom complet",
+      "firstName": "Prénom",
+      "lastName": "Nom de famille",
+      "email": "Adresse e-mail",
+      "phone": "Numéro de téléphone",
+      "optional": "facultatif",
+      "service": "Service requis",
+      "message": "Dites-nous en plus sur votre besoin",
+      "submit": "Envoyer"
+    },
+    "placeholders": {
+      "firstName": "Prénom",
+      "lastName": "Nom de famille",
+      "email": "email@adresse.com",
+      "phone": "(555) 000-0000",
+      "service": "Sélectionnez un service",
+      "message": "Partagez les détails de votre projet..."
+    },
+    "serviceOptions": {
+      "documentary": "Services documentaires",
+      "speaking": "Conférences et prises de parole"
+    },
+    "errors": {
+      "firstNameRequired": "Le prénom est obligatoire",
+      "lastNameRequired": "Le nom de famille est obligatoire",
+      "emailRequired": "L'adresse e-mail est obligatoire",
+      "emailInvalid": "Le format email@adresse.com est requis",
+      "phoneInvalid": "Veuillez entrer un numéro de téléphone valide",
+      "serviceRequired": "Veuillez sélectionner un service",
+      "messageRequired": "Veuillez nous décrire votre besoin"
+    },
+    "status": {
+      "loading": "Envoi en cours...",
+      "success": "Merci ! Nous vous contacterons bientôt.",
+      "error": "Une erreur s'est produite. Veuillez réessayer."
     }
   }
 }

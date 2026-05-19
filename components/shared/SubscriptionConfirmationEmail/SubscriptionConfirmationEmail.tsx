@@ -1,4 +1,7 @@
-export const ConfirmationEmail = (email: string, logoContentId: string) => `
+export const SubscriptionConfirmationEmail = (
+  email: string,
+  logoContentId: string,
+) => `
   <div style="font-family: Arial, sans-serif; line-height: 1.5;">
   <img
     src="cid:${logoContentId}"
