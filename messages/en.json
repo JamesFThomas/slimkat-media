@@ -7,7 +7,7 @@
       "studioImage2Alt": "Podcast Studio Image 2"
     },
     "about": {
-      "aboutLine1": "We’re SlimKat Media — a studio",
+      "aboutLine1": "We're SlimKat Media — a studio",
       "aboutLine2": "producing high-quality documentaries",
       "aboutLine3": "and developing content creators."
     },
@@ -15,7 +15,7 @@
       "headShotAlt": "Headshot of Kayla Turner Thomas",
       "bioParagraph1": "While the job titles have changed over the years, my nearly 15-year career in local television has been centered around two things in one way or another: growing viewership or growing revenue.",
       "bioParagraph2": "This has consisted of everything from producing promotional materials, TV commercials, sponsored segments, and special interest TV programs, to showrunner, executive producer, media sales and marketing.",
-      "bioParagraph3": "Additionally an independent filmmaker, I’ve been able to secure distribution for my debut documentary, Farming Freedom, which is available beginning in 2026.",
+      "bioParagraph3": "Additionally an independent filmmaker, I've been able to secure distribution for my debut documentary, Farming Freedom, which is available beginning in 2026.",
       "bioParagraph4": "With more than a decade's experience of managing projects from inception to launch, I look forward to bringing that very experience to Jackson Metro's newest podcast studio for anyone seeking to produce professional shows that are distribution ready for any platform.",
       "signature": "-Kayla Turner Thomas, Television Executive"
     },
@@ -30,7 +30,7 @@
     },
     "projects": {
       "header": "Our Projects",
-      "description": "Explore the stories we’ve brought to life—crafted to engage audiences and leave a lasting impact.",
+      "description": "Explore the stories we've brought to life—crafted to engage audiences and leave a lasting impact.",
       "projectLinksHeader": "PRESS HIGHLIGHTS",
       "project1": {
         "title": "FARMING FREEDOM",
@@ -92,7 +92,7 @@
       },
       "foundation": {
         "title": "The Foundation",
-        "description": "Learn about our foundation’s mission to support emerging filmmakers and storytellers.",
+        "description": "Learn about our foundation's mission to support emerging filmmakers and storytellers.",
         "imageAlt": "Mentor guiding aspiring filmmakers in a workshop"
       },
       "ourWork": {
@@ -122,8 +122,47 @@
   },
   "ContactPage": {
     "header": {
-      "title": "Contact Page",
-      "subtitle": "Page content coming soon!"
+      "title": "Contact Us",
+      "subtitle": "We'd love to hear from you. Fill out the form below and we'll be in touch."
+    }
+  },
+  "ContactForm": {
+    "labels": {
+      "fullName": "Full Name",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "optional": "optional",
+      "service": "Service Required",
+      "message": "Tell us more about your requirement",
+      "submit": "Submit"
+    },
+    "placeholders": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "email@address.com",
+      "phone": "(555) 000-0000",
+      "service": "Select a service",
+      "message": "Share any details about your project..."
+    },
+    "serviceOptions": {
+      "documentary": "Documentary Services",
+      "speaking": "Speaking Engagements"
+    },
+    "errors": {
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "email@address.com format is required",
+      "phoneInvalid": "Please enter a valid phone number",
+      "serviceRequired": "Please select a service",
+      "messageRequired": "Please tell us about your requirement"
+    },
+    "status": {
+      "loading": "Submitting...",
+      "success": "Thank you! We'll be in touch soon.",
+      "error": "Something went wrong. Please try again."
     }
   }
 }
