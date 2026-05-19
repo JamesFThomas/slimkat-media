@@ -199,12 +199,13 @@ export const ContactForm = () => {
         resetSubmitStatus();
 
         // Trigger confirmation email
-        await fetch("/api/confirm", {
+        await fetch("/api/contact-confirm", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             email: fields.email,
             firstName: fields.firstName,
+            service: fields.service,
           }),
         });
       } else {
