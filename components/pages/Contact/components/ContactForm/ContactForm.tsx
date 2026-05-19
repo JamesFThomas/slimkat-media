@@ -234,177 +234,184 @@ export const ContactForm = () => {
   // ─── Render ────────────────────────────────────────────────────────────────
 
   return (
-    <div className="flex flex-col w-full max-w-2xl mx-auto">
-      <form className="flex flex-col gap-6" onSubmit={handleSubmit} noValidate>
-        {/* Full Name */}
-        <div className="flex flex-col gap-1">
-          <label className="font-semibold text-sm">
-            {t("labels.fullName")} <span className="text-red-600">*</span>
-          </label>
-          <div className="flex flex-row gap-4">
-            {/* First Name */}
-            <div className="flex flex-col gap-1 flex-1">
-              <input
-                type="text"
-                name="firstName"
-                value={fields.firstName}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder={t("placeholders.firstName")}
-                className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent"
-              />
-              <span className="text-xs text-gray-500">
-                {t("labels.firstName")}
-              </span>
-              {touched.firstName && errors.firstName && (
-                <p className="text-red-700 font-bold text-xs">
-                  {errors.firstName}
-                </p>
-              )}
-            </div>
+    <div className="w-full px-4 sm:px-6 py-6 max-w-2xl mx-auto">
+      <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 sm:p-8 md:p-10">
+        <form
+          className="flex flex-col gap-6"
+          onSubmit={handleSubmit}
+          noValidate
+        >
+          {/* Full Name */}
+          <div className="flex flex-col gap-1">
+            <label className="font-semibold text-sm">
+              {t("labels.fullName")} <span className="text-red-600">*</span>
+            </label>
+            <div className="flex flex-col sm:flex-row gap-4">
+              {/* First Name */}
+              <div className="flex flex-col gap-1 flex-1">
+                <input
+                  type="text"
+                  name="firstName"
+                  value={fields.firstName}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder={t("placeholders.firstName")}
+                  className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent"
+                />
+                <span className="text-xs text-gray-500">
+                  {t("labels.firstName")}
+                </span>
+                {touched.firstName && errors.firstName && (
+                  <p className="text-red-700 font-bold text-xs">
+                    {errors.firstName}
+                  </p>
+                )}
+              </div>
 
-            {/* Last Name */}
-            <div className="flex flex-col gap-1 flex-1">
-              <input
-                type="text"
-                name="lastName"
-                value={fields.lastName}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder={t("placeholders.lastName")}
-                className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent"
-              />
-              <span className="text-xs text-gray-500">
-                {t("labels.lastName")}
-              </span>
-              {touched.lastName && errors.lastName && (
-                <p className="text-red-700 font-bold text-xs">
-                  {errors.lastName}
-                </p>
-              )}
+              {/* Last Name */}
+              <div className="flex flex-col gap-1 flex-1">
+                <input
+                  type="text"
+                  name="lastName"
+                  value={fields.lastName}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder={t("placeholders.lastName")}
+                  className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent"
+                />
+                <span className="text-xs text-gray-500">
+                  {t("labels.lastName")}
+                </span>
+                {touched.lastName && errors.lastName && (
+                  <p className="text-red-700 font-bold text-xs">
+                    {errors.lastName}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Email */}
-        <div className="flex flex-col gap-1">
-          <label className="font-semibold text-sm">
-            {t("labels.email")} <span className="text-red-600">*</span>
-          </label>
-          <input
-            type="email"
-            name="email"
-            value={fields.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            placeholder={t("placeholders.email")}
-            className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent"
-          />
-          {touched.email && errors.email && (
-            <p className="text-red-700 font-bold text-xs">{errors.email}</p>
-          )}
-        </div>
+          {/* Email */}
+          <div className="flex flex-col gap-1">
+            <label className="font-semibold text-sm">
+              {t("labels.email")} <span className="text-red-600">*</span>
+            </label>
+            <input
+              type="email"
+              name="email"
+              value={fields.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              placeholder={t("placeholders.email")}
+              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent"
+            />
+            {touched.email && errors.email && (
+              <p className="text-red-700 font-bold text-xs">{errors.email}</p>
+            )}
+          </div>
 
-        {/* Phone */}
-        <div className="flex flex-col gap-1">
-          <label className="font-semibold text-sm">
-            {t("labels.phone")}
-            <span className="text-gray-400 font-normal ml-1">
-              ({t("labels.optional")})
-            </span>
-          </label>
-          <input
-            type="tel"
-            name="phone"
-            value={fields.phone}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            placeholder={t("placeholders.phone")}
-            className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent"
-          />
-          {touched.phone && errors.phone && (
-            <p className="text-red-700 font-bold text-xs">{errors.phone}</p>
-          )}
-        </div>
+          {/* Phone */}
+          <div className="flex flex-col gap-1">
+            <label className="font-semibold text-sm">
+              {t("labels.phone")}
+              <span className="text-gray-400 font-normal ml-1">
+                ({t("labels.optional")})
+              </span>
+            </label>
+            <input
+              type="tel"
+              name="phone"
+              value={fields.phone}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              placeholder={t("placeholders.phone")}
+              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent"
+            />
+            {touched.phone && errors.phone && (
+              <p className="text-red-700 font-bold text-xs">{errors.phone}</p>
+            )}
+          </div>
 
-        {/* Service Required */}
-        <div className="flex flex-col gap-1">
-          <label className="font-semibold text-sm">
-            {t("labels.service")} <span className="text-red-600">*</span>
-          </label>
-          <select
-            name="service"
-            value={fields.service}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent appearance-none hover:cursor-pointer"
+          {/* Service Required */}
+          <div className="flex flex-col gap-1">
+            <label className="font-semibold text-sm">
+              {t("labels.service")} <span className="text-red-600">*</span>
+            </label>
+            <select
+              name="service"
+              value={fields.service}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent appearance-none hover:cursor-pointer"
+            >
+              <option value="" disabled>
+                {t("placeholders.service")}
+              </option>
+              <option value="documentary">
+                {t("serviceOptions.documentary")}
+              </option>
+              <option value="speaking">{t("serviceOptions.speaking")}</option>
+            </select>
+            {touched.service && errors.service && (
+              <p className="text-red-700 font-bold text-xs">{errors.service}</p>
+            )}
+          </div>
+
+          {/* Message */}
+          <div className="flex flex-col gap-1">
+            <label className="font-semibold text-sm">
+              {t("labels.message")} <span className="text-red-600">*</span>
+            </label>
+            <textarea
+              name="message"
+              value={fields.message}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              placeholder={t("placeholders.message")}
+              rows={5}
+              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent resize-none"
+            />
+            {touched.message && errors.message && (
+              <p className="text-red-700 font-bold text-xs">{errors.message}</p>
+            )}
+          </div>
+
+          {/* Submit */}
+          <button
+            type="submit"
+            disabled={!isFormValid || submitStatus === "loading"}
+            className="
+              mt-2
+              p-3
+              rounded-md
+              text-white
+              bg-black
+              font-semibold
+              w-full
+              hover:cursor-pointer
+              disabled:bg-gray-400
+              disabled:cursor-not-allowed
+              transition-colors
+            "
           >
-            <option value="" disabled>
-              {t("placeholders.service")}
-            </option>
-            <option value="documentary">
-              {t("serviceOptions.documentary")}
-            </option>
-            <option value="speaking">{t("serviceOptions.speaking")}</option>
-          </select>
-          {touched.service && errors.service && (
-            <p className="text-red-700 font-bold text-xs">{errors.service}</p>
-          )}
-        </div>
+            {submitStatus === "loading"
+              ? t("status.loading")
+              : t("labels.submit")}
+          </button>
+        </form>
 
-        {/* Message */}
-        <div className="flex flex-col gap-1">
-          <label className="font-semibold text-sm">
-            {t("labels.message")} <span className="text-red-600">*</span>
-          </label>
-          <textarea
-            name="message"
-            value={fields.message}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            placeholder={t("placeholders.message")}
-            rows={5}
-            className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent resize-none"
-          />
-          {touched.message && errors.message && (
-            <p className="text-red-700 font-bold text-xs">{errors.message}</p>
-          )}
-        </div>
-
-        {/* Submit */}
-        <button
-          type="submit"
-          disabled={!isFormValid || submitStatus === "loading"}
-          className="
-            mt-2
-            p-3
-            rounded-md
-            text-white
-            bg-black
-            font-semibold
-            hover:cursor-pointer
-            disabled:bg-gray-400
-            disabled:cursor-not-allowed
-            transition-colors
-          "
-        >
-          {submitStatus === "loading"
-            ? t("status.loading")
-            : t("labels.submit")}
-        </button>
-      </form>
-
-      {/* Status messages */}
-      {submitStatus === "success" && (
-        <p className="mt-4 text-sm text-green-700 font-semibold">
-          {t("status.success")}
-        </p>
-      )}
-      {submitStatus === "error" && (
-        <p className="mt-4 text-sm text-red-700 font-semibold">
-          {t("status.error")}
-        </p>
-      )}
+        {/* Status messages */}
+        {submitStatus === "success" && (
+          <p className="mt-4 text-sm text-green-700 font-semibold">
+            {t("status.success")}
+          </p>
+        )}
+        {submitStatus === "error" && (
+          <p className="mt-4 text-sm text-red-700 font-semibold">
+            {t("status.error")}
+          </p>
+        )}
+      </div>
     </div>
   );
 };
