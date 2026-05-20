@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import { CallToAction } from "./components/CallToAction/CallToAction";
 import { ClientTestimonials } from "./components/ClientTestimonials/ClientTestimonials";
 import { TestimonialVideo } from "./components/TestimonialVideo/TestimonialVideo";
+import { ServicesPanels } from "./components/ServicesPanels/ServicesPanels";
+// import { ServicesPanels } from "./components/ServicesPanels/ServicesPanels";
 
 export const DocumentariesPage = () => {
   const t = useTranslations("DocumentariesPage");
@@ -57,6 +59,18 @@ export const DocumentariesPage = () => {
           "
         >
           <TestimonialVideo />
+        </div>
+      </section>
+      <section
+        id="services"
+        className="
+    flex flex-col
+    w-full
+  "
+      >
+        {/* TODO: replace with <ServicesPanels /> component */}
+        <div className="w-full flex items-center justify-center text-gray-400 text-sm py-12">
+          <ServicesPanels />
         </div>
       </section>
     </div>
