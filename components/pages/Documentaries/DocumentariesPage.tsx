@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { CallToAction } from "./components/CallToAction/CallToAction";
 import { ClientTestimonials } from "./components/ClientTestimonials/ClientTestimonials";
@@ -20,20 +20,24 @@ export const DocumentariesPage = () => {
           items-stretch
         "
       >
-        <div
-          id="hero-image"
-          className="
-            w-full md:w-[70%]
-            bg-gray-200
-            min-h-[300px] md:min-h-[500px]
-            shrink-0
-          "
-        >
-          {/* TODO: replace with <Image> component */}
-          <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">
-            [ Hero Image ]
-          </div>
-        </div>
+       <div
+  id="hero-image"
+  className="
+    w-full md:w-[70%]
+    min-h-[300px] md:min-h-[500px]
+    shrink-0
+    relative
+    overflow-hidden
+  "
+>
+  <Image
+    src="/images/pages/documentaries/documentaries-hero.png"
+    alt="A family gathered together sharing stories"
+    fill
+    className="object-cover"
+    priority
+  />
+</div>
 
         <div id="hero-text" className=" w-full md:w-[30%]">
           <CallToAction />
