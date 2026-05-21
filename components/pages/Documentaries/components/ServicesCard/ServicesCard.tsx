@@ -4,6 +4,8 @@ interface ServicesCardProps {
   service: ServiceItem;
 }
 
+import Link from "next/link";
+
 export const ServicesCard = ({ service }: ServicesCardProps) => {
   return (
     <div
@@ -44,18 +46,20 @@ export const ServicesCard = ({ service }: ServicesCardProps) => {
 
       {/* CTA — full width mobile, centered auto width desktop */}
       <div className="mt-auto flex justify-start">
-        <button
+        <Link
+          href={`/contact?service=documentary&package=${encodeURIComponent(service.title)}`}
           className="
-            w-full md:w-auto
-            px-10 py-3
-            bg-black text-white
-            font-semibold rounded-md
-            hover:bg-gray-800
-            transition-colors
-          "
+    w-[calc(100%-2rem)] md:w-auto
+    px-10 py-3
+    bg-black text-white
+    font-semibold rounded-md
+    hover:bg-gray-800
+    transition-colors
+    text-center
+  "
         >
           {service.ctaLabel}
-        </button>
+        </Link>
       </div>
     </div>
   );
