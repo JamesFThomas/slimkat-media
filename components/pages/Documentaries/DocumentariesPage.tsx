@@ -16,28 +16,28 @@ export const DocumentariesPage = () => {
         id="hero"
         className="
           flex flex-col-reverse md:flex-row
-          w-full min-h-[500px]
+          w-full min-h-[500px] 
           items-stretch
         "
       >
-       <div
-  id="hero-image"
-  className="
-    w-full md:w-[70%]
-    min-h-[300px] md:min-h-[500px]
-    shrink-0
-    relative
-    overflow-hidden
-  "
->
-  <Image
-    src="/images/pages/documentaries/documentaries-hero.png"
-    alt="A family gathered together sharing stories"
-    fill
-    className="object-cover"
-    priority
-  />
-</div>
+        <div
+          id="hero-image"
+          className="
+          w-full md:w-[70%]
+          min-h-[300px] md:min-h-[500px]
+          shrink-0
+          relative
+          overflow-hidden
+        "
+        >
+          <Image
+            src="/images/pages/documentaries/documentaries-hero.png"
+            alt="A family gathered together sharing stories"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
 
         <div id="hero-text" className=" w-full md:w-[30%]">
           <CallToAction />
