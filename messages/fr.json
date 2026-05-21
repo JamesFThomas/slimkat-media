@@ -106,6 +106,105 @@
     "header": {
       "title": "Documentaries Page French side",
       "subtitle": "Page content coming soon! O la la"
+    },
+    "hero": {
+      "eyebrow": "Documentaires de Patrimoine",
+      "headline": "Chaque Famille a une Histoire qui Mérite d'Être Préservée",
+      "body": "Slim Kat Media capture les voix, les souvenirs et les moments qui définissent le patrimoine de votre famille — avant qu'ils ne disparaissent. Laissez-nous transformer votre histoire en un souvenir cinématographique qui vivra pour toujours.",
+      "cta": "Commencer Votre Documentaire"
+    },
+    "servicesCard": {
+      "cta": "Réserver Ce Forfait"
+    },
+    "services": {
+      "panels": [
+        {
+          "title": "Entretien Unique",
+          "price": "1 600 $",
+          "description": "Un seul entretien capturant l'histoire d'un membre de la famille.",
+          "features": ["1 entretien", "Documentaire de 5 minutes", "Filmé à la Nouvelle-Orléans ou à Jackson, MS"],
+          "infoGrid": [
+            { "label": "Nombre d'Entretiens", "value": "1" },
+            { "label": "Durée du Documentaire", "value": "5 minutes" },
+            { "label": "Lieu de Tournage", "value": "Nouvelle-Orléans ou Jackson, MS" },
+            { "label": "Réunion de Famille Incluse", "value": false }
+          ]
+        },
+        {
+          "title": "Documentaire Souvenir Standard",
+          "price": "10 000 $",
+          "description": "Un documentaire souvenir mettant en vedette deux voix familiales.",
+          "features": ["2 entretiens", "Documentaire de 10 minutes", "Filmé à l'endroit préféré de la famille"],
+          "infoGrid": [
+            { "label": "Nombre d'Entretiens", "value": "2" },
+            { "label": "Durée du Documentaire", "value": "10 minutes" },
+            { "label": "Lieu de Tournage", "value": "Endroit préféré de la famille" },
+            { "label": "Réunion de Famille Incluse", "value": false }
+          ]
+        },
+        {
+          "title": "Documentaire Patrimoine Standard",
+          "price": "15 000 $ – 20 000 $",
+          "description": "Un documentaire sur le patrimoine préservant trois générations d'histoire.",
+          "features": ["3 entretiens", "Documentaire de 15 minutes", "Filmé à l'endroit préféré de la famille"],
+          "infoGrid": [
+            { "label": "Nombre d'Entretiens", "value": "3" },
+            { "label": "Durée du Documentaire", "value": "15 minutes" },
+            { "label": "Lieu de Tournage", "value": "Endroit préféré de la famille" },
+            { "label": "Réunion de Famille Incluse", "value": false }
+          ]
+        },
+        {
+          "title": "Documentaire Héritage Durable",
+          "price": "À partir de 20 000 $",
+          "description": "Un documentaire approfondi pour les familles qui veulent que toute leur histoire soit racontée.",
+          "features": ["3 entretiens", "Documentaire de 20 minutes", "Filmé à l'endroit préféré de la famille"],
+          "infoGrid": [
+            { "label": "Nombre d'Entretiens", "value": "3" },
+            { "label": "Durée du Documentaire", "value": "20 minutes" },
+            { "label": "Lieu de Tournage", "value": "Endroit préféré de la famille" },
+            { "label": "Réunion de Famille Incluse", "value": false }
+          ]
+        },
+        {
+          "title": "Documentaire Réunion de Famille",
+          "price": "25 000 $",
+          "description": "Le forfait ultime — un documentaire complet plus une réunion de famille de 2 jours organisée par Slim Kat Media.",
+          "features": ["3 entretiens", "Documentaire de 20 minutes", "Réunion de 2 jours à la Nouvelle-Orléans ou à Jackson, MS"],
+          "infoGrid": [
+            { "label": "Nombre d'Entretiens", "value": "3" },
+            { "label": "Durée du Documentaire", "value": "20 minutes" },
+            { "label": "Lieu de Tournage", "value": "Nouvelle-Orléans ou Jackson, MS" },
+            { "label": "Réunion de Famille Incluse", "value": true }
+          ]
+        }
+      ],
+      "pricingFeatures": "Caractéristiques Tarifaires"
+    },
+    "testimonials": {
+      "eyebrow": "Chaque famille a une histoire, capturons la vôtre.",
+      "clients": [
+        {
+          "name": "Patricia Williams",
+          "location": "Jackson, MS",
+          "quote": "Slim Kat Media a offert à notre famille quelque chose que nous chérirons pour des générations. Regarder ma mère raconter son histoire à l'écran a été l'une des expériences les plus émouvantes de ma vie."
+        },
+        {
+          "name": "Marcus & Denise Johnson",
+          "location": "New Orleans, LA",
+          "quote": "Nous n'avions aucune idée à quel point ce serait puissant. Notre grand-mère n'avait jamais raconté certaines de ces histoires auparavant. Maintenant elles vivront pour toujours."
+        },
+        {
+          "name": "Renée Thibodaux",
+          "location": "Baton Rouge, LA",
+          "quote": "L'équipe a mis tout le monde parfaitement à l'aise. Le documentaire final a fait pleurer toute notre famille — de bonnes larmes."
+        },
+        {
+          "name": "La Famille Caldwell",
+          "location": "Atlanta, GA",
+          "quote": "Du premier appel au film final, chaque détail a été géré avec soin et professionnalisme. Cela valait chaque centime."
+        }
+      ]
     }
   },
   "ProductionsPage": {

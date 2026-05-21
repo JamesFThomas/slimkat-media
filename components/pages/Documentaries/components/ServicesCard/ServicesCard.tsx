@@ -5,8 +5,10 @@ interface ServicesCardProps {
 }
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export const ServicesCard = ({ service }: ServicesCardProps) => {
+  const t = useTranslations("DocumentariesPage");
   return (
     <div
       className="
@@ -58,7 +60,7 @@ export const ServicesCard = ({ service }: ServicesCardProps) => {
     text-center
   "
         >
-          {service.ctaLabel}
+          {t("servicesCard.cta")}
         </Link>
       </div>
     </div>
