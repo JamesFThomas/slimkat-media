@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 export const CallToAction = () => {
@@ -21,9 +22,12 @@ export const CallToAction = () => {
       </p>
       <div className="mt-4">
         {/* TODO: wire to /contact?service=documentary */}
-        <button className="px-6 py-3 bg-black text-white font-semibold rounded-md">
+        <Link
+          href="/contact?service=documentary"
+          className="px-6 py-3 bg-black text-white font-semibold rounded-md hover:bg-gray-800 transition-colors"
+        >
           Start Your Documentary
-        </button>
+        </Link>
       </div>
     </div>
   );

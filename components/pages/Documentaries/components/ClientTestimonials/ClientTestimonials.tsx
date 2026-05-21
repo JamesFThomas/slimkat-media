@@ -85,7 +85,7 @@ export const ClientTestimonials = () => {
             key={t.id}
             onClick={() => setActiveIndex(i)}
             className={`
-              relative w-12 h-12
+              relative w-12 h-12 cursor-pointer
               rounded-full overflow-hidden
               border-2 transition-colors shrink-0
               ${activeIndex === i ? "border-black" : "border-transparent"}

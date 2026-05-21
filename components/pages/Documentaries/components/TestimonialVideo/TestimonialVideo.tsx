@@ -48,7 +48,7 @@ export const TestimonialVideo = () => {
       <button
         onClick={togglePlay}
         className={`
-          absolute inset-0
+          absolute inset-0 cursor-pointer
           flex items-center justify-center
           bg-black/20 hover:bg-black/30
           transition-colors
