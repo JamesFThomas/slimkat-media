@@ -106,6 +106,105 @@
     "header": {
       "title": "Documentaries Page",
       "subtitle": "Page content coming soon!"
+    },
+    "hero": {
+      "eyebrow": "Legacy Documentaries",
+      "headline": "Every Family Has a Story Worth Preserving",
+      "body": "Slim Kat Media captures the voices, memories, and moments that define your family's legacy — before they're gone. Let us turn your story into a cinematic keepsake that lives forever.",
+      "cta": "Start Your Documentary"
+    },
+    "servicesCard": {
+      "cta": "Book This Package"
+    },
+    "services": {
+      "panels": [
+        {
+          "title": "Single Legacy Interview",
+          "price": "$1,600",
+          "description": "A single interview capturing one family member's story.",
+          "features": ["1 interview", "5-minute documentary", "Filmed in New Orleans or Jackson, MS"],
+          "infoGrid": [
+            { "label": "Number of Interviews", "value": "1" },
+            { "label": "Documentary Length", "value": "5 minutes" },
+            { "label": "Filming Location", "value": "New Orleans or Jackson, MS" },
+            { "label": "Family Reunion Included", "value": false }
+          ]
+        },
+        {
+          "title": "Standard Keepsake Documentary",
+          "price": "$10,000",
+          "description": "A keepsake documentary featuring two family voices.",
+          "features": ["2 interviews", "10-minute documentary", "Filmed at family's preferred location"],
+          "infoGrid": [
+            { "label": "Number of Interviews", "value": "2" },
+            { "label": "Documentary Length", "value": "10 minutes" },
+            { "label": "Filming Location", "value": "Family's preferred location" },
+            { "label": "Family Reunion Included", "value": false }
+          ]
+        },
+        {
+          "title": "Standard Heritage Documentary",
+          "price": "$15,000 – $20,000",
+          "description": "A heritage documentary preserving three generations of story.",
+          "features": ["3 interviews", "15-minute documentary", "Filmed at family's preferred location"],
+          "infoGrid": [
+            { "label": "Number of Interviews", "value": "3" },
+            { "label": "Documentary Length", "value": "15 minutes" },
+            { "label": "Filming Location", "value": "Family's preferred location" },
+            { "label": "Family Reunion Included", "value": false }
+          ]
+        },
+        {
+          "title": "Lasting Legacy Documentary",
+          "price": "Starting at $20,000",
+          "description": "An in-depth legacy documentary for families who want the full story told.",
+          "features": ["3 interviews", "20-minute documentary", "Filmed at family's preferred location"],
+          "infoGrid": [
+            { "label": "Number of Interviews", "value": "3" },
+            { "label": "Documentary Length", "value": "20 minutes" },
+            { "label": "Filming Location", "value": "Family's preferred location" },
+            { "label": "Family Reunion Included", "value": false }
+          ]
+        },
+        {
+          "title": "Family Reunion Documentary",
+          "price": "$25,000",
+          "description": "The ultimate package — a full documentary plus a 2-day family reunion organized and hosted by Slim Kat Media.",
+          "features": ["3 interviews", "20-minute documentary", "2-day reunion in New Orleans or Jackson, MS"],
+          "infoGrid": [
+            { "label": "Number of Interviews", "value": "3" },
+            { "label": "Documentary Length", "value": "20 minutes" },
+            { "label": "Filming Location", "value": "New Orleans or Jackson, MS" },
+            { "label": "Family Reunion Included", "value": true }
+          ]
+        }
+      ],
+      "pricingFeatures": "Pricing Features"
+    },
+    "testimonials": {
+      "eyebrow": "Every family has a story, let's capture yours.",
+      "clients": [
+        {
+          "name": "Patricia Williams",
+          "location": "Jackson, MS",
+          "quote": "Slim Kat Media gave our family something we will treasure for generations. Watching my mother tell her story on screen was one of the most emotional and beautiful experiences of my life."
+        },
+        {
+          "name": "Marcus & Denise Johnson",
+          "location": "New Orleans, LA",
+          "quote": "We had no idea how powerful this would be. Our grandmother had never told some of these stories before. Now they live forever."
+        },
+        {
+          "name": "Renée Thibodaux",
+          "location": "Baton Rouge, LA",
+          "quote": "The crew made everyone feel completely at ease. The final documentary brought our whole family to tears — the good kind."
+        },
+        {
+          "name": "The Caldwell Family",
+          "location": "Atlanta, GA",
+          "quote": "From the first call to the final film, every detail was handled with such care and professionalism. This was worth every penny."
+        }
+      ]
     }
   },
   "ProductionsPage": {

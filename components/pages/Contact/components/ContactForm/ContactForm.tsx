@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
@@ -59,6 +59,11 @@ export const ContactForm = () => {
       ? serviceParam
       : "";
 
+  const packageParam = searchParams.get("package");
+  const initialMessage = packageParam
+    ? `I am interested in the ${packageParam} package and would like to learn more.`
+    : "";
+
   // Pre-fill service from query param e.g. /contact?service=documentary
   const initialFields: FormFields = {
     firstName: "",
@@ -66,7 +71,7 @@ export const ContactForm = () => {
     email: "",
     phone: "",
     service: initialService, // pre-filled from query param
-    message: "",
+    message: initialMessage,
   };
 
   const initialErrors: FormErrors = {
