@@ -122,11 +122,18 @@
           "title": "Entretien Unique",
           "price": "1 600 $",
           "description": "Un seul entretien capturant l'histoire d'un membre de la famille.",
-          "features": ["1 entretien", "Documentaire de 5 minutes", "Filmé à la Nouvelle-Orléans ou à Jackson, MS"],
+          "features": [
+            "1 entretien",
+            "Documentaire de 5 minutes",
+            "Filmé à la Nouvelle-Orléans ou à Jackson, MS"
+          ],
           "infoGrid": [
             { "label": "Nombre d'Entretiens", "value": "1" },
             { "label": "Durée du Documentaire", "value": "5 minutes" },
-            { "label": "Lieu de Tournage", "value": "Nouvelle-Orléans ou Jackson, MS" },
+            {
+              "label": "Lieu de Tournage",
+              "value": "Nouvelle-Orléans ou Jackson, MS"
+            },
             { "label": "Réunion de Famille Incluse", "value": false }
           ]
         },
@@ -134,11 +141,18 @@
           "title": "Documentaire Souvenir Standard",
           "price": "10 000 $",
           "description": "Un documentaire souvenir mettant en vedette deux voix familiales.",
-          "features": ["2 entretiens", "Documentaire de 10 minutes", "Filmé à l'endroit préféré de la famille"],
+          "features": [
+            "2 entretiens",
+            "Documentaire de 10 minutes",
+            "Filmé à l'endroit préféré de la famille"
+          ],
           "infoGrid": [
             { "label": "Nombre d'Entretiens", "value": "2" },
             { "label": "Durée du Documentaire", "value": "10 minutes" },
-            { "label": "Lieu de Tournage", "value": "Endroit préféré de la famille" },
+            {
+              "label": "Lieu de Tournage",
+              "value": "Endroit préféré de la famille"
+            },
             { "label": "Réunion de Famille Incluse", "value": false }
           ]
         },
@@ -146,11 +160,18 @@
           "title": "Documentaire Patrimoine Standard",
           "price": "15 000 $ – 20 000 $",
           "description": "Un documentaire sur le patrimoine préservant trois générations d'histoire.",
-          "features": ["3 entretiens", "Documentaire de 15 minutes", "Filmé à l'endroit préféré de la famille"],
+          "features": [
+            "3 entretiens",
+            "Documentaire de 15 minutes",
+            "Filmé à l'endroit préféré de la famille"
+          ],
           "infoGrid": [
             { "label": "Nombre d'Entretiens", "value": "3" },
             { "label": "Durée du Documentaire", "value": "15 minutes" },
-            { "label": "Lieu de Tournage", "value": "Endroit préféré de la famille" },
+            {
+              "label": "Lieu de Tournage",
+              "value": "Endroit préféré de la famille"
+            },
             { "label": "Réunion de Famille Incluse", "value": false }
           ]
         },
@@ -158,11 +179,18 @@
           "title": "Documentaire Héritage Durable",
           "price": "À partir de 20 000 $",
           "description": "Un documentaire approfondi pour les familles qui veulent que toute leur histoire soit racontée.",
-          "features": ["3 entretiens", "Documentaire de 20 minutes", "Filmé à l'endroit préféré de la famille"],
+          "features": [
+            "3 entretiens",
+            "Documentaire de 20 minutes",
+            "Filmé à l'endroit préféré de la famille"
+          ],
           "infoGrid": [
             { "label": "Nombre d'Entretiens", "value": "3" },
             { "label": "Durée du Documentaire", "value": "20 minutes" },
-            { "label": "Lieu de Tournage", "value": "Endroit préféré de la famille" },
+            {
+              "label": "Lieu de Tournage",
+              "value": "Endroit préféré de la famille"
+            },
             { "label": "Réunion de Famille Incluse", "value": false }
           ]
         },
@@ -170,11 +198,18 @@
           "title": "Documentaire Réunion de Famille",
           "price": "25 000 $",
           "description": "Le forfait ultime — un documentaire complet plus une réunion de famille de 2 jours organisée par Slim Kat Media.",
-          "features": ["3 entretiens", "Documentaire de 20 minutes", "Réunion de 2 jours à la Nouvelle-Orléans ou à Jackson, MS"],
+          "features": [
+            "3 entretiens",
+            "Documentaire de 20 minutes",
+            "Réunion de 2 jours à la Nouvelle-Orléans ou à Jackson, MS"
+          ],
           "infoGrid": [
             { "label": "Nombre d'Entretiens", "value": "3" },
             { "label": "Durée du Documentaire", "value": "20 minutes" },
-            { "label": "Lieu de Tournage", "value": "Nouvelle-Orléans ou Jackson, MS" },
+            {
+              "label": "Lieu de Tournage",
+              "value": "Nouvelle-Orléans ou Jackson, MS"
+            },
             { "label": "Réunion de Famille Incluse", "value": true }
           ]
         }
@@ -211,6 +246,45 @@
     "header": {
       "title": "Productions Page French side",
       "subtitle": "Page content coming soon! O la la"
+    },
+    "productions": {
+      "production1": {
+        "title": "FARMING FREEDOM",
+        "description": "2025 · Documentaire Éducatif",
+        "imageAlt": "Affiche du documentaire Farming Freedom",
+        "year": "2025",
+        "category": "Documentaire Éducatif",
+        "runtime": "42 min",
+        "festivals": "3 projections",
+        "distribution": "PBS, CNBC",
+        "status": "Sorti",
+        "longDescription": "Farming Freedom retrace l'histoire méconnue de la perte de terres des Noirs dans le Sud américain — comment la dépossession systémique a déplacé des générations de familles agricoles, et les militants qui luttent pour récupérer cet héritage.",
+        "pressLinks": {
+          "NPR": {
+            "label": "L'histoire de la perte de terres agricoles des Noirs dans le Sud américain",
+            "url": "https://www.npr.org/sections/codeswitch/2025/01/15/1099981234/farming-freedom-documentary-explores-the-legacy-of-sharecropping",
+            "info": "NPR | 10 janvier 2026"
+          },
+          "CNBC": {
+            "label": "Mettre en lumière la perte de terres des Noirs.",
+            "url": "https://www.cnbc.com",
+            "info": "CNBC | 1er décembre 2025"
+          }
+        }
+      },
+      "production2": {
+        "title": "Powerful Project",
+        "description": "2025 · Documentaire en Développement",
+        "imageAlt": "Affiche du documentaire Powerful Project",
+        "year": "2025",
+        "category": "Documentaire en Développement",
+        "runtime": "À déterminer",
+        "festivals": "À déterminer",
+        "distribution": "À déterminer",
+        "status": "En Développement",
+        "longDescription": "Détails à venir.",
+        "pressLinks": {}
+      }
     }
   },
   "FoundationPage": {

@@ -122,11 +122,18 @@
           "title": "Single Legacy Interview",
           "price": "$1,600",
           "description": "A single interview capturing one family member's story.",
-          "features": ["1 interview", "5-minute documentary", "Filmed in New Orleans or Jackson, MS"],
+          "features": [
+            "1 interview",
+            "5-minute documentary",
+            "Filmed in New Orleans or Jackson, MS"
+          ],
           "infoGrid": [
             { "label": "Number of Interviews", "value": "1" },
             { "label": "Documentary Length", "value": "5 minutes" },
-            { "label": "Filming Location", "value": "New Orleans or Jackson, MS" },
+            {
+              "label": "Filming Location",
+              "value": "New Orleans or Jackson, MS"
+            },
             { "label": "Family Reunion Included", "value": false }
           ]
         },
@@ -134,11 +141,18 @@
           "title": "Standard Keepsake Documentary",
           "price": "$10,000",
           "description": "A keepsake documentary featuring two family voices.",
-          "features": ["2 interviews", "10-minute documentary", "Filmed at family's preferred location"],
+          "features": [
+            "2 interviews",
+            "10-minute documentary",
+            "Filmed at family's preferred location"
+          ],
           "infoGrid": [
             { "label": "Number of Interviews", "value": "2" },
             { "label": "Documentary Length", "value": "10 minutes" },
-            { "label": "Filming Location", "value": "Family's preferred location" },
+            {
+              "label": "Filming Location",
+              "value": "Family's preferred location"
+            },
             { "label": "Family Reunion Included", "value": false }
           ]
         },
@@ -146,11 +160,18 @@
           "title": "Standard Heritage Documentary",
           "price": "$15,000 – $20,000",
           "description": "A heritage documentary preserving three generations of story.",
-          "features": ["3 interviews", "15-minute documentary", "Filmed at family's preferred location"],
+          "features": [
+            "3 interviews",
+            "15-minute documentary",
+            "Filmed at family's preferred location"
+          ],
           "infoGrid": [
             { "label": "Number of Interviews", "value": "3" },
             { "label": "Documentary Length", "value": "15 minutes" },
-            { "label": "Filming Location", "value": "Family's preferred location" },
+            {
+              "label": "Filming Location",
+              "value": "Family's preferred location"
+            },
             { "label": "Family Reunion Included", "value": false }
           ]
         },
@@ -158,11 +179,18 @@
           "title": "Lasting Legacy Documentary",
           "price": "Starting at $20,000",
           "description": "An in-depth legacy documentary for families who want the full story told.",
-          "features": ["3 interviews", "20-minute documentary", "Filmed at family's preferred location"],
+          "features": [
+            "3 interviews",
+            "20-minute documentary",
+            "Filmed at family's preferred location"
+          ],
           "infoGrid": [
             { "label": "Number of Interviews", "value": "3" },
             { "label": "Documentary Length", "value": "20 minutes" },
-            { "label": "Filming Location", "value": "Family's preferred location" },
+            {
+              "label": "Filming Location",
+              "value": "Family's preferred location"
+            },
             { "label": "Family Reunion Included", "value": false }
           ]
         },
@@ -170,11 +198,18 @@
           "title": "Family Reunion Documentary",
           "price": "$25,000",
           "description": "The ultimate package — a full documentary plus a 2-day family reunion organized and hosted by Slim Kat Media.",
-          "features": ["3 interviews", "20-minute documentary", "2-day reunion in New Orleans or Jackson, MS"],
+          "features": [
+            "3 interviews",
+            "20-minute documentary",
+            "2-day reunion in New Orleans or Jackson, MS"
+          ],
           "infoGrid": [
             { "label": "Number of Interviews", "value": "3" },
             { "label": "Documentary Length", "value": "20 minutes" },
-            { "label": "Filming Location", "value": "New Orleans or Jackson, MS" },
+            {
+              "label": "Filming Location",
+              "value": "New Orleans or Jackson, MS"
+            },
             { "label": "Family Reunion Included", "value": true }
           ]
         }
@@ -209,20 +244,70 @@
   },
   "ProductionsPage": {
     "header": {
-      "title": "Productions Page",
-      "subtitle": "Page content coming soon!"
+      "title": "Our Work",
+      "subtitle": "Exploring the stories of America."
+    },
+    "productions": {
+      "production1": {
+        "title": "FARMING FREEDOM",
+        "description": "2025 · Educational Documentary",
+        "imageAlt": "Farming Freedom Documentary Poster",
+        "year": "2025",
+        "category": "Educational Documentary",
+        "runtime": "42 min",
+        "festivals": "3 screenings",
+        "distribution": "PBS, CNBC",
+        "status": "Released",
+        "longDescription": "Farming Freedom follows the untold story of Black land loss across the American South — tracing how systemic dispossession displaced generations of farming families, and the activists working to reclaim that legacy.",
+        "pressLinks": {
+          "NPR": {
+            "label": "The story of black land loss in the American South",
+            "url": "https://www.npr.org/sections/codeswitch/2025/01/15/1099981234/farming-freedom-documentary-explores-the-legacy-of-sharecropping",
+            "info": "NPR | January 10, 2026"
+          },
+          "CNBC": {
+            "label": "Shedding light on black land loss.",
+            "url": "https://www.cnbc.com",
+            "info": "CNBC | December 1, 2025"
+          }
+        }
+      },
+      "production2": {
+        "title": "Powerful Project",
+        "description": "2025 · Documentary in Development",
+        "imageAlt": "Powerful Project Documentary Poster",
+        "year": "2025",
+        "category": "Documentary in Development",
+        "runtime": "TBD",
+        "festivals": "TBD",
+        "distribution": "TBD",
+        "status": "In Development",
+        "longDescription": "Details coming soon.",
+        "pressLinks": {
+          "WashingtonPost": {
+            "label": "A powerful look into untold stories that shape our understanding of history and culture.",
+            "url": "https://www.washingtonpost.com/arts-entertainment/2025/11/20/project-2-documentary-development/",
+            "info": "Washington Post | November 20, 2025"
+          },
+          "MBP": {
+            "label": "A story of a MS family keeping the legacy of their land alive.",
+            "url": "https://www.mbp.com",
+            "info": "MBP | November 25, 2025"
+          }
+        }
+      }
     }
   },
   "FoundationPage": {
     "header": {
-      "title": "Foundation Page",
-      "subtitle": "Page content coming soon!"
+      "title": "James & Kayla Thomas Foundation",
+      "subtitle": "Investing in People"
     }
   },
   "ContactPage": {
     "header": {
       "title": "Contact Us",
-      "subtitle": "We'd love to hear from you. Fill out the form below and we'll be in touch."
+      "subtitle": "We'd love to hear from you."
     }
   },
   "ContactForm": {
