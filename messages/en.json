@@ -297,9 +297,27 @@
         }
       }
     },
+    "featureInfo": {
+      "year": "Year",
+      "category": "Category",
+      "runtime": "Runtime",
+      "festivals": "Festivals",
+      "distribution": "Distribution",
+      "status": "Status"
+    },
     "speaking": {
       "header": "Speaking Engagements",
       "cta": "Book a Speaking Engagement",
+      "speakerName": "Kayla Turner Thomas",
+      "speakerBio": "With nearly 15 years in local television — from executive producer to independent filmmaker — Kayla Turner Thomas brings firsthand expertise in storytelling, media, and distribution to every stage she steps on.",
+      "speakerImageAlt": "Kayla Turner Thomas headshot",
+      "columns": {
+        "event": "Event",
+        "date": "Date",
+        "venue": "Venue",
+        "topic": "Topic"
+      },
+      "viewEvent": "View event →",
       "engagements": [
         {
           "event": "Mississippi Documentary Festival",

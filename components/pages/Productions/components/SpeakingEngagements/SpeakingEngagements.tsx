@@ -30,18 +30,15 @@ export const SpeakingEngagements = () => {
         <div className="w-40 h-40 lg:w-48 lg:h-48 shrink-0 rounded-full overflow-hidden relative">
           <Image
             src="/images/headshot/KaylaThomas_Headshot.jpg"
-            alt="Kayla Turner Thomas"
+            alt={t('speaking.speakerImageAlt')}
             fill
             className="object-cover object-top"
           />
         </div>
         <div className="flex flex-col gap-3 text-center lg:text-left">
-          <h3 className="text-xl font-bold">Kayla Turner Thomas</h3>
+          <h3 className="text-xl font-bold">{t('speaking.speakerName')}</h3>
           <p className="text-sm leading-relaxed text-[var(--muted-foreground)] max-w-xl">
-            With nearly 15 years in local television — from executive producer
-            to independent filmmaker — Kayla Turner Thomas brings firsthand
-            expertise in storytelling, media, and distribution to every stage
-            she steps on.
+            {t('speaking.speakerBio')}
           </p>
         </div>
       </div>
@@ -51,16 +48,16 @@ export const SpeakingEngagements = () => {
       {/* Desktop header row */}
       <div className="hidden lg:grid grid-cols-[2fr_1fr_1fr_2fr_40px] gap-4 pb-2 border-b border-[var(--border)]">
         <span className="text-xs font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-          Event
+          {t('speaking.columns.event')}
         </span>
         <span className="text-xs font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-          Date
+          {t('speaking.columns.date')}
         </span>
         <span className="text-xs font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-          Venue
+          {t('speaking.columns.venue')}
         </span>
         <span className="text-xs font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-          Topic
+          {t('speaking.columns.topic')}
         </span>
         <span />
       </div>
@@ -152,7 +149,7 @@ export const SpeakingEngagements = () => {
                 <div className="lg:hidden flex flex-col gap-2 pb-4 pl-2 animate-[slideFadeIn_300ms_ease-out]">
                   <div className="flex flex-col gap-1">
                     <span className="text-xs uppercase tracking-widest text-[var(--muted-foreground)]">
-                      Venue
+                      {t('speaking.columns.venue')}
                     </span>
                     <span className="text-sm">
                       {engagement.venue}, {engagement.location}
@@ -160,7 +157,7 @@ export const SpeakingEngagements = () => {
                   </div>
                   <div className="flex flex-col gap-1">
                     <span className="text-xs uppercase tracking-widest text-[var(--muted-foreground)]">
-                      Topic
+                      {t('speaking.columns.topic')}
                     </span>
                     <span className="text-sm">{engagement.topic}</span>
                   </div>
@@ -171,7 +168,7 @@ export const SpeakingEngagements = () => {
                       rel="noopener noreferrer"
                       className="text-sm text-[var(--accent-link)] hover:underline mt-1"
                     >
-                      View event →
+                      {t('speaking.viewEvent')}
                     </Link>
                   )}
                 </div>

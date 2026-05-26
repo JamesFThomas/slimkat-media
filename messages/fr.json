@@ -244,8 +244,8 @@
   },
   "ProductionsPage": {
     "header": {
-      "title": "Productions Page French side",
-      "subtitle": "Page content coming soon! O la la"
+      "title": "Notre Travail",
+      "subtitle": "Explorer les histoires de l'Amérique."
     },
     "productions": {
       "production1": {
@@ -283,12 +283,41 @@
         "distribution": "À déterminer",
         "status": "En Développement",
         "longDescription": "Détails à venir.",
-        "pressLinks": {}
+        "pressLinks": {
+          "WashingtonPost": {
+            "label": "Un regard puissant sur des histoires méconnues qui façonnent notre compréhension de l'histoire et de la culture.",
+            "url": "https://www.washingtonpost.com/arts-entertainment/2025/11/20/project-2-documentary-development/",
+            "info": "Washington Post | 20 novembre 2025"
+          },
+          "MBP": {
+            "label": "L'histoire d'une famille MS qui perpétue l'héritage de leurs terres.",
+            "url": "https://www.mbp.com",
+            "info": "MBP | 25 novembre 2025"
+          }
+        }
       }
+    },
+    "featureInfo": {
+      "year": "Année",
+      "category": "Catégorie",
+      "runtime": "Durée",
+      "festivals": "Festivals",
+      "distribution": "Distribution",
+      "status": "Statut"
     },
     "speaking": {
       "header": "Conférences et Prises de Parole",
       "cta": "Réserver une Conférence",
+      "speakerName": "Kayla Turner Thomas",
+      "speakerBio": "Avec près de 15 ans dans la télévision locale — de productrice exécutive à cinéaste indépendante — Kayla Turner Thomas apporte une expertise de première main en narration, médias et distribution sur chaque scène où elle intervient.",
+      "speakerImageAlt": "Photo de Kayla Turner Thomas",
+      "columns": {
+        "event": "Événement",
+        "date": "Date",
+        "venue": "Lieu",
+        "topic": "Sujet"
+      },
+      "viewEvent": "Voir l'événement →",
       "engagements": [
         {
           "event": "Mississippi Documentary Festival",
