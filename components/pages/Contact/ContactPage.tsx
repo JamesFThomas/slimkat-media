@@ -13,7 +13,7 @@ export const ContactPage = () => {
           <h1 id="title" className="text-5xl">
             {t("header.title")}
           </h1>
-          <span id="subtitle" className="text-xl text font-bold p-2">
+          <span id="subtitle" className="text-xl text font-medium p-2">
             {t("header.subtitle")}
           </span>
         </section>
