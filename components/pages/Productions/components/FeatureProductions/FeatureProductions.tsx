@@ -24,7 +24,7 @@ export const FeatureProductions = () => {
             imageAlt={active.imageAlt}
             namespace="ProductionsPage"
             showText={false}
-            handleProjectCardClick={() => {}}
+            handleProjectCardClick={() => {}} // passing an empty function because click handler will be on the filmstrip buttons below, not the card itself
           />
         </div>
         <div className="w-full min-w-0">

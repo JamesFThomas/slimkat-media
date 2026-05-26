@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { FeatureProductions } from "./components/FeatureProductions/FeatureProductions";
+import { SpeakingEngagements } from "./components/SpeakingEngagements/SpeakingEngagements";
 
 export const ProductionsPage = () => {
   const t = useTranslations("ProductionsPage");
@@ -20,11 +21,12 @@ export const ProductionsPage = () => {
         <section id="featured" className="w-full max-w-[1100px] mx-auto px-4">
           <FeatureProductions />
         </section>
-
         <section
           id="speaking"
-          className="flex flex-col gap-4 p-4 bg-amber-500 h-[250px] w-full"
-        ></section>
+          className="flex flex-col items-center w-full py-8 border-t  border-gray-200 border-[var(--border)]"
+        >
+          <SpeakingEngagements />
+        </section>
       </main>
     </div>
   );

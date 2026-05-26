@@ -296,6 +296,44 @@
           }
         }
       }
+    },
+    "speaking": {
+      "header": "Speaking Engagements",
+      "cta": "Book a Speaking Engagement",
+      "engagements": [
+        {
+          "event": "Mississippi Documentary Festival",
+          "date": "March 14, 2025",
+          "venue": "Capri Theatre",
+          "location": "Jackson, MS",
+          "topic": "Black Land Loss and the Power of Documentary Film",
+          "url": ""
+        },
+        {
+          "event": "CNBC Voices Summit",
+          "date": "June 22, 2025",
+          "venue": "Nasdaq MarketSite",
+          "location": "New York, NY",
+          "topic": "Storytelling as Advocacy",
+          "url": ""
+        },
+        {
+          "event": "Sundance Film Festival Panel",
+          "date": "January 20, 2026",
+          "venue": "Egyptian Theatre",
+          "location": "Park City, UT",
+          "topic": "Independent Filmmaking in the American South",
+          "url": "https://sundance.org"
+        },
+        {
+          "event": "SXSW Documentary Track",
+          "date": "March 10, 2026",
+          "venue": "Austin Convention Center",
+          "location": "Austin, TX",
+          "topic": "Securing Distribution as an Independent Filmmaker",
+          "url": "https://sxsw.com"
+        }
+      ]
     }
   },
   "FoundationPage": {

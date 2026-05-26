@@ -285,6 +285,44 @@
         "longDescription": "Détails à venir.",
         "pressLinks": {}
       }
+    },
+    "speaking": {
+      "header": "Conférences et Prises de Parole",
+      "cta": "Réserver une Conférence",
+      "engagements": [
+        {
+          "event": "Mississippi Documentary Festival",
+          "date": "14 mars 2025",
+          "venue": "Capri Theatre",
+          "location": "Jackson, MS",
+          "topic": "La perte de terres des Noirs et le pouvoir du documentaire",
+          "url": ""
+        },
+        {
+          "event": "CNBC Voices Summit",
+          "date": "22 juin 2025",
+          "venue": "Nasdaq MarketSite",
+          "location": "New York, NY",
+          "topic": "La narration comme forme de plaidoyer",
+          "url": ""
+        },
+        {
+          "event": "Sundance Film Festival Panel",
+          "date": "20 janvier 2026",
+          "venue": "Egyptian Theatre",
+          "location": "Park City, UT",
+          "topic": "Le cinéma indépendant dans le Sud américain",
+          "url": "https://sundance.org"
+        },
+        {
+          "event": "SXSW Documentary Track",
+          "date": "10 mars 2026",
+          "venue": "Austin Convention Center",
+          "location": "Austin, TX",
+          "topic": "Obtenir une distribution en tant que cinéaste indépendant",
+          "url": "https://sxsw.com"
+        }
+      ]
     }
   },
   "FoundationPage": {
