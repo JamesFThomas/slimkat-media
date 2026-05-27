@@ -1,4 +1,4 @@
-import { SubscriptionConfirmationEmail } from "@/components/shared/SubscriptionConfirmationEmail/SubscriptionConfirmationEmail";
+import { SubscriptionConfirmationEmail } from "../../../../components/shared/SubscriptionConfirmationEmail/SubscriptionConfirmationEmail";
 import { Resend } from "resend";
 import path from "path";
 import fs from "fs";
@@ -7,7 +7,7 @@ import { NextRequest } from "next/server";
 export const runtime = "nodejs";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const filePath = path.join(process.cwd(), "public", "logo", "SlimKat_Logo.png");
+const filePath = path.join(process.cwd(), "public", "logo", "jktf-logo.png");
 
 const attachment = fs.readFileSync(filePath).toString("base64");
 
@@ -22,15 +22,15 @@ export async function POST(request: NextRequest) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: "SlimKat Media LLC. <no-reply@slimkatmedia.com>",
-      to: email, // replace with user email after tests are passing
-      subject: "Subscription Confirmation",
-      html: SubscriptionConfirmationEmail(email, "SlimKat_Logo"),
+      from: "James & Kayla Thomas Foundation <no-reply@slimkatmedia.com>",
+      to: email,
+      subject: "You're subscribed — James & Kayla Thomas Foundation",
+      html: SubscriptionConfirmationEmail(email, "jktf_logo"),
       attachments: [
         {
           content: attachment,
-          filename: "SlimKat_Logo.png",
-          contentId: "SlimKat_Logo",
+          filename: "jktf-logo.png",
+          contentId: "jktf_logo",
         },
       ],
     });

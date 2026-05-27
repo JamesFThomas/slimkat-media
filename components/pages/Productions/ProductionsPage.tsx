@@ -11,7 +11,7 @@ export const ProductionsPage = () => {
     <div>
       <main className="flex flex-col grow w-full items-center mx-auto gap-4">
         <section id="header" className="flex flex-col text-center gap-2 p-4">
-          <h1 id="title" className="text-5xl">
+          <h1 id="title" className="text-5xl md:text-6xl xl:text-8xl font-bold">
             {t("header.title")}
           </h1>
           <span id="subtitle" className="text-xl text font-medium p-2">
