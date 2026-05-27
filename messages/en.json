@@ -356,8 +356,25 @@
   },
   "FoundationPage": {
     "header": {
-      "title": "James & Kayla Thomas Foundation",
-      "subtitle": "Investing in People"
+      "title": "James & Kayla Thomas Foundation"
+    },
+    "mission": {
+      "label": "Our Mission",
+      "body": "The James & Kayla Thomas Foundation was built on a simple belief — that people, when given the right resources, opportunities, and support, can transform their lives and their communities. We exist to bridge gaps, amplify voices, and invest in the kind of change that lasts. Through education, media, health, and community development, we are committed to building a foundation that serves people first."
+    },
+    "model": {
+      "label": "Investing In People",
+      "voice": "VOICE",
+      "educationOuter": "EDUCATION",
+      "scholarship": "SCHOLARSHIP",
+      "media": "Media",
+      "wellness": "Wellness",
+      "community": "Community",
+      "education": "Education"
+    },
+    "programs": {
+      "title": "Programs Scheduled to Begin in 2027",
+      "body": "We are actively developing programming across all four focus areas. Subscribe to foundation news and ways to get involved."
     }
   },
   "ContactPage": {

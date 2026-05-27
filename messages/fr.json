@@ -356,8 +356,25 @@
   },
   "FoundationPage": {
     "header": {
-      "title": "Foundation Page French side",
-      "subtitle": "Page content coming soon! O la la"
+      "title": "Fondation James & Kayla Thomas"
+    },
+    "mission": {
+      "label": "Notre mission",
+      "body": "La Fondation James & Kayla Thomas repose sur une conviction simple — que les personnes, lorsqu'elles disposent des bonnes ressources, des bonnes opportunités et du bon soutien, peuvent transformer leur vie et leurs communautés. Nous existons pour combler les écarts, amplifier les voix et investir dans un changement durable. À travers l'éducation, les médias, la santé et le développement communautaire, nous nous engageons à bâtir une fondation qui place les personnes au premier plan."
+    },
+    "model": {
+      "label": "INVESTIR DANS LES PERSONNES",
+      "voice": "VOIX",
+      "educationOuter": "ÉDUCATION",
+      "scholarship": "BOURSE",
+      "media": "Médias",
+      "wellness": "Bien-être",
+      "community": "Communauté",
+      "education": "Éducation"
+    },
+    "programs": {
+      "title": "Programmes prévus pour débuter en 2027",
+      "body": "Nous développons activement des programmes dans nos quatre domaines prioritaires. Abonnez-vous aux nouvelles de la fondation et aux façons de vous impliquer."
     }
   },
   "ContactPage": {
