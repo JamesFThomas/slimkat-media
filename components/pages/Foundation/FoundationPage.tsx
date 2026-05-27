@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { SubscriptionForm } from "../../shared/SubscriptionForm/SubscriptionForm";
 
@@ -201,10 +202,18 @@ export const FoundationPage = () => {
     <div className="flex flex-col w-full">
       <main className="flex flex-col w-full items-center mx-auto">
         {/* ── Header ── */}
-        <section className="flex flex-col text-center gap-3 px-6 py-12 max-w-2xl">
-          <h1 className="text-4xl font-semibold tracking-tight">
-            {t("header.title")}
-          </h1>
+        <section className="flex flex-col text-center px-6 py-12 max-w-2xl">
+          <Image
+            src="/logo/jktf-logo.svg"
+            alt="James & Kayla Thomas Foundation"
+            width={400}
+            height={250}
+            style={{
+              display: "block",
+              height: "auto",
+              margin: "0 auto 32px auto",
+            }}
+          />
         </section>
 
         {/* ── Strategic Model ── */}
