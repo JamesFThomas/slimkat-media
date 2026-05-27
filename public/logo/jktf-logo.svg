@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" width="200" height="160">
+  <rect width="200" height="160" fill="white"/>
+
+  <!-- 2x2 Grid Mark -->
+  <g transform="translate(52, 8)">
+    <!-- J - filled -->
+    <rect x="0" y="0" width="46" height="46" fill="black"/>
+    <text x="23" y="34" font-family="Georgia, serif" font-size="28" font-weight="500" fill="white" text-anchor="middle">J</text>
+
+    <!-- K - outlined -->
+    <rect x="50" y="0" width="46" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+    <text x="73" y="34" font-family="Georgia, serif" font-size="28" font-weight="500" fill="black" text-anchor="middle">K</text>
+
+    <!-- T - outlined -->
+    <rect x="0" y="50" width="46" height="46" fill="white" stroke="black" stroke-width="1.5"/>
+    <text x="23" y="84" font-family="Georgia, serif" font-size="28" font-weight="500" fill="black" text-anchor="middle">T</text>
+
+    <!-- F - filled -->
+    <rect x="50" y="50" width="46" height="46" fill="black"/>
+    <text x="73" y="84" font-family="Georgia, serif" font-size="28" font-weight="500" fill="white" text-anchor="middle">F</text>
+  </g>
+
+  <!-- Foundation name -->
+  <text x="100" y="124" font-family="Georgia, serif" font-size="10" font-weight="500" fill="black" text-anchor="middle" letter-spacing="0.5">James &amp; Kayla Thomas Foundation</text>
+
+  <!-- Tagline -->
+  <text x="100" y="140" font-family="Arial, sans-serif" font-size="7.5" fill="#555555" text-anchor="middle" letter-spacing="2">INVESTING IN PEOPLE</text>
+</svg>
