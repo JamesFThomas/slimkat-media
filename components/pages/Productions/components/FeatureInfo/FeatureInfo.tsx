@@ -26,7 +26,7 @@ export const FeatureInfo = ({ production }: FeatureInfoProps) => {
             key={label}
             className="flex flex-col gap-1 p-3 rounded-lg bg-[var(--muted)]"
           >
-            <span className="text-xs text-[var(--muted-foreground)]">
+            <span className="text-xs text-[var(--muted-foreground)] uppercase tracking-wider">
               {label}
             </span>
             <span className="text-sm font-medium">{value}</span>
