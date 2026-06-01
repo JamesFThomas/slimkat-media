@@ -421,5 +421,14 @@
       "success": "Thank you! We'll be in touch soon.",
       "error": "Something went wrong. Please try again."
     }
+  },
+  "Footer": {
+    "foundation": {
+      "copyright": "© {year} James & Kayla Thomas Foundation. All rights reserved.",
+      "incorporation": "A Mississippi Nonprofit Corporation"
+    },
+    "slimkat": {
+      "copyright": "© {year} SlimKat Media. All rights reserved."
+    }
   }
 }

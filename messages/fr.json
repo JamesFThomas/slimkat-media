@@ -421,5 +421,14 @@
       "success": "Merci ! Nous vous contacterons bientôt.",
       "error": "Une erreur s'est produite. Veuillez réessayer."
     }
+  },
+  "Footer": {
+    "foundation": {
+      "copyright": "© {year} Fondation James & Kayla Thomas. Tous droits réservés.",
+      "incorporation": "Société à but non lucratif du Mississippi"
+    },
+    "slimkat": {
+      "copyright": "© {year} SlimKat Media. Tous droits réservés."
+    }
   }
 }
