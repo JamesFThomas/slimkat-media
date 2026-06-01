@@ -21,11 +21,11 @@ export const SubscriptionConfirmationEmail = (
     </p>
 
     <p>
-      The James &amp; Kayla Thomas Foundation is working toward our first program
-      launch in <strong>2027</strong>: a media studio and hands-on curriculum
-      designed to equip people with the skills to use media as a tool for business,
-      storytelling, and opportunity. Think podcasting, content creation, and
-      building a voice that works for you.
+      The James &amp; Kayla Thomas Foundation is actively developing our
+      inaugural programs across four focus areas: media, wellness, education,
+      and community. Our media studio will equip people with the skills to use
+      media as a tool for business, storytelling, and opportunity — think
+      podcasting, content creation, and building a voice that works for you.
     </p>
 
     <p>
