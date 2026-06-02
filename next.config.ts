@@ -7,14 +7,26 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/:path*",
+        has: [{ type: "host", value: "www.jktfoundation.org" }],
+        destination: "https://www.slimkatmedia.com/foundation",
+        permanent: false,
+      },
+      {
+        source: "/:path*",
         has: [{ type: "host", value: "jktfoundation.org" }],
-        destination: "https://slimkatmedia.com/foundation",
+        destination: "https://www.slimkatmedia.com/foundation",
+        permanent: false,
+      },
+      {
+        source: "/fr/:path*",
+        has: [{ type: "host", value: "www.jktfoundation.org" }],
+        destination: "https://www.slimkatmedia.com/fr/foundation",
         permanent: false,
       },
       {
         source: "/fr/:path*",
         has: [{ type: "host", value: "jktfoundation.org" }],
-        destination: "https://slimkatmedia.com/fr/foundation",
+        destination: "https://www.slimkatmedia.com/fr/foundation",
         permanent: false,
       },
     ];
