@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: "James & Kayla Thomas Foundation <no-reply@slimkatmedia.com>",
+      from: "James & Kayla Thomas Foundation <no-reply@jktfoundation.org>",
       to: email,
       subject: "You're subscribed — James & Kayla Thomas Foundation",
       html: SubscriptionConfirmationEmail(email, "jktf_logo"),

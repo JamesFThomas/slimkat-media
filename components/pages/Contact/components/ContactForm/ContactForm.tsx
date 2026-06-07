@@ -262,7 +262,7 @@ export const ContactForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder={t("placeholders.firstName")}
-                  className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent"
+                  className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent text-foreground"
                 />
                 <span className="text-xs text-gray-500">
                   {t("labels.firstName")}
@@ -283,7 +283,7 @@ export const ContactForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder={t("placeholders.lastName")}
-                  className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent"
+                  className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent text-foreground"
                 />
                 <span className="text-xs text-gray-500">
                   {t("labels.lastName")}
@@ -309,7 +309,7 @@ export const ContactForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder={t("placeholders.email")}
-              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent"
+              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent text-foreground"
             />
             {touched.email && errors.email && (
               <p className="text-red-700 font-bold text-xs">{errors.email}</p>
@@ -331,7 +331,7 @@ export const ContactForm = () => {
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder={t("placeholders.phone")}
-              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent"
+              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent text-foreground"
             />
             {touched.phone && errors.phone && (
               <p className="text-red-700 font-bold text-xs">{errors.phone}</p>
@@ -348,7 +348,7 @@ export const ContactForm = () => {
               value={fields.service}
               onChange={handleChange}
               onBlur={handleBlur}
-              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent appearance-none hover:cursor-pointer"
+              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent appearance-none hover:cursor-pointer text-foreground"
             >
               <option value="" disabled>
                 {t("placeholders.service")}
@@ -375,7 +375,7 @@ export const ContactForm = () => {
               onBlur={handleBlur}
               placeholder={t("placeholders.message")}
               rows={5}
-              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent resize-none"
+              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent resize-none text-foreground"
             />
             {touched.message && errors.message && (
               <p className="text-red-700 font-bold text-xs">{errors.message}</p>

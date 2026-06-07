@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 :root {
   --background: #ffffff;
@@ -24,6 +24,19 @@
     --surface: #141414; /* bio background for dark mode */
     --chrome: #2a2520; /* nav + footer in dark mode */
     --border: #ffffff4d; /* subtle light border */
+  }
+}
+
+.logo-dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo-light {
+    display: none;
+  }
+  .logo-dark {
+    display: block;
   }
 }
 
