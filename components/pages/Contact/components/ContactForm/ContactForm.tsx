@@ -241,7 +241,7 @@ export const ContactForm = () => {
 
   return (
     <div className="w-full px-4 sm:px-6 py-6 max-w-2xl mx-auto">
-      <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 sm:p-8 md:p-10">
+      <div className="bg-background border border-(--border) rounded-2xl shadow-sm p-6 sm:p-8 md:p-10">
         <form
           className="flex flex-col gap-6"
           onSubmit={handleSubmit}
@@ -262,7 +262,7 @@ export const ContactForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder={t("placeholders.firstName")}
-                  className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent text-foreground"
+                  className="p-2 border-b outline-none bg-transparent form-input"
                 />
                 <span className="text-xs text-gray-500">
                   {t("labels.firstName")}
@@ -283,7 +283,7 @@ export const ContactForm = () => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder={t("placeholders.lastName")}
-                  className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent text-foreground"
+                  className="p-2 border-b outline-none bg-transparent form-input"
                 />
                 <span className="text-xs text-gray-500">
                   {t("labels.lastName")}
@@ -348,7 +348,7 @@ export const ContactForm = () => {
               value={fields.service}
               onChange={handleChange}
               onBlur={handleBlur}
-              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent appearance-none hover:cursor-pointer text-foreground"
+              className="p-2 border-b outline-none bg-transparent appearance-none hover:cursor-pointer form-input"
             >
               <option value="" disabled>
                 {t("placeholders.service")}
@@ -375,7 +375,7 @@ export const ContactForm = () => {
               onBlur={handleBlur}
               placeholder={t("placeholders.message")}
               rows={5}
-              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent resize-none text-foreground"
+              className="p-2 border-b outline-none bg-transparent resize-none form-input"
             />
             {touched.message && errors.message && (
               <p className="text-red-700 font-bold text-xs">{errors.message}</p>

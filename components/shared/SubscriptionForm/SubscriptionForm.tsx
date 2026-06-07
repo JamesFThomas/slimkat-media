@@ -116,7 +116,7 @@ export const SubscriptionForm = () => {
         <div id="form-input-container" className="flex flex-row w-full">
           <input
             id="email input"
-            className="p-2 border border-black grow rounded-l-md border-r-0 hover:cursor-pointer"
+            className="p-2 border grow rounded-l-md border-r-0 hover:cursor-pointer bg-transparent form-input"
             type="email"
             value={email}
             onChange={handleEmailChange}
