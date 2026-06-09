@@ -13,6 +13,7 @@ const customJestConfig = {
   },
   moduleNameMapper: {
     '^next-intl$': '<rootDir>/test/__mocks__/next-intl.ts',
+    '^@/(.*)$': '<rootDir>/$1',
   },
   transformIgnorePatterns: ['/node_modules/(?!(next-intl|use-intl)/)'],
 };
