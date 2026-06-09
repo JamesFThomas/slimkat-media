@@ -39,7 +39,7 @@ const phonePattern = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
 // ─── Isolated data-writing layer ─────────────────────────────────────────────
 // Swap this function's internals when migrating from Google Sheets → Azure DB.
 // The rest of the form never needs to change.
-async function writeContactSubmission(payload: FormFields): Promise<Response> {
+function writeContactSubmission(payload: FormFields): Promise<Response> {
   return fetch("/api/contact", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
