@@ -10,7 +10,7 @@ const projectsList: ProjectCardData[] = [
     id: 1,
     title: "projects.project1.title",
     description: "projects.project1.description",
-    imageUrl: "/logo/Farming_Freedom_Logo1.png",
+    imageUrl: "/logo/Farming_Freedom_Logo2.png",
     imageAlt: "projects.project1.imageAlt",
   },
   {
