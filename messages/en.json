@@ -37,15 +37,20 @@
         "description": "2025 - Educational Documentary",
         "imageAlt": "Farming Freedom Documentary Poster",
         "links": {
-          "NPR": {
-            "label": "The story of black land loss in the american south",
-            "url": "https://www.npr.org/sections/codeswitch/2025/01/15/1099981234/farming-freedom-documentary-explores-the-legacy-of-sharecropping",
-            "info": "NPR | January 10, 2026"
+          "Adweek": {
+            "label": "Mississippi Station to Air Documentary About Black Farmers During Jim Crow Era",
+            "url": "https://www.adweek.com/tvspy/mississippi-station-to-air-documentary-about-black-farmers-during-jim-crow-era/",
+            "info": "Adweek"
           },
-          "CNBC": {
-            "label": "Shedding light on black land loss.",
-            "url": "https://www.cnbc.com",
-            "info": "CNBC | December 1, 2025"
+          "WLBT": {
+            "label": "'Farming Freedom' director Kayla Thomas discusses her documentary about Mississippi's African American farmers",
+            "url": "https://www.wlbt.com/2025/05/05/farming-freedom-director-kayla-thomas-discusses-her-documentary-about-mississippis-african-american-farmers/",
+            "info": "WLBT | May 5, 2025"
+          },
+          "TVNewsCheck": {
+            "label": "Mississippi Documentary 'Farming Freedom' Secures Educational Distribution Through Collective Eye Films",
+            "url": "https://tvnewscheck.com/programming/article/mississippi-documentary-farming-freedom-secures-educational-distribution-through-collective-eye-films/#mai-popup-67d86609b75b5",
+            "info": "TVNewsCheck"
           }
         }
       },
@@ -260,15 +265,45 @@
         "status": "Released",
         "longDescription": "Farming Freedom follows the untold story of Black land loss across the American South — tracing how systemic dispossession displaced generations of farming families, and the activists working to reclaim that legacy.",
         "pressLinks": {
-          "NPR": {
-            "label": "The story of black land loss in the American South",
-            "url": "https://www.npr.org/sections/codeswitch/2025/01/15/1099981234/farming-freedom-documentary-explores-the-legacy-of-sharecropping",
-            "info": "NPR | January 10, 2026"
+          "DeltaNewsTV": {
+            "label": "Granddaughter turns family conversations into documentary on Black land ownership",
+            "url": "https://www.deltanews.tv/news/granddaughter-turns-family-conversations-into-documentary-on-black-land-ownership/article_109525ad-7bd7-4607-a5e0-8b1f38f3c4de.html",
+            "info": "Delta News TV"
           },
-          "CNBC": {
-            "label": "Shedding light on black land loss.",
-            "url": "https://www.cnbc.com",
-            "info": "CNBC | December 1, 2025"
+          "USCUpstate": {
+            "label": "History, Family Ties Bring 'Farming Freedom' to Campus",
+            "url": "https://uscupstate.edu/history-family-ties-bring-farming-freedom-to-campus/",
+            "info": "University of South Carolina Upstate"
+          },
+          "TVNewsCheck": {
+            "label": "Mississippi Documentary 'Farming Freedom' Secures Educational Distribution Through Collective Eye Films",
+            "url": "https://tvnewscheck.com/programming/article/mississippi-documentary-farming-freedom-secures-educational-distribution-through-collective-eye-films/#mai-popup-67d86609b75b5",
+            "info": "TVNewsCheck"
+          },
+          "WLBTPlus": {
+            "label": "'Farming Freedom' director Kayla Thomas discusses her documentary about Mississippi's African American farmers",
+            "url": "https://www.wlbt.com/2025/05/05/farming-freedom-director-kayla-thomas-discusses-her-documentary-about-mississippis-african-american-farmers/",
+            "info": "WLBT+ | May 5, 2025"
+          },
+          "Adweek": {
+            "label": "Mississippi Station to Air Documentary About Black Farmers During Jim Crow Era",
+            "url": "https://www.adweek.com/tvspy/mississippi-station-to-air-documentary-about-black-farmers-during-jim-crow-era/",
+            "info": "Adweek"
+          },
+          "WLBTDebut": {
+            "label": "Farming Freedom Documentary Debuts on WLBT",
+            "url": "https://www.wlbt.com/2025/04/29/farming-freedom-documentary-debuts-wlbt/",
+            "info": "WLBT | April 29, 2025"
+          },
+          "WLBTMuseum": {
+            "label": "'Farming Freedom' documentary showcased at Mississippi Civil Rights Museum",
+            "url": "https://www.wlbt.com/2024/12/01/farming-freedom-documentary-showcased-mississippi-civil-rights-museum/",
+            "info": "WLBT | December 1, 2024"
+          },
+          "PennState": {
+            "label": "Farming Freedom",
+            "url": "https://journals.psu.edu/emro/article/view/8437",
+            "info": "Penn State University Press"
           }
         }
       },
