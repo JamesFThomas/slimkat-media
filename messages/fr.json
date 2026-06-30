@@ -32,56 +32,40 @@
       "header": "Nos Projets",
       "description": "Explore les histoires que nous avons donnée vie—conçues pour engager les audiences et laisser un impact durable.",
       "projectLinksHeader": "POINTS FORTS DE LA PRESSE",
+      "noPressLinks": "Couverture médiatique à venir",
       "project1": {
         "title": "FARMING FREEDOM",
         "description": "2025 - Documentaire Éducatif",
         "imageAlt": "Affiche du documentaire Farming Freedom",
         "links": {
-          "NPR": {
-            "label": "L'histoire de la perte de terres agricoles par les noirs dans le sud américain",
-            "url": "https://www.npr.org/sections/codeswitch/2025/01/15/1099981234/farming-freedom-documentary-explores-the-legacy-of-sharecropping",
-            "info": "NPR | January 10, 2026"
+          "Adweek": {
+            "label": "Mississippi Station to Air Documentary About Black Farmers During Jim Crow Era",
+            "url": "https://www.adweek.com/tvspy/mississippi-station-to-air-documentary-about-black-farmers-during-jim-crow-era/",
+            "info": "Adweek"
           },
-          "CNBC": {
-            "label": "Éclairant la perte de terres agricoles par les noirs.",
-            "url": "https://www.cnbc.com",
-            "info": "CNBC | December 1, 2025"
+          "WLBT": {
+            "label": "'Farming Freedom' director Kayla Thomas discusses her documentary about Mississippi's African American farmers",
+            "url": "https://www.wlbt.com/2025/05/05/farming-freedom-director-kayla-thomas-discusses-her-documentary-about-mississippis-african-american-farmers/",
+            "info": "WLBT | May 5, 2025"
+          },
+          "TVNewsCheck": {
+            "label": "Mississippi Documentary 'Farming Freedom' Secures Educational Distribution Through Collective Eye Films",
+            "url": "https://tvnewscheck.com/programming/article/mississippi-documentary-farming-freedom-secures-educational-distribution-through-collective-eye-films/#mai-popup-67d86609b75b5",
+            "info": "TVNewsCheck"
           }
         }
       },
       "project2": {
-        "title": "Powerful Project",
-        "description": "2025 - Documentaire en développement",
-        "imageAlt": "Project 2 Affiche du documentaire",
-        "links": {
-          "WashingtonPost": {
-            "label": "Un regard puissant sur des histoires méconnues qui façonnent notre compréhension de l'histoire et de la culture.",
-            "url": "https://www.washingtonpost.com",
-            "info": "Washington Post | November 20, 2025"
-          },
-          "MBP": {
-            "label": "Une histoire d'une famille MS conservant le legs de leur terre en vie.",
-            "url": "https://www.mbp.com",
-            "info": "MBP | November 25, 2025"
-          }
-        }
+        "title": "Soins Asymétriques : Une Histoire de Préjugés",
+        "description": "2026 - Documentaire en développement",
+        "imageAlt": "Affiche du documentaire Soins Asymétriques",
+        "links": {}
       },
       "project3": {
-        "title": "Inspiring Project",
-        "description": "2025 - Documentaire en développement",
-        "imageAlt": "Project 3 Affiche du documentaire",
-        "links": {
-          "NewYorkTimes": {
-            "label": "Un projet merveilleux qui capture l'essence du récit et le pouvoir des documentaires.",
-            "url": "https://www.nytimes.com",
-            "info": "New York Times | October 5, 2025"
-          },
-          "RollingStone": {
-            "label": "Un projet inspirant qui plonge dans le cœur du récit et l'impact des documentaires.",
-            "url": "https://www.rollingstone.com",
-            "info": "Rolling Stone | October 10, 2025"
-          }
-        }
+        "title": "Farming Freedom : Racines et Retours",
+        "description": "2026 - Documentaire en développement",
+        "imageAlt": "Affiche du documentaire Farming Freedom : Racines et Retours",
+        "links": {}
       }
     },
     "imageCards": {
@@ -254,47 +238,79 @@
         "imageAlt": "Affiche du documentaire Farming Freedom",
         "year": "2025",
         "category": "Documentaire Éducatif",
-        "runtime": "42 min",
-        "festivals": "3 projections",
+        "runtime": "85 min",
+        "festivals": "Jackson Film Festival, Jackson MS · Juke Joint Festival, Clarksdale MS",
         "distribution": "PBS, CNBC",
         "status": "Sorti",
         "longDescription": "Farming Freedom retrace l'histoire méconnue de la perte de terres des Noirs dans le Sud américain — comment la dépossession systémique a déplacé des générations de familles agricoles, et les militants qui luttent pour récupérer cet héritage.",
         "pressLinks": {
-          "NPR": {
-            "label": "L'histoire de la perte de terres agricoles des Noirs dans le Sud américain",
-            "url": "https://www.npr.org/sections/codeswitch/2025/01/15/1099981234/farming-freedom-documentary-explores-the-legacy-of-sharecropping",
-            "info": "NPR | 10 janvier 2026"
+          "DeltaNewsTV": {
+            "label": "Granddaughter turns family conversations into documentary on Black land ownership",
+            "url": "https://www.deltanews.tv/news/granddaughter-turns-family-conversations-into-documentary-on-black-land-ownership/article_109525ad-7bd7-4607-a5e0-8b1f38f3c4de.html",
+            "info": "Delta News TV"
           },
-          "CNBC": {
-            "label": "Mettre en lumière la perte de terres des Noirs.",
-            "url": "https://www.cnbc.com",
-            "info": "CNBC | 1er décembre 2025"
+          "USCUpstate": {
+            "label": "History, Family Ties Bring 'Farming Freedom' to Campus",
+            "url": "https://uscupstate.edu/history-family-ties-bring-farming-freedom-to-campus/",
+            "info": "University of South Carolina Upstate"
+          },
+          "TVNewsCheck": {
+            "label": "Mississippi Documentary 'Farming Freedom' Secures Educational Distribution Through Collective Eye Films",
+            "url": "https://tvnewscheck.com/programming/article/mississippi-documentary-farming-freedom-secures-educational-distribution-through-collective-eye-films/#mai-popup-67d86609b75b5",
+            "info": "TVNewsCheck"
+          },
+          "WLBTPlus": {
+            "label": "'Farming Freedom' director Kayla Thomas discusses her documentary about Mississippi's African American farmers",
+            "url": "https://www.wlbt.com/2025/05/05/farming-freedom-director-kayla-thomas-discusses-her-documentary-about-mississippis-african-american-farmers/",
+            "info": "WLBT+ | May 5, 2025"
+          },
+          "Adweek": {
+            "label": "Mississippi Station to Air Documentary About Black Farmers During Jim Crow Era",
+            "url": "https://www.adweek.com/tvspy/mississippi-station-to-air-documentary-about-black-farmers-during-jim-crow-era/",
+            "info": "Adweek"
+          },
+          "WLBTDebut": {
+            "label": "Farming Freedom Documentary Debuts on WLBT",
+            "url": "https://www.wlbt.com/2025/04/29/farming-freedom-documentary-debuts-wlbt/",
+            "info": "WLBT | April 29, 2025"
+          },
+          "WLBTMuseum": {
+            "label": "'Farming Freedom' documentary showcased at Mississippi Civil Rights Museum",
+            "url": "https://www.wlbt.com/2024/12/01/farming-freedom-documentary-showcased-mississippi-civil-rights-museum/",
+            "info": "WLBT | December 1, 2024"
+          },
+          "PennState": {
+            "label": "Farming Freedom",
+            "url": "https://journals.psu.edu/emro/article/view/8437",
+            "info": "Penn State University Press"
           }
         }
       },
       "production2": {
-        "title": "Powerful Project",
-        "description": "2025 · Documentaire en Développement",
-        "imageAlt": "Affiche du documentaire Powerful Project",
-        "year": "2025",
-        "category": "Documentaire en Développement",
+        "title": "Asymmetric Care: A History of Bias",
+        "description": "2026 · Documentaire en développement",
+        "imageAlt": "Affiche du documentaire Asymmetric Care",
+        "year": "2028",
+        "category": "Documentaire en développement",
         "runtime": "À déterminer",
         "festivals": "À déterminer",
         "distribution": "À déterminer",
-        "status": "En Développement",
-        "longDescription": "Détails à venir.",
-        "pressLinks": {
-          "WashingtonPost": {
-            "label": "Un regard puissant sur des histoires méconnues qui façonnent notre compréhension de l'histoire et de la culture.",
-            "url": "https://www.washingtonpost.com/arts-entertainment/2025/11/20/project-2-documentary-development/",
-            "info": "Washington Post | 20 novembre 2025"
-          },
-          "MBP": {
-            "label": "L'histoire d'une famille MS qui perpétue l'héritage de leurs terres.",
-            "url": "https://www.mbp.com",
-            "info": "MBP | 25 novembre 2025"
-          }
-        }
+        "status": "En développement",
+        "longDescription": "Asymmetric Care examine la longue histoire documentée des préjugés médicaux contre les femmes noires en Amérique — explorant comment les inégalités systémiques dans le traitement de la douleur, le diagnostic et les soins ont persisté à travers les générations, et les voix qui travaillent à changer cette réalité.",
+        "pressLinks": {}
+      },
+      "production3": {
+        "title": "Farming Freedom: Roots & Returns",
+        "description": "2026 · Documentaire en développement",
+        "imageAlt": "Affiche du documentaire Farming Freedom: Roots & Returns",
+        "year": "2030",
+        "category": "Documentaire en développement",
+        "runtime": "À déterminer",
+        "festivals": "À déterminer",
+        "distribution": "À déterminer",
+        "status": "En développement",
+        "longDescription": "Farming Freedom : Roots & Returns explore ce que la propriété foncière noire peut véritablement produire — des compétences de subsistance comme le jardinage, le petit élevage et l'aquaculture, aux opportunités génératrices de revenus à travers l'agriculture de marché, l'élevage bovin et au-delà. Un regard pratique et inspirant sur la façon dont la récupération des terres peut transformer des vies.",
+        "pressLinks": {}
       }
     },
     "featureInfo": {

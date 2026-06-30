@@ -10,21 +10,21 @@ const projectsList: ProjectCardData[] = [
     id: 1,
     title: "projects.project1.title",
     description: "projects.project1.description",
-    imageUrl: "/images/pages/landing/projects/placeholder-1.png",
+    imageUrl: "/logo/Farming_Freedom_Logo2.png",
     imageAlt: "projects.project1.imageAlt",
   },
   {
     id: 2,
     title: "projects.project2.title",
     description: "projects.project2.description",
-    imageUrl: "/images/pages/landing/projects/placeholder-2.png",
+    imageUrl: "/logo/nursing_history_logo.png",
     imageAlt: "projects.project2.imageAlt",
   },
   {
     id: 3,
     title: "projects.project3.title",
     description: "projects.project3.description",
-    imageUrl: "/images/pages/landing/projects/placeholder-3.png",
+    imageUrl: "/logo/Roots_Returns_logo.png",
     imageAlt: "projects.project3.imageAlt",
   },
 ];
@@ -43,7 +43,7 @@ export const ProjectCardList = ({
   return (
     <div
       id="projectCardList-wrapper"
-      className="w-full max-w-[1280px] flex flex-col lg:flex-row items-center justify-center gap-10 md:mt-8"
+      className="w-full max-w-[1280px] flex flex-col lg:flex-row items-start justify-center gap-10 md:mt-8"
     >
       {projects.map((project) => {
         const hasActiveCard = activeCardId !== null;
