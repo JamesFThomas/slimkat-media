@@ -29,30 +29,6 @@ const pressLinkObjects: PressLinkObject[] = [
     href: "https://tvnewscheck.com/programming/article/mississippi-documentary-farming-freedom-secures-educational-distribution-through-collective-eye-films/#mai-popup-67d86609b75b5",
     info: "projects.project1.links.TVNewsCheck.info",
   },
-  {
-    id: 2,
-    title: "projects.project2.links.WashingtonPost.label",
-    href: "https://www.washingtonpost.com/",
-    info: "projects.project2.links.WashingtonPost.info",
-  },
-  {
-    id: 2,
-    title: "projects.project2.links.MBP.label",
-    href: "https://www.mbp.com/",
-    info: "projects.project2.links.MBP.info",
-  },
-  {
-    id: 3,
-    title: "projects.project3.links.NewYorkTimes.label",
-    href: "https://www.nytco.com/",
-    info: "projects.project3.links.NewYorkTimes.info",
-  },
-  {
-    id: 3,
-    title: "projects.project3.links.RollingStone.label",
-    href: "https://www.rollingstone.com/",
-    info: "projects.project3.links.RollingStone.info",
-  },
 ];
 
 type ProjectLinksProps = {
@@ -77,6 +53,11 @@ export const ProjectLinks = ({
       >
         <h1>{t("projects.projectLinksHeader")}</h1>
       </div>
+      {links.filter((link) => link.id === activeCardId).length === 0 && (
+        <li className="w-full text-center text-[var(--muted-foreground)] py-4">
+          {t("projects.noPressLinks")}
+        </li>
+      )}
       {links.map((link) => (
         <li
           id="projectLink-item"

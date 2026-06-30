@@ -32,6 +32,7 @@
       "header": "Our Projects",
       "description": "Explore the stories we've brought to life—crafted to engage audiences and leave a lasting impact.",
       "projectLinksHeader": "PRESS HIGHLIGHTS",
+      "noPressLinks": "Press coverage coming soon",
       "project1": {
         "title": "FARMING FREEDOM",
         "description": "2025 - Educational Documentary",
@@ -55,38 +56,16 @@
         }
       },
       "project2": {
-        "title": "Powerful Project",
-        "description": "2025 - Documentary in Development",
-        "imageAlt": "Project 2 Documentary Poster",
-        "links": {
-          "WashingtonPost": {
-            "label": "A powerful look into untold stories that shape our understanding of history and culture.",
-            "url": "https://www.washingtonpost.com/arts-entertainment/2025/11/20/project-2-documentary-development/",
-            "info": "Washington Post | November 20, 2025"
-          },
-          "MBP": {
-            "label": "A story of a MS family keeping the legacy of their land alive.",
-            "url": "https://www.mbp.com",
-            "info": "MBP | November 25, 2025"
-          }
-        }
+        "title": "Asymmetric Care: A History of Bias",
+        "description": "2028 - Documentary in Development",
+        "imageAlt": "Asymmetric Care documentary poster",
+        "links": {}
       },
       "project3": {
-        "title": "Inspiring Project",
-        "description": "2025 - Documentary in Development",
-        "imageAlt": "Project 3 Documentary Poster",
-        "links": {
-          "NewYorkTimes": {
-            "label": "A wonderful project that captures the essence of storytelling and the power of documentaries.",
-            "url": "https://www.nytimes.com",
-            "info": "New York Times | October 5, 2025"
-          },
-          "RollingStone": {
-            "label": "An inspiring project that delves into the heart of storytelling and the impact of documentaries.",
-            "url": "https://www.rollingstone.com",
-            "info": "Rolling Stone | October 10, 2025"
-          }
-        }
+        "title": "Farming Freedom: Roots & Returns",
+        "description": "2030 - Documentary in Development",
+        "imageAlt": "Farming Freedom: Roots & Returns documentary poster",
+        "links": {}
       }
     },
     "imageCards": {
@@ -259,8 +238,8 @@
         "imageAlt": "Farming Freedom Documentary Poster",
         "year": "2025",
         "category": "Educational Documentary",
-        "runtime": "42 min",
-        "festivals": "3 screenings",
+        "runtime": "85 min",
+        "festivals": "Jackson Film Festival, Jackson MS · Juke Joint Festival, Clarksdale MS",
         "distribution": "PBS, CNBC",
         "status": "Released",
         "longDescription": "Farming Freedom follows the untold story of Black land loss across the American South — tracing how systemic dispossession displaced generations of farming families, and the activists working to reclaim that legacy.",
@@ -308,28 +287,30 @@
         }
       },
       "production2": {
-        "title": "Powerful Project",
-        "description": "2025 · Documentary in Development",
-        "imageAlt": "Powerful Project Documentary Poster",
-        "year": "2025",
+        "title": "Asymmetric Care: A History of Bias",
+        "description": "2026 · Documentary in Development",
+        "imageAlt": "Asymmetric Care Documentary Poster",
+        "year": "2026",
         "category": "Documentary in Development",
         "runtime": "TBD",
         "festivals": "TBD",
         "distribution": "TBD",
         "status": "In Development",
-        "longDescription": "Details coming soon.",
-        "pressLinks": {
-          "WashingtonPost": {
-            "label": "A powerful look into untold stories that shape our understanding of history and culture.",
-            "url": "https://www.washingtonpost.com/arts-entertainment/2025/11/20/project-2-documentary-development/",
-            "info": "Washington Post | November 20, 2025"
-          },
-          "MBP": {
-            "label": "A story of a MS family keeping the legacy of their land alive.",
-            "url": "https://www.mbp.com",
-            "info": "MBP | November 25, 2025"
-          }
-        }
+        "longDescription": "Asymmetric Care examines the long and documented history of medical bias against Black women in America — exploring how systemic inequities in pain treatment, diagnosis, and care have persisted across generations, and the voices working to change that reality.",
+        "pressLinks": {}
+      },
+      "production3": {
+        "title": "Farming Freedom: Roots & Returns",
+        "description": "2026 · Documentary in Development",
+        "imageAlt": "Farming Freedom: Roots & Returns Documentary Poster",
+        "year": "2026",
+        "category": "Documentary in Development",
+        "runtime": "TBD",
+        "festivals": "TBD",
+        "distribution": "TBD",
+        "status": "In Development",
+        "longDescription": "Farming Freedom: Roots & Returns explores what Black land ownership can truly yield — from subsistence skills like gardening, small livestock, and aquaculture, to revenue-generating opportunities through market farming, cattle, and beyond. A practical and inspiring look at how reclaiming land can transform lives.",
+        "pressLinks": {}
       }
     },
     "featureInfo": {
