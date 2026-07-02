@@ -14,7 +14,9 @@
     "next-intl": "^4.7.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "resend": "^6.8.0"
+    "react-simple-maps": "^3.0.0",
+    "resend": "^6.8.0",
+    "us-atlas": "^3.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
