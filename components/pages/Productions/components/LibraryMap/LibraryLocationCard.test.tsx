@@ -1,33 +1,54 @@
-/**
- * Story: Library Location Card
- *
- * As a site visitor hovering a map marker
- * I want to see the library's name and address
- * So that I know which specific library holds a copy of the film
- */
+import { render, screen } from "@testing-library/react";
+import { LibraryLocationCard } from "./LibraryLocationCard";
+import { createMapCoordinates, type LibraryLocation } from "@/types/map";
+
+const baseLibrary: LibraryLocation = {
+  id: "test-library",
+  name: "Test Public Library",
+  address: "123 Main St",
+  city: "Testville",
+  state: "TS",
+  coordinates: createMapCoordinates(-90, 40),
+  type: "public",
+};
+
+const position = { x: 0, y: 0 };
+
 describe("LibraryLocationCard", () => {
-  // Given a library location object
-  // When the card renders
-  // Then it displays the library's name
-  it.todo("renders the library name");
+  it("renders the library name", () => {
+    render(<LibraryLocationCard library={baseLibrary} position={position} />);
+    expect(screen.getByText(baseLibrary.name)).toBeInTheDocument();
+  });
 
-  // Given a library location object
-  // When the card renders
-  // Then it displays the full street address, city, and state
-  it.todo("renders the library address");
+  it("renders the library address", () => {
+    render(<LibraryLocationCard library={baseLibrary} position={position} />);
+    expect(
+      screen.getByText(
+        `${baseLibrary.address}, ${baseLibrary.city}, ${baseLibrary.state}`,
+      ),
+    ).toBeInTheDocument();
+  });
 
-  // Given a library location with type "consortium"
-  // When the card renders
-  // Then it displays a note clarifying this is a system headquarters, not a public branch
-  it.todo("renders a consortium notice for consortium-type libraries");
+  it("renders a note when one is present (e.g. consortium/ambiguous entries)", () => {
+    const consortiumLibrary: LibraryLocation = {
+      ...baseLibrary,
+      id: "test-consortium",
+      type: "consortium",
+      note: "Administrative headquarters, not a public branch.",
+    };
+    render(
+      <LibraryLocationCard library={consortiumLibrary} position={position} />,
+    );
+    expect(screen.getByText(consortiumLibrary.note!)).toBeInTheDocument();
+  });
 
-  // Given a library location with an imageUrl
-  // When the card renders
-  // Then it displays the associated image
+  it("does not render a note when note is absent", () => {
+    render(<LibraryLocationCard library={baseLibrary} position={position} />);
+    expect(
+      screen.queryByText(/administrative|headquarters/i),
+    ).not.toBeInTheDocument();
+  });
+
   it.todo("renders an image when imageUrl is present");
-
-  // Given a library location without an imageUrl
-  // When the card renders
-  // Then it does not attempt to render a broken image element
   it.todo("does not render an image element when imageUrl is absent");
 });

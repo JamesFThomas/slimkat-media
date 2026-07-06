@@ -63,7 +63,7 @@ export const FeatureProductions = () => {
       </div>
       {/* Press Highlights / Libraries tabs */}
       {hasLibraryData ? (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-6">
           <div
             role="tablist"
             className="flex gap-6 border-b border-[var(--border)]"
@@ -73,11 +73,11 @@ export const FeatureProductions = () => {
               aria-selected={activeTab === "press"}
               onClick={() => setActiveTab("press")}
               className={`pb-2 text-sm font-medium transition-colors duration-150 border-b-2 -mb-px
-                ${
-                  activeTab === "press"
-                    ? "border-[var(--accent-link)] text-[var(--foreground)]"
-                    : "border-transparent text-[var(--muted-foreground,#888)] hover:text-[var(--foreground)]"
-                }`}
+          ${
+            activeTab === "press"
+              ? "border-[var(--accent-link)] text-[var(--foreground)]"
+              : "border-transparent text-[var(--muted-foreground,#888)] hover:text-[var(--foreground)]"
+          }`}
             >
               Press Highlights
             </button>
@@ -86,21 +86,23 @@ export const FeatureProductions = () => {
               aria-selected={activeTab === "libraries"}
               onClick={() => setActiveTab("libraries")}
               className={`pb-2 text-sm font-medium transition-colors duration-150 border-b-2 -mb-px
-                ${
-                  activeTab === "libraries"
-                    ? "border-[var(--accent-link)] text-[var(--foreground)]"
-                    : "border-transparent text-[var(--muted-foreground,#888)] hover:text-[var(--foreground)]"
-                }`}
+          ${
+            activeTab === "libraries"
+              ? "border-[var(--accent-link)] text-[var(--foreground)]"
+              : "border-transparent text-[var(--muted-foreground,#888)] hover:text-[var(--foreground)]"
+          }`}
             >
               Libraries
             </button>
           </div>
 
-          {activeTab === "press" ? (
-            <FeatureLinks pressLinksKey={active.pressLinksKey} />
-          ) : (
-            <LibraryMap />
-          )}
+          <div className="w-full aspect-[1154.4/758.9]">
+            {activeTab === "press" ? (
+              <FeatureLinks pressLinksKey={active.pressLinksKey} />
+            ) : (
+              <LibraryMap />
+            )}
+          </div>
         </div>
       ) : (
         <FeatureLinks pressLinksKey={active.pressLinksKey} />
