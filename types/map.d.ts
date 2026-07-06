@@ -38,5 +38,6 @@ export interface LibraryLocation {
   state: string;
   coordinates: MapCoordinates;
   type: "public" | "academic" | "consortium";
+  note?: string;
   imageUrl?: string;
 }
