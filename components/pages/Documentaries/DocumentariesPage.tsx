@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { CallToAction } from "./components/CallToAction/CallToAction";
 import { ClientTestimonials } from "./components/ClientTestimonials/ClientTestimonials";
-import { TestimonialVideo } from "./components/TestimonialVideo/TestimonialVideo";
+import { VideoExample } from "./components/VideoExample/VideoExample";
 import { ServicesPanels } from "./components/ServicesPanels/ServicesPanels";
 // import { ServicesPanels } from "./components/ServicesPanels/ServicesPanels";
 
@@ -62,7 +62,7 @@ export const DocumentariesPage = () => {
             w-full md:w-[70%]
           "
         >
-          <TestimonialVideo />
+          <VideoExample />
         </div>
       </section>
       <section
