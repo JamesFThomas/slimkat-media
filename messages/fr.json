@@ -240,10 +240,20 @@
         "category": "Documentaire Éducatif",
         "runtime": "85 min",
         "festivals": "Jackson Film Festival, Jackson MS · Juke Joint Festival, Clarksdale MS",
-        "distribution": "PBS, CNBC",
+        "distribution": "Collective Eye Films",
         "status": "Sorti",
         "longDescription": "Farming Freedom retrace l'histoire méconnue de la perte de terres des Noirs dans le Sud américain — comment la dépossession systémique a déplacé des générations de familles agricoles, et les militants qui luttent pour récupérer cet héritage.",
         "pressLinks": {
+          "PennState": {
+            "label": "Farming Freedom Receives Critical Recognition",
+            "url": "https://journals.psu.edu/emro/article/view/8437",
+            "info": "Educational Media Reviews Online"
+          },
+          "FOXCarolina": {
+            "label": "USC Upstate screening held for Black History Month in Spartanburg",
+            "url": "https://www.youtube.com/watch?v=63nBZW_yOok&t=1",
+            "info": "FOX Carolina News"
+          },
           "DeltaNewsTV": {
             "label": "Granddaughter turns family conversations into documentary on Black land ownership",
             "url": "https://www.deltanews.tv/news/granddaughter-turns-family-conversations-into-documentary-on-black-land-ownership/article_109525ad-7bd7-4607-a5e0-8b1f38f3c4de.html",
@@ -278,11 +288,6 @@
             "label": "'Farming Freedom' documentary showcased at Mississippi Civil Rights Museum",
             "url": "https://www.wlbt.com/2024/12/01/farming-freedom-documentary-showcased-mississippi-civil-rights-museum/",
             "info": "WLBT | December 1, 2024"
-          },
-          "PennState": {
-            "label": "Farming Freedom",
-            "url": "https://journals.psu.edu/emro/article/view/8437",
-            "info": "Penn State University Press"
           }
         }
       },
@@ -322,7 +327,7 @@
       "status": "Statut"
     },
     "speaking": {
-      "header": "Conférences et Prises de Parole",
+      "header": "Conférences et Projections",
       "cta": "Réserver une Conférence",
       "speakerName": "Kayla Turner Thomas",
       "speakerBio": "Avec près de 15 ans dans la télévision locale — de productrice exécutive à cinéaste indépendante — Kayla Turner Thomas apporte une expertise de première main en narration, médias et distribution sur chaque scène où elle intervient.",
@@ -330,8 +335,7 @@
       "columns": {
         "event": "Événement",
         "date": "Date",
-        "venue": "Lieu",
-        "topic": "Sujet"
+        "venue": "Lieu"
       },
       "viewEvent": "Voir l'événement →",
       "engagements": [
@@ -340,7 +344,6 @@
           "date": "14 mars 2025",
           "venue": "Capri Theatre",
           "location": "Jackson, MS",
-          "topic": "La perte de terres des Noirs et le pouvoir du documentaire",
           "url": ""
         },
         {
@@ -348,7 +351,6 @@
           "date": "22 juin 2025",
           "venue": "Nasdaq MarketSite",
           "location": "New York, NY",
-          "topic": "La narration comme forme de plaidoyer",
           "url": ""
         },
         {
@@ -356,7 +358,6 @@
           "date": "20 janvier 2026",
           "venue": "Egyptian Theatre",
           "location": "Park City, UT",
-          "topic": "Le cinéma indépendant dans le Sud américain",
           "url": "https://sundance.org"
         },
         {
@@ -364,8 +365,49 @@
           "date": "10 mars 2026",
           "venue": "Austin Convention Center",
           "location": "Austin, TX",
-          "topic": "Obtenir une distribution en tant que cinéaste indépendant",
           "url": "https://sxsw.com"
+        },
+        {
+          "event": "Pace University Screening + Q&A",
+          "date": "30 octobre 2026",
+          "venue": "Pace University",
+          "location": "Pleasantville, NY",
+          "url": ""
+        },
+        {
+          "event": "South Carolina Black Farmers Coalition Annual Conference Screening + Q&A",
+          "date": "2 octobre 2026",
+          "venue": "South Carolina State Museum",
+          "location": "Columbia, SC",
+          "url": "https://scblackfarmers.com/annualconference/"
+        },
+        {
+          "event": "JXN Film Festival Screening + Q&A",
+          "date": "30 juillet 2026",
+          "venue": "Tougaloo College, 13h30",
+          "location": "Jackson, MS",
+          "url": "https://jxnfilmfestival.com/schedule"
+        },
+        {
+          "event": "Juke Joint Festival \"Related Event\"",
+          "date": "9 avril 2026",
+          "venue": "Crossroads Cultural Arts Center, 17h30",
+          "location": "Clarksdale, MS",
+          "url": "https://www.jukejointfestival.com/day_schedule.php?event_date=2026-04-9"
+        },
+        {
+          "event": "University of South Carolina Upstate Screening + Q&A",
+          "date": "28 février 2026",
+          "venue": "Campus Life Center, 16h30",
+          "location": "Spartanburg, SC",
+          "url": ""
+        },
+        {
+          "event": "Southeastern Louisiana University Screening + Q&A",
+          "date": "24 février 2026",
+          "venue": "Student Union Theater, 14h00",
+          "location": "Hammond, LA",
+          "url": ""
         }
       ]
     }

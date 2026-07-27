@@ -240,10 +240,20 @@
         "category": "Educational Documentary",
         "runtime": "85 min",
         "festivals": "Jackson Film Festival, Jackson MS · Juke Joint Festival, Clarksdale MS",
-        "distribution": "PBS, CNBC",
+        "distribution": "Collective Eye Films",
         "status": "Released",
         "longDescription": "Farming Freedom follows the untold story of Black land loss across the American South — tracing how systemic dispossession displaced generations of farming families, and the activists working to reclaim that legacy.",
         "pressLinks": {
+          "PennState": {
+            "label": "Farming Freedom Receives Critical Recognition",
+            "url": "https://journals.psu.edu/emro/article/view/8437",
+            "info": "Educational Media Reviews Online"
+          },
+          "FOXCarolina": {
+            "label": "USC Upstate screening held for Black History Month in Spartanburg",
+            "url": "https://www.youtube.com/watch?v=63nBZW_yOok&t=1",
+            "info": "FOX Carolina News"
+          },
           "DeltaNewsTV": {
             "label": "Granddaughter turns family conversations into documentary on Black land ownership",
             "url": "https://www.deltanews.tv/news/granddaughter-turns-family-conversations-into-documentary-on-black-land-ownership/article_109525ad-7bd7-4607-a5e0-8b1f38f3c4de.html",
@@ -278,11 +288,6 @@
             "label": "'Farming Freedom' documentary showcased at Mississippi Civil Rights Museum",
             "url": "https://www.wlbt.com/2024/12/01/farming-freedom-documentary-showcased-mississippi-civil-rights-museum/",
             "info": "WLBT | December 1, 2024"
-          },
-          "PennState": {
-            "label": "Farming Freedom",
-            "url": "https://journals.psu.edu/emro/article/view/8437",
-            "info": "Penn State University Press"
           }
         }
       },
@@ -290,7 +295,7 @@
         "title": "Asymmetric Care: A History of Bias",
         "description": "2026 · Documentary in Development",
         "imageAlt": "Asymmetric Care Documentary Poster",
-        "year": "2026",
+        "year": "2028",
         "category": "Documentary in Development",
         "runtime": "TBD",
         "festivals": "TBD",
@@ -303,7 +308,7 @@
         "title": "Farming Freedom: Roots & Returns",
         "description": "2026 · Documentary in Development",
         "imageAlt": "Farming Freedom: Roots & Returns Documentary Poster",
-        "year": "2026",
+        "year": "2030",
         "category": "Documentary in Development",
         "runtime": "TBD",
         "festivals": "TBD",
@@ -322,7 +327,7 @@
       "status": "Status"
     },
     "speaking": {
-      "header": "Speaking Engagements",
+      "header": "Speaking Engagements & Screenings",
       "cta": "Book a Speaking Engagement",
       "speakerName": "Kayla Turner Thomas",
       "speakerBio": "With nearly 15 years in local television — from executive producer to independent filmmaker — Kayla Turner Thomas brings firsthand expertise in storytelling, media, and distribution to every stage she steps on.",
@@ -330,8 +335,7 @@
       "columns": {
         "event": "Event",
         "date": "Date",
-        "venue": "Venue",
-        "topic": "Topic"
+        "venue": "Venue"
       },
       "viewEvent": "View event →",
       "engagements": [
@@ -340,7 +344,6 @@
           "date": "March 14, 2025",
           "venue": "Capri Theatre",
           "location": "Jackson, MS",
-          "topic": "Black Land Loss and the Power of Documentary Film",
           "url": ""
         },
         {
@@ -348,7 +351,6 @@
           "date": "June 22, 2025",
           "venue": "Nasdaq MarketSite",
           "location": "New York, NY",
-          "topic": "Storytelling as Advocacy",
           "url": ""
         },
         {
@@ -356,7 +358,6 @@
           "date": "January 20, 2026",
           "venue": "Egyptian Theatre",
           "location": "Park City, UT",
-          "topic": "Independent Filmmaking in the American South",
           "url": "https://sundance.org"
         },
         {
@@ -364,8 +365,49 @@
           "date": "March 10, 2026",
           "venue": "Austin Convention Center",
           "location": "Austin, TX",
-          "topic": "Securing Distribution as an Independent Filmmaker",
           "url": "https://sxsw.com"
+        },
+        {
+          "event": "Pace University Screening + Q&A",
+          "date": "October 30, 2026",
+          "venue": "Pace University",
+          "location": "Pleasantville, NY",
+          "url": ""
+        },
+        {
+          "event": "South Carolina Black Farmers Coalition Annual Conference Screening + Q&A",
+          "date": "October 2, 2026",
+          "venue": "South Carolina State Museum",
+          "location": "Columbia, SC",
+          "url": "https://scblackfarmers.com/annualconference/"
+        },
+        {
+          "event": "JXN Film Festival Screening + Q&A",
+          "date": "July 30, 2026",
+          "venue": "Tougaloo College, 1:30PM",
+          "location": "Jackson, MS",
+          "url": "https://jxnfilmfestival.com/schedule"
+        },
+        {
+          "event": "Juke Joint Festival \"Related Event\"",
+          "date": "April 9, 2026",
+          "venue": "Crossroads Cultural Arts Center, 5:30PM",
+          "location": "Clarksdale, MS",
+          "url": "https://www.jukejointfestival.com/day_schedule.php?event_date=2026-04-9"
+        },
+        {
+          "event": "University of South Carolina Upstate Screening + Q&A",
+          "date": "February 28, 2026",
+          "venue": "Campus Life Center, 4:30PM",
+          "location": "Spartanburg, SC",
+          "url": ""
+        },
+        {
+          "event": "Southeastern Louisiana University Screening + Q&A",
+          "date": "February 24, 2026",
+          "venue": "Student Union Theater, 2:00PM",
+          "location": "Hammond, LA",
+          "url": ""
         }
       ]
     }
