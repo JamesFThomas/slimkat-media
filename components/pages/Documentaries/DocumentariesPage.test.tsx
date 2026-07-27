@@ -20,8 +20,8 @@ jest.mock("./components/ClientTestimonials/ClientTestimonials", () => ({
   ClientTestimonials: () => <div data-testid="client-testimonials" />,
 }));
 
-jest.mock("./components/TestimonialVideo/TestimonialVideo", () => ({
-  TestimonialVideo: () => <div data-testid="testimonial-video" />,
+jest.mock("./components/VideoExample/VideoExample", () => ({
+  VideoExample: () => <div data-testid="example-video" />,
 }));
 
 jest.mock("./components/ServicesPanels/ServicesPanels", () => ({
@@ -70,7 +70,7 @@ describe("DocumentariesPage", () => {
   it("renders the hero image with correct alt text", () => {
     render(<DocumentariesPage />);
     expect(
-      screen.getByAltText("A family gathered together sharing stories")
+      screen.getByAltText("A family gathered together sharing stories"),
     ).toBeInTheDocument();
   });
 
@@ -86,7 +86,7 @@ describe("DocumentariesPage", () => {
 
   it("renders the TestimonialVideo in the testimonials section", () => {
     render(<DocumentariesPage />);
-    expect(screen.getByTestId("testimonial-video")).toBeInTheDocument();
+    expect(screen.getByTestId("example-video")).toBeInTheDocument();
   });
 
   it("renders the ServicesPanels in the services section", () => {

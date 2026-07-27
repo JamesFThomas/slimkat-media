@@ -4,21 +4,33 @@ export interface PressLink {
   info: string;
 }
 
+export type ProductionTabType =
+  | "trailer"
+  | "press"
+  | "filmLocator"
+  | "credits"
+  | "fiscalSponsors";
+
+export interface ProductionTab {
+  type: ProductionTabType;
+  labelKey: string; // translation key for the tab button label
+}
+
 export interface Production {
   id: number;
-  title: string; // translation key
-  description: string; // translation key
+  title: string;
+  description: string;
   imageUrl: string;
   imageUrlHorizontal?: string;
-  imageAlt: string; // translation key
-  yearKey: string; // translation key
-  categoryKey: string; // translation key
-  runtimeKey: string; // translation key
-  festivalsKey: string; // translation key
-  distributionKey: string; // translation key
-  statusKey: string; // translation key
-  longDescriptionKey: string; // translation key
-  pressLinksKey: string; // base key for t.raw()
+  imageAlt: string;
+  yearKey: string;
+  categoryKey: string;
+  runtimeKey: string;
+  distributionKey: string;
+  statusKey: string;
+  longDescriptionKey: string;
+  pressLinksKey: string;
+  tabs?: ProductionTab[]; // ordered tabs to render; omit entirely for productions with none
 }
 
 export const productions: Production[] = [
@@ -32,11 +44,18 @@ export const productions: Production[] = [
     yearKey: "productions.production1.year",
     categoryKey: "productions.production1.category",
     runtimeKey: "productions.production1.runtime",
-    festivalsKey: "productions.production1.festivals",
     distributionKey: "productions.production1.distribution",
     statusKey: "productions.production1.status",
     longDescriptionKey: "productions.production1.longDescription",
     pressLinksKey: "productions.production1.pressLinks",
+    tabs: [
+      { type: "trailer", labelKey: "productions.production1.tabs.trailer" },
+      { type: "press", labelKey: "productions.production1.tabs.press" },
+      {
+        type: "filmLocator",
+        labelKey: "productions.production1.tabs.filmLocator",
+      },
+    ],
   },
   {
     id: 2,
@@ -47,7 +66,6 @@ export const productions: Production[] = [
     yearKey: "productions.production2.year",
     categoryKey: "productions.production2.category",
     runtimeKey: "productions.production2.runtime",
-    festivalsKey: "productions.production2.festivals",
     distributionKey: "productions.production2.distribution",
     statusKey: "productions.production2.status",
     longDescriptionKey: "productions.production2.longDescription",
@@ -62,7 +80,6 @@ export const productions: Production[] = [
     yearKey: "productions.production3.year",
     categoryKey: "productions.production3.category",
     runtimeKey: "productions.production3.runtime",
-    festivalsKey: "productions.production3.festivals",
     distributionKey: "productions.production3.distribution",
     statusKey: "productions.production3.status",
     longDescriptionKey: "productions.production3.longDescription",

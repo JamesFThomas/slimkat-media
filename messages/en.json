@@ -239,7 +239,6 @@
         "year": "2025",
         "category": "Educational Documentary",
         "runtime": "85 min",
-        "festivals": "Jackson Film Festival, Jackson MS · Juke Joint Festival, Clarksdale MS",
         "distribution": "Collective Eye Films",
         "status": "Released",
         "longDescription": "Farming Freedom follows the untold story of Black land loss across the American South — tracing how systemic dispossession displaced generations of farming families, and the activists working to reclaim that legacy.",
@@ -289,6 +288,11 @@
             "url": "https://www.wlbt.com/2024/12/01/farming-freedom-documentary-showcased-mississippi-civil-rights-museum/",
             "info": "WLBT | December 1, 2024"
           }
+        },
+        "tabs": {
+          "press": "Press Highlights",
+          "filmLocator": "Film Locator",
+          "trailer": "Trailer"
         }
       },
       "production2": {
@@ -298,7 +302,6 @@
         "year": "2028",
         "category": "Documentary in Development",
         "runtime": "TBD",
-        "festivals": "TBD",
         "distribution": "TBD",
         "status": "In Development",
         "longDescription": "Asymmetric Care examines the long and documented history of medical bias against Black women in America — exploring how systemic inequities in pain treatment, diagnosis, and care have persisted across generations, and the voices working to change that reality.",
@@ -311,7 +314,6 @@
         "year": "2030",
         "category": "Documentary in Development",
         "runtime": "TBD",
-        "festivals": "TBD",
         "distribution": "TBD",
         "status": "In Development",
         "longDescription": "Farming Freedom: Roots & Returns explores what Black land ownership can truly yield — from subsistence skills like gardening, small livestock, and aquaculture, to revenue-generating opportunities through market farming, cattle, and beyond. A practical and inspiring look at how reclaiming land can transform lives.",
@@ -339,34 +341,6 @@
       },
       "viewEvent": "View event →",
       "engagements": [
-        {
-          "event": "Mississippi Documentary Festival",
-          "date": "March 14, 2025",
-          "venue": "Capri Theatre",
-          "location": "Jackson, MS",
-          "url": ""
-        },
-        {
-          "event": "CNBC Voices Summit",
-          "date": "June 22, 2025",
-          "venue": "Nasdaq MarketSite",
-          "location": "New York, NY",
-          "url": ""
-        },
-        {
-          "event": "Sundance Film Festival Panel",
-          "date": "January 20, 2026",
-          "venue": "Egyptian Theatre",
-          "location": "Park City, UT",
-          "url": "https://sundance.org"
-        },
-        {
-          "event": "SXSW Documentary Track",
-          "date": "March 10, 2026",
-          "venue": "Austin Convention Center",
-          "location": "Austin, TX",
-          "url": "https://sxsw.com"
-        },
         {
           "event": "Pace University Screening + Q&A",
           "date": "October 30, 2026",

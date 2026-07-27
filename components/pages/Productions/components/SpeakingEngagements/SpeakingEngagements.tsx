@@ -148,11 +148,7 @@ export const SpeakingEngagements = () => {
                       {engagement.venue}, {engagement.location}
                     </span>
                   </div>
-                  <div className="flex flex-col gap-1">
-                    <span className="text-xs uppercase tracking-widest text-[var(--muted-foreground)]">
-                      {t("speaking.columns.topic")}
-                    </span>
-                  </div>
+
                   {hasLink && (
                     <Link
                       href={engagement.url}
