@@ -1,23 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import Image from "next/image";
 import { FeatureInfo } from "../FeatureInfo/FeatureInfo";
 import { FeatureLinks } from "../FeatureLinks/FeatureLinks";
 import { LibraryMap } from "../LibraryMap/LibraryMap";
-import { productions, type Production } from "../../data/productions.data";
+import { useTranslations } from "next-intl";
+import {
+  productions,
+  type Production,
+  type ProductionTabType,
+} from "../../data/productions.data";
 import { ProjectCard } from "@/components/shared/ProjectCard/ProjectCard";
 
-const LIBRARY_DATA_PRODUCTION_ID = 1;
-
-type ProductionsTab = "press" | "libraries";
+const TAB_CONTENT: Partial<
+  Record<ProductionTabType, (production: Production) => ReactNode>
+> = {
+  press: (production) => (
+    <FeatureLinks pressLinksKey={production.pressLinksKey} />
+  ),
+  filmLocator: () => <LibraryMap />,
+};
 
 export const FeatureProductions = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [activeTab, setActiveTab] = useState<ProductionsTab>("press");
+  const t = useTranslations("ProductionsPage");
+  const [activeTab, setActiveTab] = useState<ProductionTabType | undefined>(
+    productions[0].tabs?.[0]?.type,
+  );
   const active: Production = productions[activeIndex];
-
-  const hasLibraryData = active.id === LIBRARY_DATA_PRODUCTION_ID;
 
   return (
     <div className="flex flex-col gap-6 w-full p-4">
@@ -29,7 +40,6 @@ export const FeatureProductions = () => {
             title={active.title}
             description={active.description}
             imageUrl={active.imageUrl}
-            imageUrlHorizontal={active.imageUrlHorizontal}
             imageAlt={active.imageAlt}
             namespace="ProductionsPage"
             showText={false}
@@ -62,52 +72,39 @@ export const FeatureProductions = () => {
           </button>
         ))}
       </div>
-      {/* Press Highlights / Libraries tabs */}
-      {hasLibraryData ? (
-        <div className="flex flex-col gap-6">
+
+      {/* Production Tabs */}
+      {active.tabs && active.tabs.length > 0 ? (
+        <div className="flex flex-col gap-4">
           <div
             role="tablist"
             className="flex gap-6 border-b border-[var(--border)]"
           >
-            <button
-              role="tab"
-              aria-selected={activeTab === "press"}
-              onClick={() => setActiveTab("press")}
-              className={`pb-2 text-sm font-medium transition-colors duration-150 border-b-2 -mb-px
-          ${
-            activeTab === "press"
-              ? "border-[var(--accent-link)] text-[var(--foreground)]"
-              : "border-transparent text-[var(--muted-foreground,#888)] hover:text-[var(--foreground)]"
-          }`}
-            >
-              Press Highlights
-            </button>
-            <button
-              role="tab"
-              aria-selected={activeTab === "libraries"}
-              onClick={() => setActiveTab("libraries")}
-              className={`pb-2 text-sm font-medium transition-colors duration-150 border-b-2 -mb-px
-          ${
-            activeTab === "libraries"
-              ? "border-[var(--accent-link)] text-[var(--foreground)]"
-              : "border-transparent text-[var(--muted-foreground,#888)] hover:text-[var(--foreground)]"
-          }`}
-            >
-              Libraries
-            </button>
+            {active.tabs.map((tab) => (
+              <button
+                key={tab.type}
+                role="tab"
+                aria-selected={activeTab === tab.type}
+                onClick={() => setActiveTab(tab.type)}
+                className={`pb-2 text-sm font-medium transition-colors duration-150 border-b-2 -mb-px
+            ${
+              activeTab === tab.type
+                ? "border-[var(--accent-link)] text-[var(--foreground)]"
+                : "border-transparent text-[var(--muted-foreground,#888)] hover:text-[var(--foreground)]"
+            }`}
+              >
+                {t(tab.labelKey)}
+              </button>
+            ))}
           </div>
 
           <div className="w-full aspect-[1154.4/758.9]">
-            {activeTab === "press" ? (
-              <FeatureLinks pressLinksKey={active.pressLinksKey} />
-            ) : (
-              <LibraryMap />
-            )}
+            {activeTab && TAB_CONTENT[activeTab]?.(active)}
           </div>
         </div>
       ) : (
         <FeatureLinks pressLinksKey={active.pressLinksKey} />
-      )}{" "}
+      )}
     </div>
   );
 };

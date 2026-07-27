@@ -4,21 +4,33 @@ export interface PressLink {
   info: string;
 }
 
+export type ProductionTabType =
+  | "trailer"
+  | "press"
+  | "filmLocator"
+  | "credits"
+  | "fiscalSponsors";
+
+export interface ProductionTab {
+  type: ProductionTabType;
+  labelKey: string; // translation key for the tab button label
+}
+
 export interface Production {
   id: number;
-  title: string; // translation key
-  description: string; // translation key
+  title: string;
+  description: string;
   imageUrl: string;
-  imageUrlHorizontal?: string;
-  imageAlt: string; // translation key
-  yearKey: string; // translation key
-  categoryKey: string; // translation key
-  runtimeKey: string; // translation key
-  festivalsKey: string; // translation key
-  distributionKey: string; // translation key
-  statusKey: string; // translation key
-  longDescriptionKey: string; // translation key
-  pressLinksKey: string; // base key for t.raw()
+  imageAlt: string;
+  yearKey: string;
+  categoryKey: string;
+  runtimeKey: string;
+  festivalsKey: string;
+  distributionKey: string;
+  statusKey: string;
+  longDescriptionKey: string;
+  pressLinksKey: string;
+  tabs?: ProductionTab[]; // ordered tabs to render; omit entirely for productions with none
 }
 
 export const productions: Production[] = [
@@ -27,7 +39,6 @@ export const productions: Production[] = [
     title: "productions.production1.title",
     description: "productions.production1.description",
     imageUrl: "/logo/Farming_Freedom_Logo2.png",
-    imageUrlHorizontal: "/logo/Farming_Freedom_Horizontal.png",
     imageAlt: "productions.production1.imageAlt",
     yearKey: "productions.production1.year",
     categoryKey: "productions.production1.category",
@@ -37,6 +48,14 @@ export const productions: Production[] = [
     statusKey: "productions.production1.status",
     longDescriptionKey: "productions.production1.longDescription",
     pressLinksKey: "productions.production1.pressLinks",
+    tabs: [
+      { type: "trailer", labelKey: "productions.production1.tabs.trailer" },
+      { type: "press", labelKey: "productions.production1.tabs.press" },
+      {
+        type: "filmLocator",
+        labelKey: "productions.production1.tabs.filmLocator",
+      },
+    ],
   },
   {
     id: 2,
