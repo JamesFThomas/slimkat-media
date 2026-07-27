@@ -26,7 +26,6 @@ export interface Production {
   yearKey: string;
   categoryKey: string;
   runtimeKey: string;
-  festivalsKey: string;
   distributionKey: string;
   statusKey: string;
   longDescriptionKey: string;
@@ -45,7 +44,6 @@ export const productions: Production[] = [
     yearKey: "productions.production1.year",
     categoryKey: "productions.production1.category",
     runtimeKey: "productions.production1.runtime",
-    festivalsKey: "productions.production1.festivals",
     distributionKey: "productions.production1.distribution",
     statusKey: "productions.production1.status",
     longDescriptionKey: "productions.production1.longDescription",
@@ -68,7 +66,6 @@ export const productions: Production[] = [
     yearKey: "productions.production2.year",
     categoryKey: "productions.production2.category",
     runtimeKey: "productions.production2.runtime",
-    festivalsKey: "productions.production2.festivals",
     distributionKey: "productions.production2.distribution",
     statusKey: "productions.production2.status",
     longDescriptionKey: "productions.production2.longDescription",
@@ -83,7 +80,6 @@ export const productions: Production[] = [
     yearKey: "productions.production3.year",
     categoryKey: "productions.production3.category",
     runtimeKey: "productions.production3.runtime",
-    festivalsKey: "productions.production3.festivals",
     distributionKey: "productions.production3.distribution",
     statusKey: "productions.production3.status",
     longDescriptionKey: "productions.production3.longDescription",

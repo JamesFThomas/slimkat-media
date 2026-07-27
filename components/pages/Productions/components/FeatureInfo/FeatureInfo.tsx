@@ -9,12 +9,14 @@ export const FeatureInfo = ({ production }: FeatureInfoProps) => {
   const t = useTranslations("ProductionsPage");
 
   const stats = [
-    { label: t('featureInfo.year'),         value: t(production.yearKey) },
-    { label: t('featureInfo.category'),     value: t(production.categoryKey) },
-    { label: t('featureInfo.runtime'),      value: t(production.runtimeKey) },
-    { label: t('featureInfo.festivals'),    value: t(production.festivalsKey) },
-    { label: t('featureInfo.distribution'), value: t(production.distributionKey) },
-    { label: t('featureInfo.status'),       value: t(production.statusKey) },
+    { label: t("featureInfo.year"), value: t(production.yearKey) },
+    { label: t("featureInfo.category"), value: t(production.categoryKey) },
+    { label: t("featureInfo.runtime"), value: t(production.runtimeKey) },
+    {
+      label: t("featureInfo.distribution"),
+      value: t(production.distributionKey),
+    },
+    { label: t("featureInfo.status"), value: t(production.statusKey) },
   ];
 
   return (
