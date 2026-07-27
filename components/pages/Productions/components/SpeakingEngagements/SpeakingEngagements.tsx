@@ -10,7 +10,6 @@ type Engagement = {
   date: string;
   venue: string;
   location: string;
-  topic: string;
   url: string;
 };
 
@@ -30,15 +29,15 @@ export const SpeakingEngagements = () => {
         <div className="w-40 h-40 lg:w-48 lg:h-48 shrink-0 rounded-full overflow-hidden relative">
           <Image
             src="/images/headshot/KaylaThomas_Headshot.jpg"
-            alt={t('speaking.speakerImageAlt')}
+            alt={t("speaking.speakerImageAlt")}
             fill
             className="object-cover object-top"
           />
         </div>
         <div className="flex flex-col gap-3 text-center lg:text-left">
-          <h3 className="text-xl font-bold">{t('speaking.speakerName')}</h3>
+          <h3 className="text-xl font-bold">{t("speaking.speakerName")}</h3>
           <p className="text-sm leading-relaxed text-[var(--muted-foreground)] max-w-xl">
-            {t('speaking.speakerBio')}
+            {t("speaking.speakerBio")}
           </p>
         </div>
       </div>
@@ -48,16 +47,13 @@ export const SpeakingEngagements = () => {
       {/* Desktop header row */}
       <div className="hidden lg:grid grid-cols-[2fr_1fr_1fr_2fr_40px] gap-4 pb-2 border-b border-[var(--border)]">
         <span className="text-xs font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-          {t('speaking.columns.event')}
+          {t("speaking.columns.event")}
         </span>
         <span className="text-xs font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-          {t('speaking.columns.date')}
+          {t("speaking.columns.date")}
         </span>
         <span className="text-xs font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-          {t('speaking.columns.venue')}
-        </span>
-        <span className="text-xs font-semibold uppercase tracking-widest text-[var(--muted-foreground)]">
-          {t('speaking.columns.topic')}
+          {t("speaking.columns.venue")}
         </span>
         <span />
       </div>
@@ -88,9 +84,6 @@ export const SpeakingEngagements = () => {
                 </span>
                 <span className="hidden lg:block text-sm text-[var(--muted-foreground)]">
                   {engagement.venue}, {engagement.location}
-                </span>
-                <span className="hidden lg:block text-sm text-[var(--muted-foreground)]">
-                  {engagement.topic}
                 </span>
 
                 {/* Link icon — desktop only, only when URL exists */}
@@ -149,7 +142,7 @@ export const SpeakingEngagements = () => {
                 <div className="lg:hidden flex flex-col gap-2 pb-4 pl-2 animate-[slideFadeIn_300ms_ease-out]">
                   <div className="flex flex-col gap-1">
                     <span className="text-xs uppercase tracking-widest text-[var(--muted-foreground)]">
-                      {t('speaking.columns.venue')}
+                      {t("speaking.columns.venue")}
                     </span>
                     <span className="text-sm">
                       {engagement.venue}, {engagement.location}
@@ -157,9 +150,8 @@ export const SpeakingEngagements = () => {
                   </div>
                   <div className="flex flex-col gap-1">
                     <span className="text-xs uppercase tracking-widest text-[var(--muted-foreground)]">
-                      {t('speaking.columns.topic')}
+                      {t("speaking.columns.topic")}
                     </span>
-                    <span className="text-sm">{engagement.topic}</span>
                   </div>
                   {hasLink && (
                     <Link
@@ -168,7 +160,7 @@ export const SpeakingEngagements = () => {
                       rel="noopener noreferrer"
                       className="text-sm text-[var(--accent-link)] hover:underline mt-1"
                     >
-                      {t('speaking.viewEvent')}
+                      {t("speaking.viewEvent")}
                     </Link>
                   )}
                 </div>
