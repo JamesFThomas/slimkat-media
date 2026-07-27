@@ -9,6 +9,7 @@ export interface Production {
   title: string; // translation key
   description: string; // translation key
   imageUrl: string;
+  imageUrlHorizontal?: string;
   imageAlt: string; // translation key
   yearKey: string; // translation key
   categoryKey: string; // translation key
@@ -26,6 +27,7 @@ export const productions: Production[] = [
     title: "productions.production1.title",
     description: "productions.production1.description",
     imageUrl: "/logo/Farming_Freedom_Logo2.png",
+    imageUrlHorizontal: "/logo/Farming_Freedom_Horizontal.png",
     imageAlt: "productions.production1.imageAlt",
     yearKey: "productions.production1.year",
     categoryKey: "productions.production1.category",
