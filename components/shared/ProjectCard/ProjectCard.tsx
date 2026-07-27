@@ -7,6 +7,7 @@ export type ProjectCardData = {
   title: string;
   description: string;
   imageUrl: string;
+  imageUrlHorizontal?: string;
   imageAlt: string;
 };
 
@@ -15,6 +16,7 @@ type ProjectCardProps = {
   title: string;
   description: string;
   imageUrl: string;
+  imageUrlHorizontal?: string;
   imageAlt: string;
   namespace?: string;
   showText?: boolean;
@@ -26,6 +28,7 @@ export const ProjectCard = ({
   title,
   description,
   imageUrl,
+  imageUrlHorizontal,
   imageAlt,
   namespace = "LandingPage",
   showText = true,
@@ -39,10 +42,20 @@ export const ProjectCard = ({
       className="w-full"
       onClick={() => handleProjectCardClick(id)}
     >
+      {/* Mobile: horizontal poster if available, otherwise falls back to the portrait image */}
+      <Image
+        src={imageUrlHorizontal ?? imageUrl}
+        alt={t(imageAlt)}
+        className="block lg:hidden w-full aspect-[875/436] object-cover rounded-xl"
+        width={875}
+        height={436}
+      />
+
+      {/* Desktop: portrait poster */}
       <Image
         src={imageUrl}
         alt={t(imageAlt)}
-        className="w-full aspect-[875/436] lg:aspect-[400/538] object-cover rounded-xl"
+        className="hidden lg:block w-full aspect-[400/538] object-cover rounded-xl"
         width={400}
         height={538}
       />

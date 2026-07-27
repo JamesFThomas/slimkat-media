@@ -11,6 +11,7 @@ const projectsList: ProjectCardData[] = [
     title: "projects.project1.title",
     description: "projects.project1.description",
     imageUrl: "/logo/Farming_Freedom_Logo2.png",
+    imageUrlHorizontal: "/logo/Farming_Freedom_Horizontal.png",
     imageAlt: "projects.project1.imageAlt",
   },
   {
@@ -18,6 +19,7 @@ const projectsList: ProjectCardData[] = [
     title: "projects.project2.title",
     description: "projects.project2.description",
     imageUrl: "/logo/nursing_history_logo.png",
+    imageUrlHorizontal: "/logo/nursing_history_horizontal.png",
     imageAlt: "projects.project2.imageAlt",
   },
   {
@@ -25,6 +27,7 @@ const projectsList: ProjectCardData[] = [
     title: "projects.project3.title",
     description: "projects.project3.description",
     imageUrl: "/logo/Roots_Returns_logo.png",
+    imageUrlHorizontal: "/logo/Roots_Returns_Horizontal.png",
     imageAlt: "projects.project3.imageAlt",
   },
 ];
