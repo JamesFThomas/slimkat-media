@@ -26,7 +26,7 @@ export const ClientTestimonials = () => {
   return (
     <div
       id="client-testimonials"
-      className="flex flex-col justify-center p-8 pr-10 md:p-12 h-full gap-6 shrink-0"
+      className="flex flex-col justify-center p-8 md:p-12 h-full gap-6 shrink-0"
     >
       {/* Eyebrow */}
       <span className="text-xs font-semibold tracking-widest uppercase text-gray-400">
