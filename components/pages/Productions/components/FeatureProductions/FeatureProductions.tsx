@@ -6,20 +6,20 @@ import { FeatureInfo } from "../FeatureInfo/FeatureInfo";
 import { FeatureLinks } from "../FeatureLinks/FeatureLinks";
 import { LibraryMap } from "../LibraryMap/LibraryMap";
 import { useTranslations } from "next-intl";
+
 import {
   productions,
   type Production,
   type ProductionTabType,
 } from "../../data/productions.data";
+
 import { ProjectCard } from "@/components/shared/ProjectCard/ProjectCard";
 
-const TAB_CONTENT: Partial<
-  Record<ProductionTabType, (production: Production) => ReactNode>
-> = {
-  press: (production) => (
-    <FeatureLinks pressLinksKey={production.pressLinksKey} />
-  ),
-  filmLocator: () => <LibraryMap />,
+import { Trailer } from "@/components/shared/Trailer/Trailer";
+
+const TAB_ASPECT_CLASS: Partial<Record<ProductionTabType, string>> = {
+  filmLocator: "aspect-[1154.4/758.9]",
+  trailer: "aspect-video",
 };
 
 export const FeatureProductions = () => {
@@ -29,6 +29,23 @@ export const FeatureProductions = () => {
     productions[0].tabs?.[0]?.type,
   );
   const active: Production = productions[activeIndex];
+
+  const TAB_CONTENT: Partial<
+    Record<ProductionTabType, (production: Production) => ReactNode>
+  > = {
+    press: (production) => (
+      <FeatureLinks pressLinksKey={production.pressLinksKey} />
+    ),
+    filmLocator: () => <LibraryMap />,
+    trailer: (production) => (
+      <Trailer
+        videoId="1212487625"
+        title={t(production.title)}
+        thumbnailUrl={production.imageUrlHorizontal ?? production.imageUrl}
+        thumbnailAlt={t(production.imageAlt)}
+      />
+    ),
+  };
 
   return (
     <div className="flex flex-col gap-6 w-full p-4">
@@ -98,7 +115,9 @@ export const FeatureProductions = () => {
             ))}
           </div>
 
-          <div className="w-full aspect-[1154.4/758.9]">
+          <div
+            className={`relative w-full ${activeTab ? (TAB_ASPECT_CLASS[activeTab] ?? "") : ""}`}
+          >
             {activeTab && TAB_CONTENT[activeTab]?.(active)}
           </div>
         </div>
