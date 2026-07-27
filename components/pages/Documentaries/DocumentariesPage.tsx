@@ -3,9 +3,8 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { CallToAction } from "./components/CallToAction/CallToAction";
 import { ClientTestimonials } from "./components/ClientTestimonials/ClientTestimonials";
-import { TestimonialVideo } from "./components/TestimonialVideo/TestimonialVideo";
+import { VideoExample } from "./components/VideoExample/VideoExample";
 import { ServicesPanels } from "./components/ServicesPanels/ServicesPanels";
-// import { ServicesPanels } from "./components/ServicesPanels/ServicesPanels";
 
 export const DocumentariesPage = () => {
   const t = useTranslations("DocumentariesPage");
@@ -16,19 +15,20 @@ export const DocumentariesPage = () => {
         id="hero"
         className="
           flex flex-col-reverse md:flex-row
-          w-full min-h-[500px] 
+          w-full h-auto md:h-[600px]
           items-stretch
+          overflow-hidden
         "
       >
         <div
           id="hero-image"
           className="
-          w-full md:w-[70%]
-          min-h-[300px] md:min-h-[500px]
-          shrink-0
-          relative
-          overflow-hidden
-        "
+            w-full md:w-[70%]
+            h-[300px] md:h-full
+            shrink-0
+            relative
+            overflow-hidden
+          "
         >
           <Image
             src="/images/pages/documentaries/documentaries-hero.png"
@@ -39,7 +39,7 @@ export const DocumentariesPage = () => {
           />
         </div>
 
-        <div id="hero-text" className=" w-full md:w-[30%]">
+        <div id="hero-text" className="w-full md:w-[30%]">
           <CallToAction />
         </div>
       </section>
@@ -48,8 +48,9 @@ export const DocumentariesPage = () => {
         id="testimonials"
         className="
           flex flex-col md:flex-row
-          w-full min-h-[500px]
+          w-full h-auto md:h-[600px]
           items-stretch
+          overflow-hidden
         "
       >
         <div id="testimonials-text" className="w-full md:w-[30%]">
@@ -58,21 +59,19 @@ export const DocumentariesPage = () => {
 
         <div
           id="testimonials-video"
-          className="
-            w-full md:w-[70%]
-          "
+          className="w-full md:w-[70%] h-[300px] md:h-full"
         >
-          <TestimonialVideo />
+          <VideoExample />
         </div>
       </section>
+
       <section
         id="services"
         className="
-    flex flex-col
-    w-full
-  "
+          flex flex-col
+          w-full
+        "
       >
-        {/* TODO: replace with <ServicesPanels /> component */}
         <div className="w-full flex items-center justify-center text-gray-400 text-sm py-12">
           <ServicesPanels />
         </div>
