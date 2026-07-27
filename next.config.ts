@@ -29,6 +29,30 @@ const nextConfig: NextConfig = {
         destination: "https://www.slimkatmedia.com/fr/foundation",
         permanent: false,
       },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.farmingfreedommovie.com" }],
+        destination: "https://www.slimkatmedia.com/productions",
+        permanent: false,
+      },
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "farmingfreedommovie.com" }],
+        destination: "https://www.slimkatmedia.com/productions",
+        permanent: false,
+      },
+      {
+        source: "/fr/:path*",
+        has: [{ type: "host", value: "www.farmingfreedommovie.com" }],
+        destination: "https://www.slimkatmedia.com/fr/productions",
+        permanent: false,
+      },
+      {
+        source: "/fr/:path*",
+        has: [{ type: "host", value: "farmingfreedommovie.com" }],
+        destination: "https://www.slimkatmedia.com/fr/productions",
+        permanent: false,
+      },
     ];
   },
 };
