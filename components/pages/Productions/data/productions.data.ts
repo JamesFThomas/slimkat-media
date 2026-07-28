@@ -23,6 +23,7 @@ export interface Production {
   imageUrl: string;
   imageUrlHorizontal?: string;
   imageAlt: string;
+  trailerVideoId?: string;
   yearKey: string;
   categoryKey: string;
   runtimeKey: string;
@@ -30,7 +31,7 @@ export interface Production {
   statusKey: string;
   longDescriptionKey: string;
   pressLinksKey: string;
-  tabs?: ProductionTab[]; // ordered tabs to render; omit entirely for productions with none
+  tabs?: ProductionTab[];
 }
 
 export const productions: Production[] = [
@@ -41,6 +42,7 @@ export const productions: Production[] = [
     imageUrl: "/logo/Farming_Freedom_Logo2.png",
     imageUrlHorizontal: "/logo/Farming_Freedom_Horizontal.png",
     imageAlt: "productions.production1.imageAlt",
+    trailerVideoId: "1212487625",
     yearKey: "productions.production1.year",
     categoryKey: "productions.production1.category",
     runtimeKey: "productions.production1.runtime",
