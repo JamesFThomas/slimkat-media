@@ -57,6 +57,7 @@ export const FeatureProductions = () => {
             title={active.title}
             description={active.description}
             imageUrl={active.imageUrl}
+            imageUrlHorizontal={active.imageUrlHorizontal}
             imageAlt={active.imageAlt}
             namespace="ProductionsPage"
             showText={false}
