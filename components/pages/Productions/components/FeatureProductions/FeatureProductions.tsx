@@ -39,7 +39,7 @@ export const FeatureProductions = () => {
     filmLocator: () => <LibraryMap />,
     trailer: (production) => (
       <Trailer
-        videoId="1212487625"
+        videoId={production.trailerVideoId ?? ""}
         title={t(production.title)}
         thumbnailUrl={production.imageUrlHorizontal ?? production.imageUrl}
         thumbnailAlt={t(production.imageAlt)}
@@ -57,6 +57,7 @@ export const FeatureProductions = () => {
             title={active.title}
             description={active.description}
             imageUrl={active.imageUrl}
+            imageUrlHorizontal={active.imageUrlHorizontal}
             imageAlt={active.imageAlt}
             namespace="ProductionsPage"
             showText={false}

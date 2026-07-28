@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "jest"
+    "test": "jest",
+    "typecheck": "tsc --noEmit",
+    "verify": "npm run typecheck && npm test"
   },
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
