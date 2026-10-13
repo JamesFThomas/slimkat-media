@@ -112,13 +112,22 @@
             "Filmed in New Orleans or Jackson, MS"
           ],
           "infoGrid": [
-            { "label": "Number of Interviews", "value": "1" },
-            { "label": "Documentary Length", "value": "5 minutes" },
+            {
+              "label": "Number of Interviews",
+              "value": "1"
+            },
+            {
+              "label": "Documentary Length",
+              "value": "5 minutes"
+            },
             {
               "label": "Filming Location",
               "value": "New Orleans or Jackson, MS"
             },
-            { "label": "Family Reunion Included", "value": false }
+            {
+              "label": "Family Reunion Included",
+              "value": false
+            }
           ]
         },
         {
@@ -131,13 +140,22 @@
             "Filmed at family's preferred location"
           ],
           "infoGrid": [
-            { "label": "Number of Interviews", "value": "2" },
-            { "label": "Documentary Length", "value": "10 minutes" },
+            {
+              "label": "Number of Interviews",
+              "value": "2"
+            },
+            {
+              "label": "Documentary Length",
+              "value": "10 minutes"
+            },
             {
               "label": "Filming Location",
               "value": "Family's preferred location"
             },
-            { "label": "Family Reunion Included", "value": false }
+            {
+              "label": "Family Reunion Included",
+              "value": false
+            }
           ]
         },
         {
@@ -150,13 +168,22 @@
             "Filmed at family's preferred location"
           ],
           "infoGrid": [
-            { "label": "Number of Interviews", "value": "3" },
-            { "label": "Documentary Length", "value": "15 minutes" },
+            {
+              "label": "Number of Interviews",
+              "value": "3"
+            },
+            {
+              "label": "Documentary Length",
+              "value": "15 minutes"
+            },
             {
               "label": "Filming Location",
               "value": "Family's preferred location"
             },
-            { "label": "Family Reunion Included", "value": false }
+            {
+              "label": "Family Reunion Included",
+              "value": false
+            }
           ]
         },
         {
@@ -169,13 +196,22 @@
             "Filmed at family's preferred location"
           ],
           "infoGrid": [
-            { "label": "Number of Interviews", "value": "3" },
-            { "label": "Documentary Length", "value": "20 minutes" },
+            {
+              "label": "Number of Interviews",
+              "value": "3"
+            },
+            {
+              "label": "Documentary Length",
+              "value": "20 minutes"
+            },
             {
               "label": "Filming Location",
               "value": "Family's preferred location"
             },
-            { "label": "Family Reunion Included", "value": false }
+            {
+              "label": "Family Reunion Included",
+              "value": false
+            }
           ]
         },
         {
@@ -188,13 +224,22 @@
             "2-day reunion in New Orleans or Jackson, MS"
           ],
           "infoGrid": [
-            { "label": "Number of Interviews", "value": "3" },
-            { "label": "Documentary Length", "value": "20 minutes" },
+            {
+              "label": "Number of Interviews",
+              "value": "3"
+            },
+            {
+              "label": "Documentary Length",
+              "value": "20 minutes"
+            },
             {
               "label": "Filming Location",
               "value": "New Orleans or Jackson, MS"
             },
-            { "label": "Family Reunion Included", "value": true }
+            {
+              "label": "Family Reunion Included",
+              "value": true
+            }
           ]
         }
       ],
@@ -386,29 +431,6 @@
       ]
     }
   },
-  "FoundationPage": {
-    "header": {
-      "title": "James & Kayla Thomas Foundation"
-    },
-    "mission": {
-      "label": "Our Mission",
-      "body": "The James & Kayla Thomas Foundation was built on a simple belief — that people, when given the right resources, opportunities, and support, can transform their lives and their communities. We exist to bridge gaps, amplify voices, and invest in the kind of change that lasts. Through education, media, health, and community development, we are committed to building a foundation that serves people first."
-    },
-    "model": {
-      "label": "How We Invest in People",
-      "voice": "VOICE",
-      "educationOuter": "EDUCATION",
-      "scholarship": "SCHOLARSHIP",
-      "media": "Media",
-      "wellness": "Wellness",
-      "community": "Community",
-      "education": "Education"
-    },
-    "programs": {
-      "title": "We are actively developing our inaugural programs.",
-      "body": "We are actively developing programming across all four focus areas. Subscribe to foundation news and ways to get involved."
-    }
-  },
   "ContactPage": {
     "header": {
       "title": "Contact Us",
@@ -452,15 +474,6 @@
       "loading": "Submitting...",
       "success": "Thank you! We'll be in touch soon.",
       "error": "Something went wrong. Please try again."
-    }
-  },
-  "Footer": {
-    "foundation": {
-      "copyright": "© {year} James & Kayla Thomas Foundation. All rights reserved.",
-      "incorporation": "A Mississippi Nonprofit Corporation"
-    },
-    "slimkat": {
-      "copyright": "© {year} SlimKat Media. All rights reserved."
     }
   }
 }

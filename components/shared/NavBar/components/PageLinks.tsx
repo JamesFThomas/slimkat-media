@@ -21,7 +21,7 @@ export const links = [
   {
     id: 4,
     name: 'Foundation',
-    href: '/foundation',
+    href: 'https://jktfoundation.org',
   },
   {
     id: 5,

@@ -112,13 +112,22 @@
             "Filmé à la Nouvelle-Orléans ou à Jackson, MS"
           ],
           "infoGrid": [
-            { "label": "Nombre d'Entretiens", "value": "1" },
-            { "label": "Durée du Documentaire", "value": "5 minutes" },
+            {
+              "label": "Nombre d'Entretiens",
+              "value": "1"
+            },
+            {
+              "label": "Durée du Documentaire",
+              "value": "5 minutes"
+            },
             {
               "label": "Lieu de Tournage",
               "value": "Nouvelle-Orléans ou Jackson, MS"
             },
-            { "label": "Réunion de Famille Incluse", "value": false }
+            {
+              "label": "Réunion de Famille Incluse",
+              "value": false
+            }
           ]
         },
         {
@@ -131,13 +140,22 @@
             "Filmé à l'endroit préféré de la famille"
           ],
           "infoGrid": [
-            { "label": "Nombre d'Entretiens", "value": "2" },
-            { "label": "Durée du Documentaire", "value": "10 minutes" },
+            {
+              "label": "Nombre d'Entretiens",
+              "value": "2"
+            },
+            {
+              "label": "Durée du Documentaire",
+              "value": "10 minutes"
+            },
             {
               "label": "Lieu de Tournage",
               "value": "Endroit préféré de la famille"
             },
-            { "label": "Réunion de Famille Incluse", "value": false }
+            {
+              "label": "Réunion de Famille Incluse",
+              "value": false
+            }
           ]
         },
         {
@@ -150,13 +168,22 @@
             "Filmé à l'endroit préféré de la famille"
           ],
           "infoGrid": [
-            { "label": "Nombre d'Entretiens", "value": "3" },
-            { "label": "Durée du Documentaire", "value": "15 minutes" },
+            {
+              "label": "Nombre d'Entretiens",
+              "value": "3"
+            },
+            {
+              "label": "Durée du Documentaire",
+              "value": "15 minutes"
+            },
             {
               "label": "Lieu de Tournage",
               "value": "Endroit préféré de la famille"
             },
-            { "label": "Réunion de Famille Incluse", "value": false }
+            {
+              "label": "Réunion de Famille Incluse",
+              "value": false
+            }
           ]
         },
         {
@@ -169,13 +196,22 @@
             "Filmé à l'endroit préféré de la famille"
           ],
           "infoGrid": [
-            { "label": "Nombre d'Entretiens", "value": "3" },
-            { "label": "Durée du Documentaire", "value": "20 minutes" },
+            {
+              "label": "Nombre d'Entretiens",
+              "value": "3"
+            },
+            {
+              "label": "Durée du Documentaire",
+              "value": "20 minutes"
+            },
             {
               "label": "Lieu de Tournage",
               "value": "Endroit préféré de la famille"
             },
-            { "label": "Réunion de Famille Incluse", "value": false }
+            {
+              "label": "Réunion de Famille Incluse",
+              "value": false
+            }
           ]
         },
         {
@@ -188,13 +224,22 @@
             "Réunion de 2 jours à la Nouvelle-Orléans ou à Jackson, MS"
           ],
           "infoGrid": [
-            { "label": "Nombre d'Entretiens", "value": "3" },
-            { "label": "Durée du Documentaire", "value": "20 minutes" },
+            {
+              "label": "Nombre d'Entretiens",
+              "value": "3"
+            },
+            {
+              "label": "Durée du Documentaire",
+              "value": "20 minutes"
+            },
             {
               "label": "Lieu de Tournage",
               "value": "Nouvelle-Orléans ou Jackson, MS"
             },
-            { "label": "Réunion de Famille Incluse", "value": true }
+            {
+              "label": "Réunion de Famille Incluse",
+              "value": true
+            }
           ]
         }
       ],
@@ -386,29 +431,6 @@
       ]
     }
   },
-  "FoundationPage": {
-    "header": {
-      "title": "Fondation James & Kayla Thomas"
-    },
-    "mission": {
-      "label": "Notre mission",
-      "body": "La Fondation James & Kayla Thomas repose sur une conviction simple — que les personnes, lorsqu'elles disposent des bonnes ressources, des bonnes opportunités et du bon soutien, peuvent transformer leur vie et leurs communautés. Nous existons pour combler les écarts, amplifier les voix et investir dans un changement durable. À travers l'éducation, les médias, la santé et le développement communautaire, nous nous engageons à bâtir une fondation qui place les personnes au premier plan."
-    },
-    "model": {
-      "label": "Comment nous investissons dans les personnes",
-      "voice": "VOIX",
-      "educationOuter": "ÉDUCATION",
-      "scholarship": "BOURSE",
-      "media": "Médias",
-      "wellness": "Bien-être",
-      "community": "Communauté",
-      "education": "Éducation"
-    },
-    "programs": {
-      "title": "Nous développons activement nos programmes inauguraux.",
-      "body": "Nous développons activement des programmes dans nos quatre domaines prioritaires. Abonnez-vous aux nouvelles de la fondation et aux façons de vous impliquer."
-    }
-  },
   "ContactPage": {
     "header": {
       "title": "Contactez-nous",
@@ -452,15 +474,6 @@
       "loading": "Envoi en cours...",
       "success": "Merci ! Nous vous contacterons bientôt.",
       "error": "Une erreur s'est produite. Veuillez réessayer."
-    }
-  },
-  "Footer": {
-    "foundation": {
-      "copyright": "© {year} Fondation James & Kayla Thomas. Tous droits réservés.",
-      "incorporation": "Société à but non lucratif du Mississippi"
-    },
-    "slimkat": {
-      "copyright": "© {year} SlimKat Media. Tous droits réservés."
     }
   }
 }

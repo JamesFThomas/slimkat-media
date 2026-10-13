@@ -6,28 +6,14 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.jktfoundation.org" }],
-        destination: "https://www.slimkatmedia.com/foundation",
-        permanent: false,
+        source: "/foundation",
+        destination: "https://jktfoundation.org",
+        permanent: true,
       },
       {
-        source: "/:path*",
-        has: [{ type: "host", value: "jktfoundation.org" }],
-        destination: "https://www.slimkatmedia.com/foundation",
-        permanent: false,
-      },
-      {
-        source: "/fr/:path*",
-        has: [{ type: "host", value: "www.jktfoundation.org" }],
-        destination: "https://www.slimkatmedia.com/fr/foundation",
-        permanent: false,
-      },
-      {
-        source: "/fr/:path*",
-        has: [{ type: "host", value: "jktfoundation.org" }],
-        destination: "https://www.slimkatmedia.com/fr/foundation",
-        permanent: false,
+        source: "/fr/foundation",
+        destination: "https://jktfoundation.org",
+        permanent: true,
       },
       {
         source: "/:path*",
