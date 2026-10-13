@@ -17,7 +17,7 @@ const linkObjects: ServiceLinkObject[] = [
   {
     id: 2,
     nameKey: 'services.links.foundation',
-    href: '/foundation',
+    href: 'https://jktfoundation.org',
   },
   {
     id: 3,

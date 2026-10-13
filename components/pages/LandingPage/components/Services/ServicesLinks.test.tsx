@@ -16,7 +16,7 @@ jest.mock("next/link", () => ({
 
 const mockLinks: ServiceLinkObject[] = [
   { id: 1, nameKey: "services.links.legacyDocumentaries", href: "/documentaries" },
-  { id: 2, nameKey: "services.links.foundation", href: "/foundation" },
+  { id: 2, nameKey: "services.links.foundation", href: "https://jktfoundation.org" },
 ];
 
 /*
@@ -62,7 +62,7 @@ describe("ServicesLinks", () => {
     expect(screen.getByRole("link", { name: "services.links.legacyDocumentaries" }))
       .toHaveAttribute("href", "/documentaries");
     expect(screen.getByRole("link", { name: "services.links.foundation" }))
-      .toHaveAttribute("href", "/foundation");
+      .toHaveAttribute("href", "https://jktfoundation.org");
   });
 
   it("calls the hover handler with the correct id on mouse enter", () => {
