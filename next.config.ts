@@ -6,6 +6,16 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/foundation",
+        destination: "https://jktfoundation.org",
+        permanent: true,
+      },
+      {
+        source: "/fr/foundation",
+        destination: "https://jktfoundation.org",
+        permanent: true,
+      },
+      {
         source: "/:path*",
         has: [{ type: "host", value: "www.farmingfreedommovie.com" }],
         destination: "https://www.slimkatmedia.com/productions",
