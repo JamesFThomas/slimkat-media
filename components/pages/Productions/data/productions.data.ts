@@ -31,6 +31,8 @@ export interface Production {
   statusKey: string;
   longDescriptionKey: string;
   pressLinksKey: string;
+  creditsKey?: string;
+  fiscalSponsorsKey?: string;
   tabs?: ProductionTab[];
 }
 
@@ -50,12 +52,19 @@ export const productions: Production[] = [
     statusKey: "productions.production1.status",
     longDescriptionKey: "productions.production1.longDescription",
     pressLinksKey: "productions.production1.pressLinks",
+    creditsKey: "productions.production1.credits",
+    fiscalSponsorsKey: "productions.production1.fiscalSponsors",
     tabs: [
       { type: "trailer", labelKey: "productions.production1.tabs.trailer" },
       { type: "press", labelKey: "productions.production1.tabs.press" },
       {
         type: "filmLocator",
         labelKey: "productions.production1.tabs.filmLocator",
+      },
+      { type: "credits", labelKey: "productions.production1.tabs.credits" },
+      {
+        type: "fiscalSponsors",
+        labelKey: "productions.production1.tabs.fiscalSponsors",
       },
     ],
   },

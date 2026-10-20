@@ -4,6 +4,8 @@ import { ReactNode, useState } from "react";
 import Image from "next/image";
 import { FeatureInfo } from "../FeatureInfo/FeatureInfo";
 import { FeatureLinks } from "../FeatureLinks/FeatureLinks";
+import { Credits } from "../Credits/Credits";
+import { FiscalSponsors } from "../FiscalSponsors/FiscalSponsors";
 import { LibraryMap } from "../LibraryMap/LibraryMap";
 import { useTranslations } from "next-intl";
 
@@ -37,6 +39,12 @@ export const FeatureProductions = () => {
       <FeatureLinks pressLinksKey={production.pressLinksKey} />
     ),
     filmLocator: () => <LibraryMap />,
+    credits: (production) => (
+      <Credits creditsKey={production.creditsKey ?? ""} />
+    ),
+    fiscalSponsors: (production) => (
+      <FiscalSponsors fiscalSponsorsKey={production.fiscalSponsorsKey ?? ""} />
+    ),
     trailer: (production) => (
       <Trailer
         videoId={production.trailerVideoId ?? ""}
