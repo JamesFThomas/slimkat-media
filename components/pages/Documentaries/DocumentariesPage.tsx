@@ -31,8 +31,8 @@ export const DocumentariesPage = () => {
           "
         >
           <Image
-            src="/images/pages/documentaries/documentaries-hero.png"
-            alt="A family gathered together sharing stories"
+            src="/images/pages/documentaries/documentaries-hero.jpg"
+            alt="Grandparents sharing a laugh with their grandchildren at home"
             fill
             className="object-cover"
             priority
