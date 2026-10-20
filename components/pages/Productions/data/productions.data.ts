@@ -28,6 +28,7 @@ export interface Production {
   categoryKey: string;
   runtimeKey: string;
   distributionKey: string;
+  distributionUrl?: string;
   statusKey: string;
   longDescriptionKey: string;
   pressLinksKey: string;
@@ -49,6 +50,7 @@ export const productions: Production[] = [
     categoryKey: "productions.production1.category",
     runtimeKey: "productions.production1.runtime",
     distributionKey: "productions.production1.distribution",
+    distributionUrl: "https://www.collectiveeye.org/products/farming-freedom",
     statusKey: "productions.production1.status",
     longDescriptionKey: "productions.production1.longDescription",
     pressLinksKey: "productions.production1.pressLinks",
