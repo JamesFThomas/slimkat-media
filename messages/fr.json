@@ -336,8 +336,56 @@
         },
         "tabs": {
           "press": "Points forts de la presse",
-          "filmLocator": "Localisateur de films",
-          "trailer": "Bande-annonce"
+          "filmLocator": "Voir le film",
+          "trailer": "Bande-annonce",
+          "credits": "Générique",
+          "fiscalSponsors": "Commanditaires fiscaux"
+        },
+        "credits": {
+          "heading": "Générique",
+          "crew": [
+            { "name": "Kayla Turner Thomas", "role": "Réalisatrice" },
+            { "name": "Kayla Turner Thomas", "role": "Scénariste" },
+            { "name": "Kayla Turner Thomas", "role": "Productrice" },
+            { "name": "James F. Thomas", "role": "Producteur associé" },
+            { "name": "Roslin Harris Foreman", "role": "Productrice associée" },
+            { "name": "Rene Michel", "role": "Producteur associé" },
+            { "name": "Kayla Turner Thomas", "role": "Monteuse" }
+          ],
+          "castHeading": "Distribution principale",
+          "cast": [
+            { "name": "James F. Thomas", "role": "Narration" },
+            { "name": "Dr. Albert Dorsey, Jr", "role": "Lui-même" },
+            { "name": "Dr. Cassie Sade Turnipseed", "role": "Elle-même" },
+            { "name": "Otis Wright, Jr", "role": "Lui-même" },
+            { "name": "Henry Lee Harris", "role": "Lui-même" },
+            { "name": "Jessie Lee Harris", "role": "Lui-même" }
+          ]
+        },
+        "fiscalSponsors": {
+          "heading": "Commanditaires fiscaux",
+          "grantStatement": "Ce documentaire a été rendu possible en partie grâce à une subvention du Mississippi Humanities Council (MHC) dans le cadre d'une subvention du National Endowment for the Humanities (NEH). Les opinions, constatations, conclusions ou recommandations exprimées dans cette annonce ne représentent pas nécessairement celles du Mississippi Humanities Council ni du National Endowment for the Humanities. En plus du financement par subvention, Farming Freedom a été rendu possible grâce à des photos fournies avec l'aimable autorisation du Mississippi Department of Archives and History.",
+          "sponsorsIntro": "Parmi les autres commanditaires ayant contribué à la réalisation de Farming Freedom :",
+          "sponsors": [
+            "SR1's Agriculture and Food Science Department",
+            "Roslin Harris Foreman",
+            "Krystian Francuz-Harris",
+            "The Cathey Family",
+            "West Gilmore St. Church of Christ",
+            "Dynamic Wellness Medical Clinic",
+            "Dr. Bennie L. & Frankie Harris",
+            "Michellda Bradshaw-Evans",
+            "Phillips Media Agency",
+            "Jessie & Jaclyne Harris",
+            "Ascension Business Solutions",
+            "LaRaine Patterson",
+            "Maurice Turner, Jr",
+            "D'Ella Lawson",
+            "Deep South Solidarity Fund",
+            "LaKeisha Henson",
+            "The Williams Family",
+            "Dr. Rebecca Martin"
+          ]
         }
       },
       "production2": {

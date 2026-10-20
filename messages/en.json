@@ -336,8 +336,56 @@
         },
         "tabs": {
           "press": "Press Highlights",
-          "filmLocator": "Film Locator",
-          "trailer": "Trailer"
+          "filmLocator": "Watch Film",
+          "trailer": "Trailer",
+          "credits": "Credits",
+          "fiscalSponsors": "Fiscal Sponsors"
+        },
+        "credits": {
+          "heading": "Credits",
+          "crew": [
+            { "name": "Kayla Turner Thomas", "role": "Director" },
+            { "name": "Kayla Turner Thomas", "role": "Writer" },
+            { "name": "Kayla Turner Thomas", "role": "Producer" },
+            { "name": "James F. Thomas", "role": "Associate Producer" },
+            { "name": "Roslin Harris Foreman", "role": "Associate Producer" },
+            { "name": "Rene Michel", "role": "Associate Producer" },
+            { "name": "Kayla Turner Thomas", "role": "Editor" }
+          ],
+          "castHeading": "Key Cast",
+          "cast": [
+            { "name": "James F. Thomas", "role": "Narration" },
+            { "name": "Dr. Albert Dorsey, Jr", "role": "Himself" },
+            { "name": "Dr. Cassie Sade Turnipseed", "role": "Herself" },
+            { "name": "Otis Wright, Jr", "role": "Himself" },
+            { "name": "Henry Lee Harris", "role": "Himself" },
+            { "name": "Jessie Lee Harris", "role": "Himself" }
+          ]
+        },
+        "fiscalSponsors": {
+          "heading": "Fiscal Sponsors",
+          "grantStatement": "This documentary was made possible in part by a grant from the Mississippi Humanities Council (MHC) under a grant from the National Endowment for the Humanities (NEH). Any views, findings, conclusions, or recommendations expressed in this announcement do not necessarily represent those of the Mississippi Humanities Council or the National Endowment for the Humanities. In addition to grant funding, Farming Freedom was made possible by photos provided courtesy of the Mississippi Department of Archives and History.",
+          "sponsorsIntro": "Additional sponsors who helped make Farming Freedom possible include:",
+          "sponsors": [
+            "SR1's Agriculture and Food Science Department",
+            "Roslin Harris Foreman",
+            "Krystian Francuz-Harris",
+            "The Cathey Family",
+            "West Gilmore St. Church of Christ",
+            "Dynamic Wellness Medical Clinic",
+            "Dr. Bennie L. & Frankie Harris",
+            "Michellda Bradshaw-Evans",
+            "Phillips Media Agency",
+            "Jessie & Jaclyne Harris",
+            "Ascension Business Solutions",
+            "LaRaine Patterson",
+            "Maurice Turner, Jr",
+            "D'Ella Lawson",
+            "Deep South Solidarity Fund",
+            "LaKeisha Henson",
+            "The Williams Family",
+            "Dr. Rebecca Martin"
+          ]
         }
       },
       "production2": {
