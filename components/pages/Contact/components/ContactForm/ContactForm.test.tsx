@@ -68,6 +68,16 @@ const fillValidForm = () => {
  *   When I blur the phone field
  *   Then I should see a phone validation error
  *
+ * Scenario: Phone field rejects a number with too many digits
+ *   Given I type a string of digits longer than a US number
+ *   When I blur the phone field
+ *   Then I should see a phone validation error
+ *
+ * Scenario: Phone field accepts a formatted US number with country code
+ *   Given I type a US number with the country code and punctuation
+ *   When I blur the phone field
+ *   Then I should not see a phone validation error
+ *
  * Scenario: Submit button enables once all required fields are valid
  *   Given I have filled all required fields with valid data
  *   When I inspect the submit button
@@ -205,6 +215,30 @@ describe("ContactForm", () => {
     expect(
       screen.getByText("Please enter a valid phone number.")
     ).toBeInTheDocument();
+  });
+
+  it("shows phone validation error when too many digits are entered", () => {
+    render(<ContactForm />);
+    const input = screen.getByPlaceholderText("(555) 000-0000");
+    fireEvent.change(input, {
+      target: { name: "phone", value: "555555555555" },
+    });
+    fireEvent.blur(input);
+    expect(
+      screen.getByText("Please enter a valid phone number.")
+    ).toBeInTheDocument();
+  });
+
+  it("accepts a formatted US number with a country code", () => {
+    render(<ContactForm />);
+    const input = screen.getByPlaceholderText("(555) 000-0000");
+    fireEvent.change(input, {
+      target: { name: "phone", value: "+1 (504) 236-9366" },
+    });
+    fireEvent.blur(input);
+    expect(
+      screen.queryByText("Please enter a valid phone number.")
+    ).not.toBeInTheDocument();
   });
 
   it("does not show a phone error when the phone field is left empty", () => {
