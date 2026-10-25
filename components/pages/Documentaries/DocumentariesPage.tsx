@@ -32,7 +32,7 @@ export const DocumentariesPage = () => {
         >
           <Image
             src="/images/pages/documentaries/documentaries-hero.jpg"
-            alt="Grandparents sharing a laugh with their grandchildren at home"
+            alt={t("hero.imageAlt")}
             fill
             className="object-cover"
             priority

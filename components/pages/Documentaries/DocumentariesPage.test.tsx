@@ -70,9 +70,7 @@ describe("DocumentariesPage", () => {
   it("renders the hero image with correct alt text", () => {
     render(<DocumentariesPage />);
     expect(
-      screen.getByAltText(
-        "Grandparents sharing a laugh with their grandchildren at home",
-      ),
+      screen.getByAltText("hero.imageAlt"),
     ).toBeInTheDocument();
   });
 

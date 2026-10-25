@@ -34,7 +34,19 @@ interface FormTouched {
 }
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const phonePattern = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
+// US numbers only, per the North American Numbering Plan. Rather than pattern
+// matching the formatting (which varies), strip to digits and check the plan's
+// own rules: 10 digits, or 11 when prefixed with the country code 1, and
+// neither the area code nor the exchange code may begin with 0 or 1.
+const phoneCharPattern = /^[0-9+().\-\s]+$/;
+const nanpPattern = /^[2-9][0-9]{2}[2-9][0-9]{6}$/;
+
+const isValidPhone = (value: string): boolean => {
+  if (!phoneCharPattern.test(value)) return false;
+  let digits = value.replace(/\D/g, "");
+  if (digits.length === 11 && digits.startsWith("1")) digits = digits.slice(1);
+  return nanpPattern.test(digits);
+};
 
 // ─── Isolated data-writing layer ─────────────────────────────────────────────
 // Swap this function's internals when migrating from Google Sheets → Azure DB.
@@ -112,7 +124,7 @@ export const ContactForm = () => {
         if (!emailPattern.test(value)) return t("errors.emailInvalid");
         return "";
       case "phone":
-        if (value.trim() !== "" && !phonePattern.test(value))
+        if (value.trim() !== "" && !isValidPhone(value))
           return t("errors.phoneInvalid");
         return "";
       case "service":
