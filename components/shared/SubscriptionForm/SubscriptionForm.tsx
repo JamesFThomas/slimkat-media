@@ -110,6 +110,10 @@ export const SubscriptionForm = () => {
     }
   };
 
+  // Shared styling. .form-input owns colour, border and focus state.
+  const errorClass = "text-(--error) font-bold text-sm mt-1";
+  const statusClass = "mt-2 text-sm font-semibold";
+
   return (
     <div className="flex flex-col">
       <form className="flex flex-col" onSubmit={handleSubmit}>
@@ -132,11 +136,19 @@ export const SubscriptionForm = () => {
             p-2
             rounded-r-md
             border-l-0
-            text-white
-            bg-black
+            bg-foreground
+            text-background
+            font-semibold
             hover:cursor-pointer
-            disabled:bg-gray-400
+            hover:opacity-90
+            focus-visible:outline-2
+            focus-visible:outline-offset-2
+            focus-visible:outline-(--foreground)
+            disabled:bg-gray-500
+            disabled:text-white
+            disabled:opacity-100
             disabled:cursor-not-allowed
+            transition-colors
             "
           >
             Subscribe
@@ -144,21 +156,23 @@ export const SubscriptionForm = () => {
         </div>
         <div id="email-error-container">
           {touched.email && emailError && (
-            <p className="text-red-800 font-bold text-sm mt-1">{emailError}</p>
+            <p className={errorClass}>{emailError}</p>
           )}
         </div>
       </form>
 
       {submitStatus === "loading" && (
-        <p className="mt-2 text-sm text-blue-700">Submitting...</p>
+        <p className={`${statusClass} text-(--muted)`}>Submitting...</p>
       )}
 
       {submitStatus === "success" && (
-        <p className="mt-2 text-sm text-green-700">Thanks for subscribing!</p>
+        <p className={`${statusClass} text-(--success)`}>
+          Thanks for subscribing!
+        </p>
       )}
 
       {submitStatus === "error" && (
-        <p className="mt-2 text-sm text-red-700">
+        <p className={`${statusClass} text-(--error)`}>
           Something went wrong. Please try again.
         </p>
       )}
