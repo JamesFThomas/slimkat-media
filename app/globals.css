@@ -8,6 +8,10 @@
   --border: #000000;
   --accent-link: #3aafa0;
   --accent-link-hover: #1f6f67;
+  --muted: #4b5563; /* secondary text, passes AA on light background */
+  --error: #b91c1c;
+  --success: #15803d;
+  color-scheme: light;
 }
 
 @theme inline {
@@ -24,6 +28,10 @@
     --surface: #141414; /* bio background for dark mode */
     --chrome: #2a2520; /* nav + footer in dark mode */
     --border: #ffffff4d; /* subtle light border */
+    --muted: #9ca3af; /* secondary text, passes AA on dark background */
+    --error: #f87171;
+    --success: #4ade80;
+    color-scheme: dark;
   }
 }
 
@@ -46,26 +54,48 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Shared form field styling. Theme tokens only, so light and dark both follow
+   --foreground instead of hardcoding a colour per scheme. */
 .form-input {
-  color: #171717;
-  border-color: #171717;
+  color: var(--foreground);
   background-color: transparent;
+  border-color: color-mix(in srgb, var(--foreground) 55%, transparent);
+  transition:
+    border-color 0.15s ease,
+    outline-color 0.15s ease;
 }
 
 .form-input::placeholder {
-  color: #6b7280;
+  color: color-mix(in srgb, var(--foreground) 55%, transparent);
 }
 
-@media (prefers-color-scheme: dark) {
-  .form-input {
-    color: #000000;
-    border-color: #ededed;
-    background-color: transparent;
-  }
+.form-input:hover {
+  border-color: var(--foreground);
+}
 
-  .form-input::placeholder {
-    color: #9ca3af;
-  }
+/* Replaces the outline stripped by outline-none. Visible in both schemes. */
+.form-input:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+  border-radius: 2px;
+  border-color: var(--foreground);
+}
+
+/* Native select menu items follow the theme rather than the UA default. */
+.form-input option {
+  color: var(--foreground);
+  background-color: var(--background);
+}
+
+/* Chrome paints autofilled fields with its own background. Override it so a
+   filled field keeps the page's surface instead of flipping to pale blue. */
+.form-input:-webkit-autofill,
+.form-input:-webkit-autofill:hover,
+.form-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--foreground);
+  -webkit-box-shadow: 0 0 0 1000px var(--background) inset;
+  caret-color: var(--foreground);
+  transition: background-color 9999s ease-in-out 0s;
 }
 
 /* controls for carousel animation */

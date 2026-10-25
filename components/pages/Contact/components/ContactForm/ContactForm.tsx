@@ -239,6 +239,19 @@ export const ContactForm = () => {
 
   // ─── Render ────────────────────────────────────────────────────────────────
 
+  // Shared field styling. .form-input owns colour, border and focus state.
+  const fieldClass = "p-2 border-b bg-transparent form-input";
+  const labelClass = "font-semibold text-sm";
+  const helperClass = "text-xs text-(--muted)";
+  const errorClass = "text-(--error) font-bold text-xs";
+
+  // Only wire aria-describedby when an error is actually on screen.
+  const describedBy = (name: keyof FormFields) =>
+    touched[name] && errors[name] ? `${name}-error` : undefined;
+
+  const isInvalid = (name: keyof FormFields) =>
+    Boolean(touched[name] && errors[name]);
+
   return (
     <div className="w-full px-4 sm:px-6 py-6 max-w-2xl mx-auto">
       <div className="bg-background border border-(--border) rounded-2xl shadow-sm p-6 sm:p-8 md:p-10">
@@ -248,27 +261,39 @@ export const ContactForm = () => {
           noValidate
         >
           {/* Full Name */}
-          <div className="flex flex-col gap-1">
-            <label className="font-semibold text-sm">
-              {t("labels.fullName")} <span className="text-red-600">*</span>
-            </label>
+          <div
+            className="flex flex-col gap-1"
+            role="group"
+            aria-labelledby="fullName-label"
+          >
+            <span id="fullName-label" className={labelClass}>
+              {t("labels.fullName")}{" "}
+              <span className="text-(--error)" aria-hidden="true">
+                *
+              </span>
+            </span>
             <div className="flex flex-col sm:flex-row gap-4">
               {/* First Name */}
               <div className="flex flex-col gap-1 flex-1">
                 <input
+                  id="firstName"
                   type="text"
                   name="firstName"
+                  autoComplete="given-name"
                   value={fields.firstName}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder={t("placeholders.firstName")}
-                  className="p-2 border-b outline-none bg-transparent form-input"
+                  aria-required="true"
+                  aria-invalid={isInvalid("firstName")}
+                  aria-describedby={describedBy("firstName")}
+                  className={fieldClass}
                 />
-                <span className="text-xs text-gray-500">
+                <label htmlFor="firstName" className={helperClass}>
                   {t("labels.firstName")}
-                </span>
+                </label>
                 {touched.firstName && errors.firstName && (
-                  <p className="text-red-700 font-bold text-xs">
+                  <p id="firstName-error" role="alert" className={errorClass}>
                     {errors.firstName}
                   </p>
                 )}
@@ -277,19 +302,24 @@ export const ContactForm = () => {
               {/* Last Name */}
               <div className="flex flex-col gap-1 flex-1">
                 <input
+                  id="lastName"
                   type="text"
                   name="lastName"
+                  autoComplete="family-name"
                   value={fields.lastName}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder={t("placeholders.lastName")}
-                  className="p-2 border-b outline-none bg-transparent form-input"
+                  aria-required="true"
+                  aria-invalid={isInvalid("lastName")}
+                  aria-describedby={describedBy("lastName")}
+                  className={fieldClass}
                 />
-                <span className="text-xs text-gray-500">
+                <label htmlFor="lastName" className={helperClass}>
                   {t("labels.lastName")}
-                </span>
+                </label>
                 {touched.lastName && errors.lastName && (
-                  <p className="text-red-700 font-bold text-xs">
+                  <p id="lastName-error" role="alert" className={errorClass}>
                     {errors.lastName}
                   </p>
                 )}
@@ -299,86 +329,134 @@ export const ContactForm = () => {
 
           {/* Email */}
           <div className="flex flex-col gap-1">
-            <label className="font-semibold text-sm">
-              {t("labels.email")} <span className="text-red-600">*</span>
+            <label htmlFor="email" className={labelClass}>
+              {t("labels.email")}{" "}
+              <span className="text-(--error)" aria-hidden="true">
+                *
+              </span>
             </label>
             <input
+              id="email"
               type="email"
               name="email"
+              autoComplete="email"
               value={fields.email}
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder={t("placeholders.email")}
-              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent text-foreground"
+              aria-required="true"
+              aria-invalid={isInvalid("email")}
+              aria-describedby={describedBy("email")}
+              className={fieldClass}
             />
             {touched.email && errors.email && (
-              <p className="text-red-700 font-bold text-xs">{errors.email}</p>
+              <p id="email-error" role="alert" className={errorClass}>
+                {errors.email}
+              </p>
             )}
           </div>
 
           {/* Phone */}
           <div className="flex flex-col gap-1">
-            <label className="font-semibold text-sm">
+            <label htmlFor="phone" className={labelClass}>
               {t("labels.phone")}
-              <span className="text-gray-400 font-normal ml-1">
+              <span className="text-(--muted) font-normal ml-1">
                 ({t("labels.optional")})
               </span>
             </label>
             <input
+              id="phone"
               type="tel"
               name="phone"
+              inputMode="tel"
+              autoComplete="tel"
               value={fields.phone}
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder={t("placeholders.phone")}
-              className="p-2 border-b border-gray-400 focus:border-black outline-none bg-transparent text-foreground"
+              aria-invalid={isInvalid("phone")}
+              aria-describedby={describedBy("phone")}
+              className={fieldClass}
             />
             {touched.phone && errors.phone && (
-              <p className="text-red-700 font-bold text-xs">{errors.phone}</p>
+              <p id="phone-error" role="alert" className={errorClass}>
+                {errors.phone}
+              </p>
             )}
           </div>
 
           {/* Service Required */}
           <div className="flex flex-col gap-1">
-            <label className="font-semibold text-sm">
-              {t("labels.service")} <span className="text-red-600">*</span>
+            <label htmlFor="service" className={labelClass}>
+              {t("labels.service")}{" "}
+              <span className="text-(--error)" aria-hidden="true">
+                *
+              </span>
             </label>
-            <select
-              name="service"
-              value={fields.service}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className="p-2 border-b outline-none bg-transparent appearance-none hover:cursor-pointer form-input"
-            >
-              <option value="" disabled>
-                {t("placeholders.service")}
-              </option>
-              <option value="documentary">
-                {t("serviceOptions.documentary")}
-              </option>
-              <option value="speaking">{t("serviceOptions.speaking")}</option>
-            </select>
+            {/* appearance-none removes the native arrow, so supply our own */}
+            <div className="relative">
+              <select
+                id="service"
+                name="service"
+                value={fields.service}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                aria-required="true"
+                aria-invalid={isInvalid("service")}
+                aria-describedby={describedBy("service")}
+                className={`${fieldClass} appearance-none hover:cursor-pointer w-full pr-8`}
+              >
+                <option value="" disabled>
+                  {t("placeholders.service")}
+                </option>
+                <option value="documentary">
+                  {t("serviceOptions.documentary")}
+                </option>
+                <option value="speaking">{t("serviceOptions.speaking")}</option>
+              </select>
+              <svg
+                className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4"
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
+                <path d="M5 7.5 10 12.5 15 7.5" strokeLinecap="round" />
+              </svg>
+            </div>
             {touched.service && errors.service && (
-              <p className="text-red-700 font-bold text-xs">{errors.service}</p>
+              <p id="service-error" role="alert" className={errorClass}>
+                {errors.service}
+              </p>
             )}
           </div>
 
           {/* Message */}
           <div className="flex flex-col gap-1">
-            <label className="font-semibold text-sm">
-              {t("labels.message")} <span className="text-red-600">*</span>
+            <label htmlFor="message" className={labelClass}>
+              {t("labels.message")}{" "}
+              <span className="text-(--error)" aria-hidden="true">
+                *
+              </span>
             </label>
             <textarea
+              id="message"
               name="message"
               value={fields.message}
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder={t("placeholders.message")}
               rows={5}
-              className="p-2 border-b outline-none bg-transparent resize-none form-input"
+              aria-required="true"
+              aria-invalid={isInvalid("message")}
+              aria-describedby={describedBy("message")}
+              className={`${fieldClass} resize-none`}
             />
             {touched.message && errors.message && (
-              <p className="text-red-700 font-bold text-xs">{errors.message}</p>
+              <p id="message-error" role="alert" className={errorClass}>
+                {errors.message}
+              </p>
             )}
           </div>
 
@@ -390,12 +468,18 @@ export const ContactForm = () => {
               mt-2
               p-3
               rounded-md
-              text-white
-              bg-black
+              bg-foreground
+              text-background
               font-semibold
               w-full
               hover:cursor-pointer
-              disabled:bg-gray-400
+              hover:opacity-90
+              focus-visible:outline-2
+              focus-visible:outline-offset-2
+              focus-visible:outline-(--foreground)
+              disabled:bg-gray-500
+              disabled:text-white
+              disabled:opacity-100
               disabled:cursor-not-allowed
               transition-colors
             "
@@ -407,16 +491,18 @@ export const ContactForm = () => {
         </form>
 
         {/* Status messages */}
-        {submitStatus === "success" && (
-          <p className="mt-4 text-sm text-green-700 font-semibold">
-            {t("status.success")}
-          </p>
-        )}
-        {submitStatus === "error" && (
-          <p className="mt-4 text-sm text-red-700 font-semibold">
-            {t("status.error")}
-          </p>
-        )}
+        <div aria-live="polite">
+          {submitStatus === "success" && (
+            <p className="mt-4 text-sm text-(--success) font-semibold">
+              {t("status.success")}
+            </p>
+          )}
+          {submitStatus === "error" && (
+            <p className="mt-4 text-sm text-(--error) font-semibold">
+              {t("status.error")}
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
