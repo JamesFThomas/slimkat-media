@@ -524,5 +524,22 @@
       "success": "Merci ! Nous vous contacterons bientôt.",
       "error": "Une erreur s'est produite. Veuillez réessayer."
     }
+  },
+  "SubscriptionForm": {
+    "labels": {
+      "submit": "S'abonner"
+    },
+    "placeholders": {
+      "email": "Entrez votre adresse e-mail"
+    },
+    "errors": {
+      "emailRequired": "L'adresse e-mail est obligatoire",
+      "emailInvalid": "Le format email@adresse.com est requis"
+    },
+    "status": {
+      "loading": "Envoi en cours...",
+      "success": "Merci pour votre abonnement !",
+      "error": "Une erreur s'est produite. Veuillez réessayer."
+    }
   }
 }

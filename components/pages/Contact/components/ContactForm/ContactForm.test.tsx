@@ -20,13 +20,13 @@ const fillValidForm = () => {
   fireEvent.change(screen.getByPlaceholderText("Last name"), {
     target: { name: "lastName", value: "Thomas" },
   });
-  fireEvent.change(screen.getByPlaceholderText("your@email.com"), {
+  fireEvent.change(screen.getByPlaceholderText("email@address.com"), {
     target: { name: "email", value: "james@example.com" },
   });
   fireEvent.change(screen.getByRole("combobox"), {
     target: { name: "service", value: "documentary" },
   });
-  fireEvent.change(screen.getByPlaceholderText("Tell us about your project..."), {
+  fireEvent.change(screen.getByPlaceholderText("Share any details about your project..."), {
     target: { name: "message", value: "I would like to book a documentary." },
   });
 };
@@ -128,14 +128,14 @@ describe("ContactForm", () => {
 
     expect(screen.getByPlaceholderText("First name")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("Last name")).toBeInTheDocument();
-    expect(screen.getByPlaceholderText("your@email.com")).toBeInTheDocument();
+    expect(screen.getByPlaceholderText("email@address.com")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("(555) 000-0000")).toBeInTheDocument();
     expect(screen.getByRole("combobox")).toBeInTheDocument();
     expect(
-      screen.getByPlaceholderText("Tell us about your project...")
+      screen.getByPlaceholderText("Share any details about your project...")
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: /send message/i })
+      screen.getByRole("button", { name: /submit/i })
     ).toBeInTheDocument();
   });
 
@@ -143,14 +143,14 @@ describe("ContactForm", () => {
 
   it("submit button is disabled when the form is empty", () => {
     render(<ContactForm />);
-    expect(screen.getByRole("button", { name: /send message/i })).toBeDisabled();
+    expect(screen.getByRole("button", { name: /submit/i })).toBeDisabled();
   });
 
   it("submit button enables once all required fields contain valid data", () => {
     render(<ContactForm />);
     fillValidForm();
     expect(
-      screen.getByRole("button", { name: /send message/i })
+      screen.getByRole("button", { name: /submit/i })
     ).not.toBeDisabled();
   });
 
@@ -160,32 +160,32 @@ describe("ContactForm", () => {
     render(<ContactForm />);
     const input = screen.getByPlaceholderText("First name");
     fireEvent.blur(input);
-    expect(screen.getByText("First name is required.")).toBeInTheDocument();
+    expect(screen.getByText("First name is required")).toBeInTheDocument();
   });
 
   it("shows last name error after blurring an empty last name field", () => {
     render(<ContactForm />);
     const input = screen.getByPlaceholderText("Last name");
     fireEvent.blur(input);
-    expect(screen.getByText("Last name is required.")).toBeInTheDocument();
+    expect(screen.getByText("Last name is required")).toBeInTheDocument();
   });
 
   it("shows email required error after blurring an empty email field", () => {
     render(<ContactForm />);
-    const input = screen.getByPlaceholderText("your@email.com");
+    const input = screen.getByPlaceholderText("email@address.com");
     fireEvent.blur(input);
-    expect(screen.getByText("Email is required.")).toBeInTheDocument();
+    expect(screen.getByText("Email is required")).toBeInTheDocument();
   });
 
   it("shows invalid email error when a malformed email is entered", () => {
     render(<ContactForm />);
-    const input = screen.getByPlaceholderText("your@email.com");
+    const input = screen.getByPlaceholderText("email@address.com");
     fireEvent.change(input, {
       target: { name: "email", value: "not-an-email" },
     });
     fireEvent.blur(input);
     expect(
-      screen.getByText("Please enter a valid email.")
+      screen.getByText("email@address.com format is required")
     ).toBeInTheDocument();
   });
 
@@ -193,16 +193,16 @@ describe("ContactForm", () => {
     render(<ContactForm />);
     const select = screen.getByRole("combobox");
     fireEvent.blur(select);
-    expect(screen.getByText("Please select a service.")).toBeInTheDocument();
+    expect(screen.getByText("Please select a service")).toBeInTheDocument();
   });
 
   it("shows message required error after blurring an empty message field", () => {
     render(<ContactForm />);
     const textarea = screen.getByPlaceholderText(
-      "Tell us about your project..."
+      "Share any details about your project..."
     );
     fireEvent.blur(textarea);
-    expect(screen.getByText("Message is required.")).toBeInTheDocument();
+    expect(screen.getByText("Please tell us about your requirement")).toBeInTheDocument();
   });
 
   it("shows phone validation error when a malformed number is entered", () => {
@@ -213,7 +213,7 @@ describe("ContactForm", () => {
     });
     fireEvent.blur(input);
     expect(
-      screen.getByText("Please enter a valid phone number.")
+      screen.getByText("Please enter a valid phone number")
     ).toBeInTheDocument();
   });
 
@@ -225,7 +225,7 @@ describe("ContactForm", () => {
     });
     fireEvent.blur(input);
     expect(
-      screen.getByText("Please enter a valid phone number.")
+      screen.getByText("Please enter a valid phone number")
     ).toBeInTheDocument();
   });
 
@@ -237,7 +237,7 @@ describe("ContactForm", () => {
     });
     fireEvent.blur(input);
     expect(
-      screen.queryByText("Please enter a valid phone number.")
+      screen.queryByText("Please enter a valid phone number")
     ).not.toBeInTheDocument();
   });
 
@@ -246,7 +246,7 @@ describe("ContactForm", () => {
     const input = screen.getByPlaceholderText("(555) 000-0000");
     fireEvent.blur(input);
     expect(
-      screen.queryByText("Please enter a valid phone number.")
+      screen.queryByText("Please enter a valid phone number")
     ).not.toBeInTheDocument();
   });
 
@@ -276,7 +276,7 @@ describe("ContactForm", () => {
     mockSearchParams.set("package", "Standard Keepsake Documentary");
     render(<ContactForm />);
     const textarea = screen.getByPlaceholderText(
-      "Tell us about your project..."
+      "Share any details about your project..."
     ) as HTMLTextAreaElement;
     expect(textarea.value).toContain("Standard Keepsake Documentary");
   });
@@ -296,11 +296,11 @@ it("shows success message and clears the form after a successful submission", as
     fillValidForm();
 
     await act(async () => {
-      fireEvent.click(screen.getByRole("button", { name: /send message/i }));
+      fireEvent.click(screen.getByRole("button", { name: /submit/i }));
     });
 
     await waitFor(() => {
-      expect(screen.getByText("Your message has been sent!")).toBeInTheDocument();
+      expect(screen.getByText("Thank you! We'll be in touch soon.")).toBeInTheDocument();
     });
 
     expect(
@@ -319,9 +319,9 @@ it("shows success message and clears the form after a successful submission", as
     render(<ContactForm />);
     fillValidForm();
 
-    fireEvent.click(screen.getByRole("button", { name: /send message/i }));
+    fireEvent.click(screen.getByRole("button", { name: /submit/i }));
 
-    expect(await screen.findByText("Sending...")).toBeInTheDocument();
+    expect(await screen.findByText("Submitting...")).toBeInTheDocument();
 
     resolveRequest({
       ok: true,
@@ -339,7 +339,7 @@ it("shows success message and clears the form after a successful submission", as
     fillValidForm();
 
     await act(async () => {
-      fireEvent.click(screen.getByRole("button", { name: /send message/i }));
+      fireEvent.click(screen.getByRole("button", { name: /submit/i }));
     });
 
     await waitFor(() => {
@@ -358,7 +358,7 @@ it("shows success message and clears the form after a successful submission", as
     fillValidForm();
 
     await act(async () => {
-      fireEvent.click(screen.getByRole("button", { name: /send message/i }));
+      fireEvent.click(screen.getByRole("button", { name: /submit/i }));
     });
 
     await waitFor(() => {
@@ -380,7 +380,7 @@ it("shows success message and clears the form after a successful submission", as
     fillValidForm();
 
     await act(async () => {
-      fireEvent.click(screen.getByRole("button", { name: /send message/i }));
+      fireEvent.click(screen.getByRole("button", { name: /submit/i }));
     });
 
     await waitFor(() => {

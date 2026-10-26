@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export const SubscriptionForm = () => {
+  const t = useTranslations("SubscriptionForm");
+
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [touched, setTouched] = useState({
@@ -33,10 +36,10 @@ export const SubscriptionForm = () => {
     let validated = true;
 
     if (email.trim() === "") {
-      setEmailError("Email is required");
+      setEmailError(t("errors.emailRequired"));
       validated = false;
     } else if (!emailPattern.test(email)) {
-      setEmailError("email@address.com format is required");
+      setEmailError(t("errors.emailInvalid"));
       validated = false;
     } else {
       setEmailError("");
@@ -119,17 +122,17 @@ export const SubscriptionForm = () => {
       <form className="flex flex-col" onSubmit={handleSubmit}>
         <div id="form-input-container" className="flex flex-row w-full">
           <input
-            id="email input"
+            id="email-input"
             className="p-2 border grow rounded-l-md border-r-0 hover:cursor-pointer bg-transparent form-input"
             type="email"
             value={email}
             onChange={handleEmailChange}
             onBlur={() => handleBlur()}
             onFocus={() => setTouched((prev) => ({ ...prev, email: true }))}
-            placeholder="Enter your email"
+            placeholder={t("placeholders.email")}
           />
           <button
-            id="subscribe button"
+            id="subscribe-button"
             type="submit"
             disabled={!valuesAreValid || submitStatus === "loading"}
             className="
@@ -151,7 +154,7 @@ export const SubscriptionForm = () => {
             transition-colors
             "
           >
-            Subscribe
+            {t("labels.submit")}
           </button>
         </div>
         <div id="email-error-container">
@@ -162,18 +165,18 @@ export const SubscriptionForm = () => {
       </form>
 
       {submitStatus === "loading" && (
-        <p className={`${statusClass} text-(--muted)`}>Submitting...</p>
+        <p className={`${statusClass} text-(--muted)`}>{t("status.loading")}</p>
       )}
 
       {submitStatus === "success" && (
         <p className={`${statusClass} text-(--success)`}>
-          Thanks for subscribing!
+          {t("status.success")}
         </p>
       )}
 
       {submitStatus === "error" && (
         <p className={`${statusClass} text-(--error)`}>
-          Something went wrong. Please try again.
+          {t("status.error")}
         </p>
       )}
     </div>
