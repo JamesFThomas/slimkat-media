@@ -524,5 +524,22 @@
       "success": "Thank you! We'll be in touch soon.",
       "error": "Something went wrong. Please try again."
     }
+  },
+  "SubscriptionForm": {
+    "labels": {
+      "submit": "Subscribe"
+    },
+    "placeholders": {
+      "email": "Enter your email"
+    },
+    "errors": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "email@address.com format is required"
+    },
+    "status": {
+      "loading": "Submitting...",
+      "success": "Thanks for subscribing!",
+      "error": "Something went wrong. Please try again."
+    }
   }
 }

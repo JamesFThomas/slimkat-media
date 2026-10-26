@@ -1,39 +1,39 @@
-export const useLocale = () => 'en';
+/*
+ * Test double for next-intl.
+ *
+ * Reads the real messages/en.json rather than a hand maintained map, so
+ * tests assert the copy visitors actually see and the two cannot drift
+ * apart. Namespace aware, matching useTranslations("Namespace") in the
+ * components.
+ */
+import messages from "../../messages/en.json";
 
-export const useTranslations = () => (key: string) => {
-  const translations: Record<string, string> = {
-    'greeting.title': 'Welcome to SlimKat Media',
-    'greeting.subtitle': 'Your podcasting partner',
-    'greeting.studioImage1Alt': 'Podcast Studio Image 1',
-    'greeting.studioImage2Alt': 'Podcast Studio Image 2',
-    'labels.fullName': 'Full Name',
-    'labels.firstName': 'First Name',
-    'labels.lastName': 'Last Name',
-    'labels.email': 'Email',
-    'labels.phone': 'Phone',
-    'labels.optional': 'Optional',
-    'labels.service': 'Service',
-    'labels.message': 'Message',
-    'labels.submit': 'Send Message',
-    'placeholders.firstName': 'First name',
-    'placeholders.lastName': 'Last name',
-    'placeholders.email': 'your@email.com',
-    'placeholders.phone': '(555) 000-0000',
-    'placeholders.service': 'Select a service',
-    'placeholders.message': 'Tell us about your project...',
-    'serviceOptions.documentary': 'Documentary Services',
-    'serviceOptions.speaking': 'Speaking Engagements',
-    'errors.firstNameRequired': 'First name is required.',
-    'errors.lastNameRequired': 'Last name is required.',
-    'errors.emailRequired': 'Email is required.',
-    'errors.emailInvalid': 'Please enter a valid email.',
-    'errors.phoneInvalid': 'Please enter a valid phone number.',
-    'errors.serviceRequired': 'Please select a service.',
-    'errors.messageRequired': 'Message is required.',
-    'status.loading': 'Sending...',
-    'status.success': 'Your message has been sent!',
-    'status.error': 'Something went wrong. Please try again.',
+const lookup = (path: string): unknown =>
+  path
+    .split(".")
+    .reduce<unknown>(
+      (value, part) =>
+        value && typeof value === "object"
+          ? (value as Record<string, unknown>)[part]
+          : undefined,
+      messages,
+    );
+
+export const useLocale = () => "en";
+
+export const useTranslations = (namespace?: string) => {
+  const resolve = (key: string) =>
+    namespace ? `${namespace}.${key}` : key;
+
+  const t = (key: string): string => {
+    const value = lookup(resolve(key));
+    // Fall back to the key path, so a missing string fails loudly in the
+    // assertion rather than silently rendering as empty.
+    return typeof value === "string" ? value : resolve(key);
   };
 
-  return translations[key] ?? key;
+  // Structured data (e.g. press links) is read with t.raw()
+  t.raw = (key: string): unknown => lookup(resolve(key));
+
+  return t;
 };
