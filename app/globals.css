@@ -4,11 +4,12 @@
   --background: #ffffff;
   --foreground: #171717;
   --surface: #f7f3ef; /* bio background for light mode */
+  --panel: #f9fafb; /* tile/panel fill, matches ServicesCard bg-gray-50 */
   --chrome: #e5e7eb; /* replaces bg-gray-200 */
   --border: #000000;
   --accent-link: #3aafa0;
   --accent-link-hover: #1f6f67;
-  --muted: #4b5563; /* secondary text, passes AA on light background */
+  --muted-foreground: #4b5563; /* secondary text, passes AA on light background */
   --error: #b91c1c;
   --success: #15803d;
   color-scheme: light;
@@ -26,9 +27,10 @@
     --background: #0a0a0a;
     --foreground: #ededed;
     --surface: #141414; /* bio background for dark mode */
+    --panel: #141414; /* tile/panel fill for dark mode */
     --chrome: #2a2520; /* nav + footer in dark mode */
     --border: #ffffff4d; /* subtle light border */
-    --muted: #9ca3af; /* secondary text, passes AA on dark background */
+    --muted-foreground: #9ca3af; /* secondary text, passes AA on dark background */
     --error: #f87171;
     --success: #4ade80;
     color-scheme: dark;

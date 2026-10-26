@@ -116,7 +116,7 @@ export const FeatureProductions = () => {
             ${
               activeTab === tab.type
                 ? "border-[var(--accent-link)] text-[var(--foreground)]"
-                : "border-transparent text-[var(--muted-foreground,#888)] hover:text-[var(--foreground)]"
+                : "border-transparent text-[var(--muted-foreground)] hover:text-[var(--foreground)]"
             }`}
               >
                 {t(tab.labelKey)}
