@@ -29,11 +29,11 @@ export const FeatureInfo = ({ production }: FeatureInfoProps) => {
   return (
     <div className="flex flex-col gap-4 w-full">
       {/* Stats grid */}
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
         {stats.map(({ label, value, href }) => (
           <div
             key={label}
-            className="flex flex-col gap-1 p-3 rounded-lg bg-[var(--muted)]"
+            className="flex flex-col gap-1 p-3 rounded-lg bg-[var(--panel)]"
           >
             <span className="text-xs text-[var(--muted-foreground)] uppercase tracking-wider">
               {label}
