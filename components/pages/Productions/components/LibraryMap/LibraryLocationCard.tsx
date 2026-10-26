@@ -20,7 +20,7 @@ export const LibraryLocationCard = ({
         {library.address}, {library.city}, {library.state}
       </p>
       {library.note && (
-        <p className="mt-1 text-[var(--muted-foreground,#aaa)] italic">
+        <p className="mt-1 text-gray-400 italic">
           {library.note}
         </p>
       )}
