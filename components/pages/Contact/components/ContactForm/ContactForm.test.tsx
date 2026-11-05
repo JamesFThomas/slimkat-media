@@ -107,6 +107,16 @@ const fillValidForm = () => {
  *   Given the form is empty
  *   When I click the submit button (if somehow enabled) or trigger validateAll
  *   Then all required field error messages should be visible
+ *
+ * Scenario: Surrounding whitespace is stripped before submission
+ *   Given I type a first name with a leading and trailing space
+ *   When the form submits successfully
+ *   Then the confirmation email request should carry the trimmed first name
+ *
+ * Scenario: The active locale travels with the confirmation email request
+ *   Given I am viewing the Contact page in a given locale
+ *   When the form submits successfully
+ *   Then the confirmation email request should include that locale
  */
 describe("ContactForm", () => {
   beforeEach(() => {
@@ -388,6 +398,61 @@ it("shows success message and clears the form after a successful submission", as
         (url as string).includes("/api/contact-confirm")
       );
       expect(confirmCall).toBeDefined();
+    });
+  });
+
+  it("trims surrounding whitespace from the first name before submitting", async () => {
+    const fetchMock = jest.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ status: "success" }),
+    });
+
+    (global as unknown as { fetch: unknown }).fetch = fetchMock;
+
+    render(<ContactForm />);
+    fillValidForm();
+    fireEvent.change(screen.getByPlaceholderText("First name"), {
+      target: { name: "firstName", value: "  James  " },
+    });
+
+    await act(async () => {
+      fireEvent.click(screen.getByRole("button", { name: /submit/i }));
+    });
+
+    await waitFor(() => {
+      const confirmCall = fetchMock.mock.calls.find(([url]) =>
+        (url as string).includes("/api/contact-confirm")
+      );
+      const payload = JSON.parse(
+        (confirmCall as [string, { body: string }])[1].body
+      );
+      expect(payload.firstName).toBe("James");
+    });
+  });
+
+  it("sends the active locale with the confirmation email request", async () => {
+    const fetchMock = jest.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ status: "success" }),
+    });
+
+    (global as unknown as { fetch: unknown }).fetch = fetchMock;
+
+    render(<ContactForm />);
+    fillValidForm();
+
+    await act(async () => {
+      fireEvent.click(screen.getByRole("button", { name: /submit/i }));
+    });
+
+    await waitFor(() => {
+      const confirmCall = fetchMock.mock.calls.find(([url]) =>
+        (url as string).includes("/api/contact-confirm")
+      );
+      const payload = JSON.parse(
+        (confirmCall as [string, { body: string }])[1].body
+      );
+      expect(payload.locale).toBe("en");
     });
   });
 });
