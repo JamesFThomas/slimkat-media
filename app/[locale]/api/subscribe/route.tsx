@@ -4,6 +4,11 @@ type GoogleSheetsResponse = {
   status: "success" | "error";
 };
 
+// Recorded against the row in the shared spreadsheet, so one tab can hold
+// every site's entries. Convention across the sites: slimkat_, foundation_,
+// farm_.
+const submissionType = "slimkat_subscription";
+
 const googleSheetsEndpoint =
   "https://script.google.com/macros/s/AKfycbxMKuWhC3PoJjj1t00WmwRaBy3K-a37eDx6x1D3gmCYdNEvDcBRBr1Dp1RYc8Z_yvoDCg/exec";
 export async function POST(request: NextRequest) {
@@ -24,7 +29,7 @@ export async function POST(request: NextRequest) {
     const upstreamResponse = await fetch(googleSheetsEndpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email, type: submissionType }),
       // optional: avoid caching surprises
       cache: "no-store",
     });

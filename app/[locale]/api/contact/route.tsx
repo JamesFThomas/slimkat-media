@@ -4,6 +4,11 @@ type GoogleSheetsResponse = {
   status: "success" | "error";
 };
 
+// Recorded against the row in the shared spreadsheet, so one tab can hold
+// every site's entries. Convention across the sites: slimkat_, foundation_,
+// farm_.
+const submissionType = "slimkat_contact";
+
 const googleSheetsEndpoint =
   "https://script.google.com/macros/s/AKfycbxMKuWhC3PoJjj1t00WmwRaBy3K-a37eDx6x1D3gmCYdNEvDcBRBr1Dp1RYc8Z_yvoDCg/exec";
 
@@ -26,7 +31,7 @@ export async function POST(request: NextRequest) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        type: "contact",
+        type: submissionType,
         firstName,
         lastName,
         email,
