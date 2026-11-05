@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 
 type ServiceOption = "documentary" | "speaking" | "";
@@ -62,6 +62,7 @@ function writeContactSubmission(payload: FormFields): Promise<Response> {
 
 export const ContactForm = () => {
   const t = useTranslations("ContactForm");
+  const locale = useLocale();
   const searchParams = useSearchParams();
 
   // Read the param once before state initializes
@@ -207,7 +208,18 @@ export const ContactForm = () => {
     try {
       setSubmitStatus("loading");
 
-      const response = await writeContactSubmission(fields);
+      // Trimmed before anything leaves the form, so the sheet row and the
+      // confirmation email both receive clean values.
+      const submission: FormFields = {
+        ...fields,
+        firstName: fields.firstName.trim(),
+        lastName: fields.lastName.trim(),
+        email: fields.email.trim(),
+        phone: fields.phone.trim(),
+        message: fields.message.trim(),
+      };
+
+      const response = await writeContactSubmission(submission);
       const result = await response.json();
 
       if (response.ok && result.status === "success") {
@@ -220,9 +232,12 @@ export const ContactForm = () => {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            email: fields.email,
-            firstName: fields.firstName,
-            service: fields.service,
+            email: submission.email,
+            firstName: submission.firstName,
+            service: submission.service,
+            // The route reads the locale from the body: this request goes to an
+            // unprefixed /api path, so the locale is not in the URL.
+            locale,
           }),
         });
       } else {

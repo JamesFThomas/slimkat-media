@@ -525,6 +525,16 @@
       "error": "Une erreur s'est produite. Veuillez réessayer."
     }
   },
+  "ContactConfirmationEmail": {
+    "subject": "SlimKat Media : nous avons bien reçu votre demande",
+    "logoAlt": "Logo SlimKat Media",
+    "heading": "Nous avons bien reçu votre demande, {firstName} !",
+    "greeting": "Bonjour {firstName},",
+    "intro": "Merci d'avoir contacté SlimKat Media. Nous avons bien reçu votre demande concernant {service} et nous vous répondrons très prochainement.",
+    "appreciation": "Nous vous remercions de votre intérêt et avons hâte d'échanger avec vous.",
+    "signOff": "À très bientôt,",
+    "team": "SlimKat Media"
+  },
   "SubscriptionForm": {
     "labels": {
       "submit": "S'abonner"

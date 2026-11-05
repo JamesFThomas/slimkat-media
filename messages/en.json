@@ -525,6 +525,16 @@
       "error": "Something went wrong. Please try again."
     }
   },
+  "ContactConfirmationEmail": {
+    "subject": "SlimKat Media: we received your inquiry",
+    "logoAlt": "SlimKat Media Logo",
+    "heading": "We received your inquiry, {firstName}!",
+    "greeting": "Hi {firstName},",
+    "intro": "Thank you for reaching out to SlimKat Media. We've received your inquiry regarding {service} and will be in touch with you shortly.",
+    "appreciation": "We appreciate your interest and look forward to connecting with you soon.",
+    "signOff": "Talk soon,",
+    "team": "SlimKat Media"
+  },
   "SubscriptionForm": {
     "labels": {
       "submit": "Subscribe"

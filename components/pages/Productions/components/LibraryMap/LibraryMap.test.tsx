@@ -9,9 +9,21 @@ jest.mock("react-simple-maps", () => ({
   ComposableMap: ({ children }: { children: React.ReactNode }) => (
     <svg>{children}</svg>
   ),
-  Geographies: ({ children }: any) => children({ geographies: [] }),
+  Geographies: ({
+    children,
+  }: {
+    children: (payload: { geographies: unknown[] }) => React.ReactNode;
+  }) => children({ geographies: [] }),
   Geography: () => null,
-  Marker: ({ children, onMouseEnter, onMouseLeave }: any) => (
+  Marker: ({
+    children,
+    onMouseEnter,
+    onMouseLeave,
+  }: {
+    children: React.ReactNode;
+    onMouseEnter?: React.MouseEventHandler<SVGGElement>;
+    onMouseLeave?: React.MouseEventHandler<SVGGElement>;
+  }) => (
     <g
       data-testid="marker"
       onMouseEnter={onMouseEnter}
