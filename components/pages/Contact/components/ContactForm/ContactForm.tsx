@@ -51,7 +51,9 @@ const isValidPhone = (value: string): boolean => {
 // ─── Isolated data-writing layer ─────────────────────────────────────────────
 // Swap this function's internals when migrating from Google Sheets → Azure DB.
 // The rest of the form never needs to change.
-function writeContactSubmission(payload: FormFields): Promise<Response> {
+function writeContactSubmission(
+  payload: FormFields & { locale: string },
+): Promise<Response> {
   return fetch("/api/contact", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -209,7 +211,7 @@ export const ContactForm = () => {
       setSubmitStatus("loading");
 
       // Trimmed before anything leaves the form, so the sheet row and the
-      // confirmation email both receive clean values.
+      // emails raised by it all receive clean values.
       const submission: FormFields = {
         ...fields,
         firstName: fields.firstName.trim(),
@@ -219,27 +221,16 @@ export const ContactForm = () => {
         message: fields.message.trim(),
       };
 
-      const response = await writeContactSubmission(submission);
+      // The locale travels in the body: this request goes to an unprefixed
+      // /api path, so it is not in the URL. The route uses it to localize the
+      // confirmation email.
+      const response = await writeContactSubmission({ ...submission, locale });
       const result = await response.json();
 
       if (response.ok && result.status === "success") {
         setSubmitStatus("success");
         clearForm();
         resetSubmitStatus();
-
-        // Trigger confirmation email
-        await fetch("/api/contact-confirm", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: submission.email,
-            firstName: submission.firstName,
-            service: submission.service,
-            // The route reads the locale from the body: this request goes to an
-            // unprefixed /api path, so the locale is not in the URL.
-            locale,
-          }),
-        });
       } else {
         setSubmitStatus("error");
         resetSubmitStatus();
