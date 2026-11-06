@@ -1,4 +1,18 @@
+import {
+  ContactConfirmationEmail,
+  type ContactConfirmationEmailCopy,
+} from "@/components/shared/ContactConfirmationEmail/ContactConfirmationEmail";
+import { SubmissionNotificationEmail } from "@/components/shared/SubmissionNotificationEmail/SubmissionNotificationEmail";
+import { notificationRecipients } from "@/lib/email/client";
+import { sendSubmissionEmails, type SubmissionEmail } from "@/lib/email/send";
+import { getTranslations } from "next-intl/server";
+import { routing } from "@/i18n/routing";
+import path from "path";
+import fs from "fs";
 import type { NextRequest } from "next/server";
+
+// fs is used to read the logo off disk, so this route cannot run on edge.
+export const runtime = "nodejs";
 
 type GoogleSheetsResponse = {
   status: "success" | "error";
@@ -12,18 +26,46 @@ const submissionType = "slimkat_contact";
 const googleSheetsEndpoint =
   "https://script.google.com/macros/s/AKfycbxMKuWhC3PoJjj1t00WmwRaBy3K-a37eDx6x1D3gmCYdNEvDcBRBr1Dp1RYc8Z_yvoDCg/exec";
 
+const sender = "SlimKat Media LLC. <no-reply@slimkatmedia.com>";
+
+// Attached and referenced by content id rather than by URL, so the logo
+// always renders even in clients that block remote images.
+const logoPath = path.join(process.cwd(), "public", "logo", "SlimKat_Logo.png");
+
+const logoAttachment = fs.readFileSync(logoPath).toString("base64");
+
+const serviceOptionKeys = ["documentary", "speaking"] as const;
+
+type ServiceOptionKey = (typeof serviceOptionKeys)[number];
+
+const isServiceOptionKey = (value: unknown): value is ServiceOptionKey =>
+  serviceOptionKeys.includes(value as ServiceOptionKey);
+
+// The form posts to an unprefixed /api path, so the locale travels in the
+// request body rather than the route segment. Anything unrecognised falls
+// back to the default locale.
+const resolveLocale = (value: unknown): string =>
+  typeof value === "string" &&
+  (routing.locales as readonly string[]).includes(value)
+    ? value
+    : routing.defaultLocale;
+
+const errorResponse = (status: number, message: string) =>
+  new Response(JSON.stringify({ status: "error", message }), {
+    status,
+    headers: { "Content-Type": "application/json" },
+  });
+
 export async function POST(request: NextRequest) {
   try {
     // 1) Parse request body safely inside try/catch
     const body = await request.json().catch(() => null);
-    const { firstName, lastName, email, phone, service, message } = body ?? {};
+    const { firstName, lastName, email, phone, service, message, locale } =
+      body ?? {};
 
     // 2) Validate required fields
     if (!firstName || !lastName || !email || !service || !message) {
-      return new Response(
-        JSON.stringify({ status: "error", message: "Missing required fields" }),
-        { status: 400, headers: { "Content-Type": "application/json" } },
-      );
+      return errorResponse(400, "Missing required fields");
     }
 
     // 3) Call Apps Script from the server (no browser CORS)
@@ -53,13 +95,7 @@ export async function POST(request: NextRequest) {
         body: upstreamText,
       });
 
-      return new Response(
-        JSON.stringify({
-          status: "error",
-          message: "Contact submission failed",
-        }),
-        { status: 502, headers: { "Content-Type": "application/json" } },
-      );
+      return errorResponse(502, "Contact submission failed");
     }
 
     // 6) Parse upstream JSON if possible, otherwise treat it as an error
@@ -73,38 +109,97 @@ export async function POST(request: NextRequest) {
         body: upstreamText,
       });
 
-      return new Response(
-        JSON.stringify({
-          status: "error",
-          message: "Contact submission failed",
-        }),
-        { status: 502, headers: { "Content-Type": "application/json" } },
-      );
+      return errorResponse(502, "Contact submission failed");
     }
 
     // 7) Interpret Apps Script response
-    if (upstreamJson?.status === "success") {
-      return new Response(
-        JSON.stringify({
-          status: "success",
-          message: "Contact submission successful",
-        }),
-        { status: 200, headers: { "Content-Type": "application/json" } },
-      );
+    if (upstreamJson?.status !== "success") {
+      console.error("Apps Script responded without success status", upstreamJson);
+
+      return errorResponse(502, "Contact submission failed");
     }
 
-    console.error("Apps Script responded without success status", upstreamJson);
+    // 8) The row is recorded, so now send the email raised by it. Sending
+    //    happens here rather than from the browser, so there is no public
+    //    endpoint that will send mail to an arbitrary address on request.
+    const resolvedLocale = resolveLocale(locale);
+    const trimmedFirstName = String(firstName).trim();
+
+    const t = await getTranslations({
+      locale: resolvedLocale,
+      namespace: "ContactConfirmationEmail",
+    });
+    const tForm = await getTranslations({
+      locale: resolvedLocale,
+      namespace: "ContactForm",
+    });
+
+    const serviceLabel = isServiceOptionKey(service)
+      ? tForm(`serviceOptions.${service}`)
+      : String(service);
+
+    const copy: ContactConfirmationEmailCopy = {
+      logoAlt: t("logoAlt"),
+      heading: t("heading", { firstName: trimmedFirstName }),
+      greeting: t("greeting", { firstName: trimmedFirstName }),
+      // The email is an HTML string, so the emphasis is interpolated as markup.
+      intro: t("intro", { service: `<strong>${serviceLabel}</strong>` }),
+      appreciation: t("appreciation"),
+      signOff: t("signOff"),
+      team: t("team"),
+    };
+
+    const emails: SubmissionEmail[] = [
+      {
+        from: sender,
+        to: email,
+        subject: t("subject"),
+        html: ContactConfirmationEmail("SlimKat_Logo", copy),
+        attachments: [
+          {
+            content: logoAttachment,
+            filename: "SlimKat_Logo.png",
+            contentId: "SlimKat_Logo",
+          },
+        ],
+      },
+    ];
+
+    const recipients = notificationRecipients();
+
+    if (recipients.length > 0) {
+      emails.push({
+        from: sender,
+        to: recipients,
+        // Replying in Outlook answers the sender rather than the mailbox.
+        replyTo: email,
+        subject: `New contact enquiry from ${trimmedFirstName} ${String(lastName).trim()}`,
+        html: SubmissionNotificationEmail("New contact enquiry", [
+          {
+            label: "Name",
+            value: `${trimmedFirstName} ${String(lastName).trim()}`,
+          },
+          { label: "Email", value: String(email) },
+          { label: "Phone", value: String(phone || "Not given") },
+          { label: "Service", value: serviceLabel },
+          { label: "Message", value: String(message) },
+          { label: "Language", value: resolvedLocale.toUpperCase() },
+        ]),
+      });
+    }
+
+    await sendSubmissionEmails("CONTACT", emails);
 
     return new Response(
-      JSON.stringify({ status: "error", message: "Contact submission failed" }),
-      { status: 502, headers: { "Content-Type": "application/json" } },
+      JSON.stringify({
+        status: "success",
+        message: "Contact submission successful",
+      }),
+      { status: 200, headers: { "Content-Type": "application/json" } },
     );
   } catch (error) {
     console.error("Error processing contact submission:", error);
 
-    return new Response(
-      JSON.stringify({ status: "error", message: "Contact submission failed" }),
-      { status: 500, headers: { "Content-Type": "application/json" } },
-    );
+    return errorResponse(500, "Contact submission failed");
   }
 }

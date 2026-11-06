@@ -1,4 +1,13 @@
+import { SubscriptionConfirmationEmail } from "@/components/shared/SubscriptionConfirmationEmail/SubscriptionConfirmationEmail";
+import { SubmissionNotificationEmail } from "@/components/shared/SubmissionNotificationEmail/SubmissionNotificationEmail";
+import { notificationRecipients } from "@/lib/email/client";
+import { sendSubmissionEmails, type SubmissionEmail } from "@/lib/email/send";
+import path from "path";
+import fs from "fs";
 import type { NextRequest } from "next/server";
+
+// fs is used to read the logo off disk, so this route cannot run on edge.
+export const runtime = "nodejs";
 
 type GoogleSheetsResponse = {
   status: "success" | "error";
@@ -11,6 +20,21 @@ const submissionType = "slimkat_subscription";
 
 const googleSheetsEndpoint =
   "https://script.google.com/macros/s/AKfycbxMKuWhC3PoJjj1t00WmwRaBy3K-a37eDx6x1D3gmCYdNEvDcBRBr1Dp1RYc8Z_yvoDCg/exec";
+
+const sender = "SlimKat Media LLC. <no-reply@slimkatmedia.com>";
+
+// Attached and referenced by content id rather than by URL, so the logo
+// always renders even in clients that block remote images.
+const logoPath = path.join(process.cwd(), "public", "logo", "SlimKat_Logo.png");
+
+const logoAttachment = fs.readFileSync(logoPath).toString("base64");
+
+const errorResponse = (status: number, message: string) =>
+  new Response(JSON.stringify({ status: "error", message }), {
+    status,
+    headers: { "Content-Type": "application/json" },
+  });
+
 export async function POST(request: NextRequest) {
   try {
     // 1) Parse request body safely inside try/catch
@@ -19,10 +43,7 @@ export async function POST(request: NextRequest) {
 
     // 2) Validate input (presence only, since that's what you have today)
     if (!email) {
-      return new Response(
-        JSON.stringify({ status: "error", message: "Email is required" }),
-        { status: 400, headers: { "Content-Type": "application/json" } },
-      );
+      return errorResponse(400, "Email is required");
     }
 
     // 3) Call Apps Script from the server (no browser CORS)
@@ -30,14 +51,13 @@ export async function POST(request: NextRequest) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, type: submissionType }),
-      // optional: avoid caching surprises
       cache: "no-store",
     });
 
     // 4) Read text first so we can log + handle non-JSON responses cleanly
     const upstreamText = await upstreamResponse.text();
 
-    // 5) If upstream is non-2xx, return a controlled error (and include details in logs)
+    // 5) If upstream is non-2xx, return a controlled error
     if (!upstreamResponse.ok) {
       console.error("Apps Script error", {
         status: upstreamResponse.status,
@@ -45,13 +65,7 @@ export async function POST(request: NextRequest) {
         body: upstreamText,
       });
 
-      return new Response(
-        JSON.stringify({
-          status: "error",
-          message: "Subscription failed",
-        }),
-        { status: 502, headers: { "Content-Type": "application/json" } },
-      );
+      return errorResponse(502, "Subscription failed");
     }
 
     // 6) Parse upstream JSON if possible, otherwise treat it as an error
@@ -65,38 +79,62 @@ export async function POST(request: NextRequest) {
         body: upstreamText,
       });
 
-      return new Response(
-        JSON.stringify({
-          status: "error",
-          message: "Subscription failed",
-        }),
-        { status: 502, headers: { "Content-Type": "application/json" } },
-      );
+      return errorResponse(502, "Subscription failed");
     }
 
     // 7) Interpret Apps Script response
-    if (upstreamJson?.status === "success") {
-      return new Response(
-        JSON.stringify({
-          status: "success",
-          message: "Subscription successful",
-        }),
-        { status: 200, headers: { "Content-Type": "application/json" } },
-      );
+    if (upstreamJson?.status !== "success") {
+      console.error("Apps Script responded without success status", upstreamJson);
+
+      return errorResponse(502, "Subscription failed");
     }
 
-    console.error("Apps Script responded without success status", upstreamJson);
+    // 8) The row is recorded, so now send the email raised by it. Sending
+    //    happens here rather than from the browser, so there is no public
+    //    endpoint that will send mail to an arbitrary address on request.
+    const emails: SubmissionEmail[] = [
+      {
+        from: sender,
+        to: email,
+        subject: "SlimKat Media: you're subscribed",
+        html: SubscriptionConfirmationEmail("SlimKat_Logo"),
+        attachments: [
+          {
+            content: logoAttachment,
+            filename: "SlimKat_Logo.png",
+            contentId: "SlimKat_Logo",
+          },
+        ],
+      },
+    ];
+
+    const recipients = notificationRecipients();
+
+    if (recipients.length > 0) {
+      emails.push({
+        from: sender,
+        to: recipients,
+        // Replying in Outlook answers the subscriber rather than the mailbox.
+        replyTo: email,
+        subject: "New subscriber on slimkatmedia.com",
+        html: SubmissionNotificationEmail("New subscriber", [
+          { label: "Email", value: String(email) },
+        ]),
+      });
+    }
+
+    await sendSubmissionEmails("SUBSCRIBE", emails);
 
     return new Response(
-      JSON.stringify({ status: "error", message: "Subscription failed" }),
-      { status: 502, headers: { "Content-Type": "application/json" } },
+      JSON.stringify({
+        status: "success",
+        message: "Subscription successful",
+      }),
+      { status: 200, headers: { "Content-Type": "application/json" } },
     );
   } catch (error) {
     console.error("Error processing subscription:", error);
 
-    return new Response(
-      JSON.stringify({ status: "error", message: "Subscription failed" }),
-      { status: 500, headers: { "Content-Type": "application/json" } },
-    );
+    return errorResponse(500, "Subscription failed");
   }
 }
