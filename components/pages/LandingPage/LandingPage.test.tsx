@@ -40,14 +40,14 @@ jest.mock("./components/Projects/ProjectCardList", () => ({
 }));
 
 /*
- * Story: Visitor lands on the SlimKat Media home page
- * In order to learn about SlimKat Media and explore their work,
+ * Story: Visitor lands on the Slim Kat Media home page
+ * In order to learn about Slim Kat Media and explore their work,
  * a visitor wants to see the hero, services, and projects sections.
  *
  * Scenario: Hero section renders with logo and subtitle
  *   Given I visit the landing page
  *   When the LandingPage mounts
- *   Then I should see the SlimKat Media logos and subtitle
+ *   Then I should see the Slim Kat Media logos and subtitle
  *
  * Scenario: Carousel renders in the hero section
  *   Given the LandingPage has mounted
@@ -90,7 +90,7 @@ describe("LandingPage", () => {
 
   it("renders both logo images in the hero section", () => {
     render(<LandingPage />);
-    const logos = screen.getAllByAltText("SlimKat Media");
+    const logos = screen.getAllByAltText("Slim Kat Media");
     expect(logos).toHaveLength(2);
   });
 

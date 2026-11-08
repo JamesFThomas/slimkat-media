@@ -30,7 +30,7 @@ jest.mock("./components/ServicesPanels/ServicesPanels", () => ({
 
 /*
  * Story: Visitor explores the Documentaries page
- * In order to learn about SlimKat Media's documentary services,
+ * In order to learn about Slim Kat Media's documentary services,
  * a visitor wants to see the hero image, testimonials, and service packages.
  *
  * Scenario: Hero image renders

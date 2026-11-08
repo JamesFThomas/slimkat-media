@@ -29,7 +29,7 @@ const mockImages: ImageCardData[] = [
 
 /*
  * Story: Visitor hovers over a service link and sees the matching image
- * In order to visually explore SlimKat Media's services,
+ * In order to visually explore Slim Kat Media's services,
  * a visitor wants to see an image appear when hovering a service link.
  *
  * Scenario: ServicesImageList renders the wrapper

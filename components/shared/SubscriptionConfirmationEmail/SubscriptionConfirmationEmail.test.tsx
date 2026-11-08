@@ -6,7 +6,7 @@ import {
 } from "./SubscriptionConfirmationEmail";
 
 const copy: SubscriptionConfirmationEmailCopy = {
-  logoAlt: "SlimKat Media Logo",
+  logoAlt: "Slim Kat Media Logo",
   heading: "Thanks for subscribing.",
   intro: "You're on the list. We'll send word so you can be there.",
   assurance: "No fixed schedule, no spam, and your address goes nowhere else.",
@@ -52,7 +52,7 @@ describe("SubscriptionConfirmationEmail", () => {
     const html = SubscriptionConfirmationEmail(logoContentId, copy);
 
     expect(html).toContain(`src="cid:${logoContentId}"`);
-    expect(html).toContain('alt="SlimKat Media Logo"');
+    expect(html).toContain('alt="Slim Kat Media Logo"');
   });
 
   it("defines the same message keys in English and French", () => {

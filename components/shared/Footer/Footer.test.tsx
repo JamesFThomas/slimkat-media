@@ -15,10 +15,10 @@ jest.mock("next/image", () => ({
  * In order to identify the site and find legal info,
  * a visitor wants to see the site footer.
  *
- * Scenario: Footer renders the SlimKat Media logo
+ * Scenario: Footer renders the Slim Kat Media logo
  *   Given I am on any page
  *   When the Footer mounts
- *   Then the SlimKat Media logo should be visible
+ *   Then the Slim Kat Media logo should be visible
  *
  * Scenario: Footer renders the copyright text
  *   Given I am on any page
@@ -34,9 +34,9 @@ describe("Footer", () => {
     jest.restoreAllMocks();
   });
 
-  it("renders the SlimKat Media logo", () => {
+  it("renders the Slim Kat Media logo", () => {
     render(<Footer />);
-    expect(screen.getByAltText("SlimKat Media Logo")).toBeInTheDocument();
+    expect(screen.getByAltText("Slim Kat Media Logo")).toBeInTheDocument();
   });
 
   it("renders the copyright text", () => {

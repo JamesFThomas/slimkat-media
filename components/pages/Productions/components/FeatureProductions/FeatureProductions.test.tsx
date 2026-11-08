@@ -93,7 +93,7 @@ jest.mock("next/image", () => ({
 
 /*
  * Story: Visitor browses the productions on the Our Work page
- * In order to explore SlimKat Media's documentary projects,
+ * In order to explore Slim Kat Media's documentary projects,
  * a visitor wants to see a featured production with its details and switch between productions.
  *
  * Scenario: First production is active by default on mount

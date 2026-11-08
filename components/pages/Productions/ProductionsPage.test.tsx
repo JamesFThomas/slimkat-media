@@ -17,7 +17,7 @@ jest.mock("./components/SpeakingEngagements/SpeakingEngagements", () => ({
 
 /*
  * Story: Visitor explores the Productions page
- * In order to learn about SlimKat Media's productions and speaking work,
+ * In order to learn about Slim Kat Media's productions and speaking work,
  * a visitor wants to see the page header, featured productions,
  * and speaking engagements sections.
  *

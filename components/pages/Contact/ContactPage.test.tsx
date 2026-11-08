@@ -13,7 +13,7 @@ jest.mock("./components/ContactForm/ContactForm", () => ({
 
 /*
  * Story: Visitor navigates to the Contact page
- * In order to get in touch with SlimKat Media,
+ * In order to get in touch with Slim Kat Media,
  * a visitor wants to see the page header and contact form.
  *
  * Scenario: Page header renders with title and subtitle

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/logo/SlimKat_Logo.png" alt="SlimKat Media Logo" width="400"/>
+  <img src="./public/logo/SlimKat_Logo.png" alt="Slim Kat Media Logo" width="400"/>
 </p>
 
 <p align="center">
@@ -17,9 +17,9 @@
 
 ## 🎬 What We Do
 
-SlimKat Media is a creative media and storytelling platform focused on producing meaningful visual content, capturing real-life stories, and building community through film, media, and service-based offerings.
+Slim Kat Media is a creative media and storytelling platform focused on producing meaningful visual content, capturing real-life stories, and building community through film, media, and service-based offerings.
 
-At its core, SlimKat Media blends **creative production**, **personal storytelling**, and **mission-driven initiatives** to create content that resonates and leaves a lasting impact.
+At its core, Slim Kat Media blends **creative production**, **personal storytelling**, and **mission-driven initiatives** to create content that resonates and leaves a lasting impact.
 
 ---
 
@@ -63,7 +63,7 @@ Each engagement is tailored to the audience and can include behind-the-scenes in
 
 ### 3. Foundation Initiatives
 
-SlimKat Media supports and works alongside the  
+Slim Kat Media supports and works alongside the  
 **James & Kayla Thomas Foundation (J&KTF)** — a 501(c)(3) organization.
 
 The foundation will serve as the umbrella for future programs, including:
@@ -78,7 +78,7 @@ More details on programs and initiatives will be added as they are developed.
 
 ## 🌐 The Platform
 
-This repository contains the source code for the SlimKat Media web application.
+This repository contains the source code for the Slim Kat Media web application.
 
 The platform is being built to:
 

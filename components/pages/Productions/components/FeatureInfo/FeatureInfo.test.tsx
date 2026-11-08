@@ -25,7 +25,7 @@ const baseProduction: Production = {
 
 /*
  * Story: Visitor reads the details of a production on the Our Work page
- * In order to learn where a SlimKat Media documentary can be obtained,
+ * In order to learn where a Slim Kat Media documentary can be obtained,
  * a visitor wants the Distribution value to link out to the distributor when one is known.
  *
  * Scenario: Distribution renders as a link when a distributionUrl exists

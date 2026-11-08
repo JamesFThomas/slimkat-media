@@ -24,7 +24,7 @@ const mockItem: CarouselItemData = {
 
 /*
  * Story: Visitor sees a single carousel image pair
- * In order to view SlimKat Media's portfolio images,
+ * In order to view Slim Kat Media's portfolio images,
  * a visitor wants each carousel item to display its left and right images.
  *
  * Scenario: CarouselItem renders both images

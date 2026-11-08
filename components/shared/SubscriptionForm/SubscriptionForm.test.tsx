@@ -11,7 +11,7 @@ function stubFetch(ok: boolean, body: object): void {
 }
 
 /*
- * Story: Visitor subscribes to SlimKat Media updates
+ * Story: Visitor subscribes to Slim Kat Media updates
  * In order to hear about upcoming screenings, panels and speaking dates,
  * a visitor wants to enter their email and subscribe.
  *

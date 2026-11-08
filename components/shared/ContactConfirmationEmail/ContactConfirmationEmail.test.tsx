@@ -6,7 +6,7 @@ import {
 } from "./ContactConfirmationEmail";
 
 const copy: ContactConfirmationEmailCopy = {
-  logoAlt: "SlimKat Media Logo",
+  logoAlt: "Slim Kat Media Logo",
   heading: "We received your inquiry, James!",
   greeting: "Hi James,",
   intro: "We've received your inquiry regarding <strong>Documentary Services</strong>.",
@@ -59,7 +59,7 @@ describe("ContactConfirmationEmail", () => {
     const html = ContactConfirmationEmail(logoContentId, copy);
 
     expect(html).toContain(`src="cid:${logoContentId}"`);
-    expect(html).toContain('alt="SlimKat Media Logo"');
+    expect(html).toContain('alt="Slim Kat Media Logo"');
   });
 
   it("renders the greeting without introducing a space before the comma", () => {

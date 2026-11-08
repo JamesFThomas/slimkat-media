@@ -31,7 +31,7 @@ jest.mock("next-intl", () => ({
 
 /*
  * Story: Visitor views press coverage for a production on the Our Work page
- * In order to read more about a SlimKat Media documentary,
+ * In order to read more about a Slim Kat Media documentary,
  * a visitor wants to see relevant press links when a production is selected.
  *
  * Scenario: Press highlights section renders when links exist
