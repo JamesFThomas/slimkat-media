@@ -2,7 +2,7 @@ import { SubmissionNotificationEmail } from "./SubmissionNotificationEmail";
 
 /*
  * Story: The team is notified of a form submission
- * In order to answer an enquiry without watching the spreadsheet,
+ * In order to answer an inquiry without watching the spreadsheet,
  * James and Kayla want an email naming what was submitted.
  *
  * Scenario: The site's accent marks which site the submission came from
