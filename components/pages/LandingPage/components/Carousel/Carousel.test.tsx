@@ -14,7 +14,7 @@ jest.mock("../Carousel/CarouselItem", () => ({
 
 /*
  * Story: Visitor views the landing page image carousel
- * In order to see Slim Kat Media's work at a glance,
+ * In order to see SlimKat Media's work at a glance,
  * a visitor on the landing page wants to see a scrolling carousel of images.
  *
  * Scenario: Carousel renders the wrapper

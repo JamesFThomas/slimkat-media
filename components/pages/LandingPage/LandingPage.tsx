@@ -35,12 +35,12 @@ export const LandingPage = () => {
               {/* Logo alternates for light and dark modes */}
               <img
                 src="/logo/SlimKat_Logo_Black.png"
-                alt="Slim Kat Media"
+                alt="SlimKat Media"
                 className="logo-light h-16 sm:h-20 w-auto"
               />
               <img
                 src="/logo/SlimKat_Logo_White1.png"
-                alt="Slim Kat Media"
+                alt="SlimKat Media"
                 className="logo-dark h-16 sm:h-20 w-auto"
               />
             </>

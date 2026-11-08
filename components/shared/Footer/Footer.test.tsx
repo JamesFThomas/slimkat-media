@@ -23,7 +23,7 @@ jest.mock("next/image", () => ({
  * Scenario: Footer renders the copyright text
  *   Given I am on any page
  *   When the Footer mounts
- *   Then the SlimKat Media copyright text should be visible
+ *   Then the Slim Kat Media LLC copyright text should be visible
  */
 describe("Footer", () => {
   beforeEach(() => {
@@ -42,7 +42,7 @@ describe("Footer", () => {
   it("renders the copyright text", () => {
     render(<Footer />);
     expect(
-      screen.getByText(/SlimKat Media\. All rights reserved\./i)
+      screen.getByText(/Slim Kat Media LLC\. All rights reserved\./i)
     ).toBeInTheDocument();
   });
 });

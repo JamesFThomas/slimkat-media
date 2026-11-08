@@ -35,7 +35,7 @@ const fillValidForm = () => {
 
 /*
  * Story: Visitor submits a contact inquiry
- * In order to reach the Slim Kat Media team,
+ * In order to reach the SlimKat Media team,
  * a visitor on the Contact page wants to fill out and submit the form.
  *
  * Scenario: Form renders all required fields

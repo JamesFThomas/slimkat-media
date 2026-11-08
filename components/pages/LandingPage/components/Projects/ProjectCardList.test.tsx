@@ -45,7 +45,7 @@ const mockProjects: ProjectCardData[] = [
 
 /*
  * Story: Visitor browses the projects section on the landing page
- * In order to explore Slim Kat Media's work,
+ * In order to explore SlimKat Media's work,
  * a visitor wants to see project cards and expand one to view its press links.
  *
  * Scenario: All project cards render when no card is active

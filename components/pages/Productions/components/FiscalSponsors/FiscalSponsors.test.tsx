@@ -25,7 +25,7 @@ jest.mock("next-intl", () => ({
 
 /*
  * Story: Visitor views the funding credits for a production on the Our Work page
- * In order to see who funded a Slim Kat Media documentary,
+ * In order to see who funded a SlimKat Media documentary,
  * a visitor wants to read the grant statement and sponsor list when the Fiscal Sponsors tab is open.
  *
  * Scenario: Fiscal Sponsors heading renders when content exists

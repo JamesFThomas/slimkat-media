@@ -145,4 +145,4 @@ The following areas will be expanded within the platform:
 
 All rights reserved.
 
-This project, its source code, branding, and media content are the intellectual property of SlimKat Media and may not be used, reproduced, or distributed without permission.
+This project, its source code, branding, and media content are the intellectual property of Slim Kat Media LLC and may not be used, reproduced, or distributed without permission.

@@ -13,7 +13,7 @@ export const Footer = () => {
           height={100}
         />
         <div className="mt-8">
-          &copy; {new Date().getFullYear()} SlimKat Media. All rights reserved.
+          &copy; {new Date().getFullYear()} Slim Kat Media LLC. All rights reserved.
         </div>
       </div>
     </footer>

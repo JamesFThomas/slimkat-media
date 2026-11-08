@@ -31,7 +31,7 @@ const mockLinks: PressLinkObject[] = [
 
 /*
  * Story: Visitor views press coverage links for an active project
- * In order to read more about a Slim Kat Media production,
+ * In order to read more about a SlimKat Media production,
  * a visitor wants to see relevant press links when a project card is expanded.
  *
  * Scenario: Press links header renders

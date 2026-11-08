@@ -11,7 +11,7 @@ const copy: SubscriptionConfirmationEmailCopy = {
   intro: "You're on the list. We'll send word so you can be there.",
   assurance: "No fixed schedule, no spam, and your address goes nowhere else.",
   signOff: "Talk soon,",
-  team: "SlimKat Media",
+  team: "Slim Kat Media LLC",
 };
 
 /*

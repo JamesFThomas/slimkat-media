@@ -12,7 +12,7 @@ const copy: ContactConfirmationEmailCopy = {
   intro: "We've received your inquiry regarding <strong>Documentary Services</strong>.",
   appreciation: "We appreciate your interest.",
   signOff: "Talk soon,",
-  team: "SlimKat Media",
+  team: "Slim Kat Media LLC",
 };
 
 /*

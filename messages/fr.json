@@ -94,7 +94,7 @@
     "hero": {
       "eyebrow": "Documentaires de Patrimoine",
       "headline": "Chaque Famille a une Histoire qui Mérite d'Être Préservée",
-      "body": "Slim Kat Media capture les voix, les souvenirs et les moments qui définissent le patrimoine de votre famille — avant qu'ils ne disparaissent. Laissez-nous transformer votre histoire en un souvenir cinématographique qui vivra pour toujours.",
+      "body": "SlimKat Media capture les voix, les souvenirs et les moments qui définissent le patrimoine de votre famille — avant qu'ils ne disparaissent. Laissez-nous transformer votre histoire en un souvenir cinématographique qui vivra pour toujours.",
       "cta": "Commencer Votre Documentaire",
       "imageAlt": "Des grands-parents partageant un rire avec leurs petits-enfants à la maison"
     },
@@ -218,7 +218,7 @@
         {
           "title": "Documentaire Réunion de Famille",
           "price": "25 000 $",
-          "description": "Le forfait ultime — un documentaire complet plus une réunion de famille de 2 jours organisée par Slim Kat Media.",
+          "description": "Le forfait ultime — un documentaire complet plus une réunion de famille de 2 jours organisée par SlimKat Media.",
           "features": [
             "3 entretiens",
             "Documentaire de 20 minutes",
@@ -252,7 +252,7 @@
         {
           "name": "Patricia Williams",
           "location": "Jackson, MS",
-          "quote": "Slim Kat Media a offert à notre famille quelque chose que nous chérirons pour des générations. Regarder ma mère raconter son histoire à l'écran a été l'une des expériences les plus émouvantes de ma vie."
+          "quote": "SlimKat Media a offert à notre famille quelque chose que nous chérirons pour des générations. Regarder ma mère raconter son histoire à l'écran a été l'une des expériences les plus émouvantes de ma vie."
         },
         {
           "name": "Marcus & Denise Johnson",
@@ -526,14 +526,14 @@
     }
   },
   "ContactConfirmationEmail": {
-    "subject": "SlimKat Media : nous avons bien reçu votre demande",
+    "subject": "Slim Kat Media LLC : nous avons bien reçu votre demande",
     "logoAlt": "Logo SlimKat Media",
     "heading": "Nous avons bien reçu votre demande, {firstName} !",
     "greeting": "Bonjour {firstName},",
-    "intro": "Merci d'avoir contacté SlimKat Media. Nous avons bien reçu votre demande concernant {service} et nous vous répondrons très prochainement.",
+    "intro": "Merci d'avoir contacté Slim Kat Media LLC. Nous avons bien reçu votre demande concernant {service} et nous vous répondrons très prochainement.",
     "appreciation": "Nous vous remercions de votre intérêt et avons hâte d'échanger avec vous.",
     "signOff": "À très bientôt,",
-    "team": "SlimKat Media"
+    "team": "Slim Kat Media LLC"
   },
   "SubscriptionForm": {
     "labels": {
@@ -553,12 +553,12 @@
     }
   },
   "SubscriptionConfirmationEmail": {
-    "subject": "SlimKat Media : votre abonnement est confirmé",
+    "subject": "Slim Kat Media LLC : votre abonnement est confirmé",
     "logoAlt": "Logo SlimKat Media",
     "heading": "Merci de votre abonnement.",
     "intro": "Vous êtes inscrit. Au fil des projections, des tables rondes et des conférences de Kayla, nous vous écrirons pour que vous puissiez y assister.",
     "assurance": "Pas de calendrier fixe, pas de spam, et votre adresse ne va nulle part ailleurs.",
     "signOff": "À très bientôt,",
-    "team": "SlimKat Media"
+    "team": "Slim Kat Media LLC"
   }
 }

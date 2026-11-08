@@ -26,7 +26,7 @@ jest.mock("next-intl", () => ({
 
 /*
  * Story: Visitor views the credits for a production on the Our Work page
- * In order to see who made a Slim Kat Media documentary,
+ * In order to see who made a SlimKat Media documentary,
  * a visitor wants to read the crew and key cast when the Credits tab is open.
  *
  * Scenario: Credits heading renders when credits exist

@@ -94,7 +94,7 @@
     "hero": {
       "eyebrow": "Legacy Documentaries",
       "headline": "Every Family Has a Story Worth Preserving",
-      "body": "Slim Kat Media captures the voices, memories, and moments that define your family's legacy — before they're gone. Let us turn your story into a cinematic keepsake that lives forever.",
+      "body": "SlimKat Media captures the voices, memories, and moments that define your family's legacy — before they're gone. Let us turn your story into a cinematic keepsake that lives forever.",
       "cta": "Start Your Documentary",
       "imageAlt": "Grandparents sharing a laugh with their grandchildren at home"
     },
@@ -218,7 +218,7 @@
         {
           "title": "Family Reunion Documentary",
           "price": "$25,000",
-          "description": "The ultimate package — a full documentary plus a 2-day family reunion organized and hosted by Slim Kat Media.",
+          "description": "The ultimate package — a full documentary plus a 2-day family reunion organized and hosted by SlimKat Media.",
           "features": [
             "3 interviews",
             "20-minute documentary",
@@ -252,7 +252,7 @@
         {
           "name": "Patricia Williams",
           "location": "Jackson, MS",
-          "quote": "Slim Kat Media gave our family something we will treasure for generations. Watching my mother tell her story on screen was one of the most emotional and beautiful experiences of my life."
+          "quote": "SlimKat Media gave our family something we will treasure for generations. Watching my mother tell her story on screen was one of the most emotional and beautiful experiences of my life."
         },
         {
           "name": "Marcus & Denise Johnson",
@@ -526,14 +526,14 @@
     }
   },
   "ContactConfirmationEmail": {
-    "subject": "SlimKat Media: we received your inquiry",
+    "subject": "Slim Kat Media LLC: we received your inquiry",
     "logoAlt": "SlimKat Media Logo",
     "heading": "We received your inquiry, {firstName}!",
     "greeting": "Hi {firstName},",
-    "intro": "Thank you for reaching out to SlimKat Media. We've received your inquiry regarding {service} and will be in touch with you shortly.",
+    "intro": "Thank you for reaching out to Slim Kat Media LLC. We've received your inquiry regarding {service} and will be in touch with you shortly.",
     "appreciation": "We appreciate your interest and look forward to connecting with you soon.",
     "signOff": "Talk soon,",
-    "team": "SlimKat Media"
+    "team": "Slim Kat Media LLC"
   },
   "SubscriptionForm": {
     "labels": {
@@ -553,12 +553,12 @@
     }
   },
   "SubscriptionConfirmationEmail": {
-    "subject": "SlimKat Media: you're subscribed",
+    "subject": "Slim Kat Media LLC: you're subscribed",
     "logoAlt": "SlimKat Media Logo",
     "heading": "Thanks for subscribing.",
     "intro": "You're on the list. As Kayla's work takes her to new screenings, panels and speaking engagements, we'll send word so you can be there.",
     "assurance": "No fixed schedule, no spam, and your address goes nowhere else.",
     "signOff": "Talk soon,",
-    "team": "SlimKat Media"
+    "team": "Slim Kat Media LLC"
   }
 }
