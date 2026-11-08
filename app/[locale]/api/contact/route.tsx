@@ -164,7 +164,7 @@ export async function POST(request: NextRequest) {
         to: recipients,
         // Replying in Outlook answers the sender rather than the mailbox.
         replyTo: email,
-        subject: `New contact enquiry from ${trimmedFirstName} ${String(lastName).trim()}`,
+        subject: `New contact inquiry from ${trimmedFirstName} ${String(lastName).trim()} on slimkatmedia.com`,
         html: SubmissionNotificationEmail("New Slim Kat Contact", [
           {
             label: "Name",
