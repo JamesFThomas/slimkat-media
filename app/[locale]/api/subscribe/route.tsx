@@ -20,6 +20,9 @@ export const runtime = "nodejs";
 
 type GoogleSheetsResponse = {
   status: "success" | "error";
+  // Set when the address has already subscribed from this site. The row
+  // is not written again, so there is nothing to confirm.
+  duplicate?: boolean;
 };
 
 // Recorded against the row in the shared spreadsheet, so one tab can hold
@@ -125,7 +128,17 @@ export async function POST(request: NextRequest) {
       return errorResponse(502, "Subscription failed");
     }
 
-    // 10) The row is recorded, so now send the email raised by it. Sending
+    // 10) A repeat signup from this site wrote no row, so there is nothing
+    //     to confirm and nothing to tell the team about. The visitor sees
+    //     the same success either way, so the form cannot be used to find
+    //     out whether an address is already on the list.
+    if (upstreamJson.duplicate === true) {
+      console.info("SUBSCRIBE_DUPLICATE_SKIPPED");
+
+      return successResponse("Subscription successful");
+    }
+
+    // 11) The row is recorded, so now send the email raised by it. Sending
     //    happens here rather than from the browser, so there is no public
     //    endpoint that will send mail to an arbitrary address on request.
     const t = await getTranslations({

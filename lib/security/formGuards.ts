@@ -28,7 +28,12 @@ export const HONEYPOT_FIELD = "submissionRef";
 export const isHoneypotFilled = (body: unknown): boolean => {
   const value = (body as Record<string, unknown> | null)?.[HONEYPOT_FIELD];
 
-  return typeof value === "string" && value.trim() !== "";
+  // Any value at all counts, not strings alone. The forms always send a
+  // string, so only something hand assembled arrives with a number or a
+  // boolean here, and that is exactly what the field is listening for.
+  if (value === undefined || value === null) return false;
+
+  return String(value).trim() !== "";
 };
 
 /**
