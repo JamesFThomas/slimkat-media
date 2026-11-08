@@ -2,6 +2,7 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent, waitFor, act } from "@testing-library/react";
 import { ContactForm } from "./ContactForm";
+import { HONEYPOT_FIELD } from "@/lib/security/formGuards";
 
 const mockSearchParams = new URLSearchParams();
 
@@ -122,6 +123,17 @@ const fillValidForm = () => {
  *   Given I have filled the form with valid data
  *   When the form submits successfully
  *   Then only the submission request should be made from the browser
+ *
+ * Scenario: The honeypot cannot be reached by a visitor
+ *   Given I visit a page with the form
+ *   When the form mounts
+ *   Then the honeypot input should be out of the tab order, hidden from
+ *   assistive technology, and excluded from autofill
+ *
+ * Scenario: A rate limited submission shows the retry message
+ *   Given the endpoint answers 429 with a body that is not JSON
+ *   When I submit the form
+ *   Then I should see the retry message and the body should never be read
  */
 describe("ContactForm", () => {
   beforeEach(() => {
@@ -451,5 +463,64 @@ it("shows success message and clears the form after a successful submission", as
       expect(fetchMock).toHaveBeenCalledTimes(1);
     });
     expect(fetchMock.mock.calls[0][0]).toBe("/api/contact");
+  });
+
+  it("keeps the honeypot out of the tab order and away from assistive technology", () => {
+    render(<ContactForm />);
+
+    const honeypot = document.querySelector(`input[name="${HONEYPOT_FIELD}"]`);
+
+    expect(honeypot).toBeInTheDocument();
+    expect(honeypot).toHaveAttribute("tabindex", "-1");
+    expect(honeypot).toHaveAttribute("aria-hidden", "true");
+    expect(honeypot).toHaveAttribute("autocomplete", "off");
+  });
+
+  it("shows the retry message on a 429 without reading the response body", async () => {
+    const json = jest.fn().mockRejectedValue(new Error("not json"));
+
+    (global as unknown as { fetch: unknown }).fetch = jest.fn().mockResolvedValue({
+      ok: false,
+      status: 429,
+      json,
+    });
+
+    render(<ContactForm />);
+    fillValidForm();
+
+    await act(async () => {
+      fireEvent.click(screen.getByRole("button", { name: /submit/i }));
+    });
+
+    await waitFor(() => {
+      expect(
+        screen.getByText("Too many attempts. Please wait a few minutes and try again.")
+      ).toBeInTheDocument();
+    });
+
+    expect(json).not.toHaveBeenCalled();
+  });
+
+  it("carries an empty honeypot on a real submission", async () => {
+    const fetchMock = jest.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ status: "success" }),
+    });
+
+    (global as unknown as { fetch: unknown }).fetch = fetchMock;
+
+    render(<ContactForm />);
+    fillValidForm();
+
+    await act(async () => {
+      fireEvent.click(screen.getByRole("button", { name: /submit/i }));
+    });
+
+    await waitFor(() => {
+      const payload = JSON.parse(
+        (fetchMock.mock.calls[0] as [string, { body: string }])[1].body
+      );
+      expect(payload[HONEYPOT_FIELD]).toBe("");
+    });
   });
 });

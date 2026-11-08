@@ -6,6 +6,10 @@ import { SubmissionNotificationEmail } from "@/components/shared/SubmissionNotif
 import { notificationRecipients } from "@/lib/email/client";
 import { resolveLocale } from "@/lib/email/locale";
 import { sendSubmissionEmails, type SubmissionEmail } from "@/lib/email/send";
+import {
+  isHoneypotFilled,
+  isSameOrigin,
+} from "@/lib/security/formGuards";
 import { getTranslations } from "next-intl/server";
 import path from "path";
 import fs from "fs";
@@ -47,19 +51,43 @@ const errorResponse = (status: number, message: string) =>
     headers: { "Content-Type": "application/json" },
   });
 
+const successResponse = (message: string) =>
+  new Response(JSON.stringify({ status: "success", message }), {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+  });
+
 export async function POST(request: NextRequest) {
   try {
-    // 1) Parse request body safely inside try/catch
+    // 1) Turn away anything that is not a browser on this site. The only
+    //    one of these checks a scripted POST cannot satisfy.
+    if (!isSameOrigin(request)) {
+      console.warn("CONTACT_REJECTED_ORIGIN", {
+        origin: request.headers.get("origin"),
+      });
+
+      return errorResponse(403, "Contact submission failed");
+    }
+
+    // 2) Parse request body safely inside try/catch
     const body = await request.json().catch(() => null);
     const { firstName, lastName, email, phone, service, message, locale } =
       body ?? {};
 
-    // 2) Validate required fields
+    // 3) Answered as a success so a bot learns nothing, while no row is
+    //    written and no email is sent. Logged so the volume is visible.
+    if (isHoneypotFilled(body)) {
+      console.warn("CONTACT_REJECTED_HONEYPOT");
+
+      return successResponse("Contact submission successful");
+    }
+
+    // 4) Validate required fields
     if (!firstName || !lastName || !email || !service || !message) {
       return errorResponse(400, "Missing required fields");
     }
 
-    // 3) Call Apps Script from the server (no browser CORS)
+    // 5) Call Apps Script from the server (no browser CORS)
     const upstreamResponse = await fetch(googleSheetsEndpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -75,10 +103,10 @@ export async function POST(request: NextRequest) {
       cache: "no-store",
     });
 
-    // 4) Read text first so we can log + handle non-JSON responses cleanly
+    // 6) Read text first so we can log + handle non-JSON responses cleanly
     const upstreamText = await upstreamResponse.text();
 
-    // 5) If upstream is non-2xx, return a controlled error
+    // 7) If upstream is non-2xx, return a controlled error
     if (!upstreamResponse.ok) {
       console.error("Apps Script error", {
         status: upstreamResponse.status,
@@ -89,7 +117,7 @@ export async function POST(request: NextRequest) {
       return errorResponse(502, "Contact submission failed");
     }
 
-    // 6) Parse upstream JSON if possible, otherwise treat it as an error
+    // 8) Parse upstream JSON if possible, otherwise treat it as an error
     let upstreamJson: GoogleSheetsResponse | null = null;
 
     try {
@@ -103,14 +131,14 @@ export async function POST(request: NextRequest) {
       return errorResponse(502, "Contact submission failed");
     }
 
-    // 7) Interpret Apps Script response
+    // 9) Interpret Apps Script response
     if (upstreamJson?.status !== "success") {
       console.error("Apps Script responded without success status", upstreamJson);
 
       return errorResponse(502, "Contact submission failed");
     }
 
-    // 8) The row is recorded, so now send the email raised by it. Sending
+    // 10) The row is recorded, so now send the email raised by it. Sending
     //    happens here rather than from the browser, so there is no public
     //    endpoint that will send mail to an arbitrary address on request.
     const resolvedLocale = resolveLocale(locale);
@@ -181,13 +209,7 @@ export async function POST(request: NextRequest) {
 
     await sendSubmissionEmails("CONTACT", emails);
 
-    return new Response(
-      JSON.stringify({
-        status: "success",
-        message: "Contact submission successful",
-      }),
-      { status: 200, headers: { "Content-Type": "application/json" } },
-    );
+    return successResponse("Contact submission successful");
   } catch (error) {
     console.error("Error processing contact submission:", error);
 

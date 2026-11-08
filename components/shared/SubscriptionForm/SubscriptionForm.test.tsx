@@ -3,11 +3,16 @@ import "@testing-library/jest-dom";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { SubscriptionForm } from "./SubscriptionForm";
+import { HONEYPOT_FIELD } from "@/lib/security/formGuards";
 
-function stubFetch(ok: boolean, body: object): void {
+function stubFetch(
+  ok: boolean,
+  body: object,
+  status = ok ? 200 : 500,
+): void {
   (global as unknown as { fetch: unknown }).fetch = jest
     .fn()
-    .mockResolvedValue({ ok, json: async () => body });
+    .mockResolvedValue({ ok, status, json: async () => body });
 }
 
 /*
@@ -54,6 +59,17 @@ function stubFetch(ok: boolean, body: object): void {
  *   Given I type a valid email on a page in a known locale
  *   When I click subscribe
  *   Then the posted body should carry that locale alongside the email
+ *
+ * Scenario: The honeypot cannot be reached by a visitor
+ *   Given I visit a page with the form
+ *   When the form mounts
+ *   Then the honeypot input should be out of the tab order, hidden from
+ *   assistive technology, and excluded from autofill
+ *
+ * Scenario: A rate limited submission shows the retry message
+ *   Given the endpoint answers 429 with a body that is not JSON
+ *   When I submit the form
+ *   Then I should see the retry message and the body should never be read
  */
 describe("SubscriptionForm", () => {
   beforeEach(() => {
@@ -150,6 +166,41 @@ describe("SubscriptionForm", () => {
     expect(JSON.parse(init.body)).toEqual({
       email: "valid@example.com",
       locale: "en",
+      [HONEYPOT_FIELD]: "",
     });
+  });
+
+  it("keeps the honeypot out of the tab order and away from assistive technology", () => {
+    render(<SubscriptionForm />);
+
+    const honeypot = document.querySelector(`input[name="${HONEYPOT_FIELD}"]`);
+
+    expect(honeypot).toBeInTheDocument();
+    expect(honeypot).toHaveAttribute("tabindex", "-1");
+    expect(honeypot).toHaveAttribute("aria-hidden", "true");
+    expect(honeypot).toHaveAttribute("autocomplete", "off");
+  });
+
+  it("shows the retry message on a 429 without reading the response body", async () => {
+    const json = jest.fn().mockRejectedValue(new Error("not json"));
+
+    (global as unknown as { fetch: unknown }).fetch = jest
+      .fn()
+      .mockResolvedValue({ ok: false, status: 429, json });
+
+    render(<SubscriptionForm />);
+    await userEvent.type(
+      screen.getByPlaceholderText("Enter your email"),
+      "valid@example.com"
+    );
+    await userEvent.click(screen.getByRole("button", { name: "Subscribe" }));
+
+    await waitFor(() => {
+      expect(
+        screen.getByText("Too many attempts. Please wait a few minutes and try again.")
+      ).toBeInTheDocument();
+    });
+
+    expect(json).not.toHaveBeenCalled();
   });
 });
