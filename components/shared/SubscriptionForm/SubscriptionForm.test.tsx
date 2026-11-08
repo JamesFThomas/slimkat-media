@@ -11,8 +11,8 @@ function stubFetch(ok: boolean, body: object): void {
 }
 
 /*
- * Story: Visitor subscribes to Foundation updates
- * In order to stay informed about the James & Kayla Thomas Foundation,
+ * Story: Visitor subscribes to SlimKat Media updates
+ * In order to hear about upcoming screenings, panels and speaking dates,
  * a visitor wants to enter their email and subscribe.
  *
  * Scenario: Form renders with email input and subscribe button
@@ -49,6 +49,11 @@ function stubFetch(ok: boolean, body: object): void {
  *   Given I type a valid email and the API returns an error
  *   When I click subscribe
  *   Then an error message should appear
+ *
+ * Scenario: The submission carries the active locale
+ *   Given I type a valid email on a page in a known locale
+ *   When I click subscribe
+ *   Then the posted body should carry that locale alongside the email
  */
 describe("SubscriptionForm", () => {
   beforeEach(() => {
@@ -127,6 +132,24 @@ describe("SubscriptionForm", () => {
       expect(
         screen.getByText("Something went wrong. Please try again.")
       ).toBeInTheDocument();
+    });
+  });
+  it("posts the active locale alongside the email", async () => {
+    stubFetch(true, { status: "success" });
+    render(<SubscriptionForm />);
+    await userEvent.type(
+      screen.getByPlaceholderText("Enter your email"),
+      "valid@example.com"
+    );
+    await userEvent.click(screen.getByRole("button", { name: "Subscribe" }));
+
+    await waitFor(() => expect(global.fetch).toHaveBeenCalled());
+
+    const [, init] = (global.fetch as jest.Mock).mock.calls[0];
+
+    expect(JSON.parse(init.body)).toEqual({
+      email: "valid@example.com",
+      locale: "en",
     });
   });
 });

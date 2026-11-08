@@ -1,7 +1,12 @@
-import { SubscriptionConfirmationEmail } from "@/components/shared/SubscriptionConfirmationEmail/SubscriptionConfirmationEmail";
+import {
+  SubscriptionConfirmationEmail,
+  type SubscriptionConfirmationEmailCopy,
+} from "@/components/shared/SubscriptionConfirmationEmail/SubscriptionConfirmationEmail";
 import { SubmissionNotificationEmail } from "@/components/shared/SubmissionNotificationEmail/SubmissionNotificationEmail";
 import { notificationRecipients } from "@/lib/email/client";
+import { resolveLocale } from "@/lib/email/locale";
 import { sendSubmissionEmails, type SubmissionEmail } from "@/lib/email/send";
+import { getTranslations } from "next-intl/server";
 import path from "path";
 import fs from "fs";
 import type { NextRequest } from "next/server";
@@ -40,6 +45,9 @@ export async function POST(request: NextRequest) {
     // 1) Parse request body safely inside try/catch
     const body = await request.json().catch(() => null);
     const email = body?.email;
+    // The form posts to an unprefixed /api path, so the locale travels in
+    // the body rather than the route segment.
+    const locale = body?.locale;
 
     // 2) Validate input (presence only, since that's what you have today)
     if (!email) {
@@ -92,12 +100,26 @@ export async function POST(request: NextRequest) {
     // 8) The row is recorded, so now send the email raised by it. Sending
     //    happens here rather than from the browser, so there is no public
     //    endpoint that will send mail to an arbitrary address on request.
+    const t = await getTranslations({
+      locale: resolveLocale(locale),
+      namespace: "SubscriptionConfirmationEmail",
+    });
+
+    const copy: SubscriptionConfirmationEmailCopy = {
+      logoAlt: t("logoAlt"),
+      heading: t("heading"),
+      intro: t("intro"),
+      assurance: t("assurance"),
+      signOff: t("signOff"),
+      team: t("team"),
+    };
+
     const emails: SubmissionEmail[] = [
       {
         from: sender,
         to: email,
-        subject: "SlimKat Media: you're subscribed",
-        html: SubscriptionConfirmationEmail("SlimKat_Logo"),
+        subject: t("subject"),
+        html: SubscriptionConfirmationEmail("SlimKat_Logo", copy),
         attachments: [
           {
             content: logoAttachment,
