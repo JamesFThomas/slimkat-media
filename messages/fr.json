@@ -551,5 +551,14 @@
       "success": "Merci pour votre abonnement !",
       "error": "Une erreur s'est produite. Veuillez réessayer."
     }
+  },
+  "SubscriptionConfirmationEmail": {
+    "subject": "SlimKat Media : votre abonnement est confirmé",
+    "logoAlt": "Logo SlimKat Media",
+    "heading": "Merci de votre abonnement.",
+    "intro": "Vous êtes inscrit. Au fil des projections, des tables rondes et des conférences de Kayla, nous vous écrirons pour que vous puissiez y assister.",
+    "assurance": "Pas de calendrier fixe, pas de spam, et votre adresse ne va nulle part ailleurs.",
+    "signOff": "À très bientôt,",
+    "team": "SlimKat Media"
   }
 }

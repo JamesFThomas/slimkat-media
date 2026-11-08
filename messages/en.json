@@ -551,5 +551,14 @@
       "success": "Thanks for subscribing!",
       "error": "Something went wrong. Please try again."
     }
+  },
+  "SubscriptionConfirmationEmail": {
+    "subject": "SlimKat Media: you're subscribed",
+    "logoAlt": "SlimKat Media Logo",
+    "heading": "Thanks for subscribing.",
+    "intro": "You're on the list. As Kayla's work takes her to new screenings, panels and speaking engagements, we'll send word so you can be there.",
+    "assurance": "No fixed schedule, no spam, and your address goes nowhere else.",
+    "signOff": "Talk soon,",
+    "team": "SlimKat Media"
   }
 }

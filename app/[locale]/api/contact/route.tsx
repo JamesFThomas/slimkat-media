@@ -4,9 +4,9 @@ import {
 } from "@/components/shared/ContactConfirmationEmail/ContactConfirmationEmail";
 import { SubmissionNotificationEmail } from "@/components/shared/SubmissionNotificationEmail/SubmissionNotificationEmail";
 import { notificationRecipients } from "@/lib/email/client";
+import { resolveLocale } from "@/lib/email/locale";
 import { sendSubmissionEmails, type SubmissionEmail } from "@/lib/email/send";
 import { getTranslations } from "next-intl/server";
-import { routing } from "@/i18n/routing";
 import path from "path";
 import fs from "fs";
 import type { NextRequest } from "next/server";
@@ -40,15 +40,6 @@ type ServiceOptionKey = (typeof serviceOptionKeys)[number];
 
 const isServiceOptionKey = (value: unknown): value is ServiceOptionKey =>
   serviceOptionKeys.includes(value as ServiceOptionKey);
-
-// The form posts to an unprefixed /api path, so the locale travels in the
-// request body rather than the route segment. Anything unrecognised falls
-// back to the default locale.
-const resolveLocale = (value: unknown): string =>
-  typeof value === "string" &&
-  (routing.locales as readonly string[]).includes(value)
-    ? value
-    : routing.defaultLocale;
 
 const errorResponse = (status: number, message: string) =>
   new Response(JSON.stringify({ status: "error", message }), {

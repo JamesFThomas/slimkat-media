@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export const SubscriptionForm = () => {
   const t = useTranslations("SubscriptionForm");
+  const locale = useLocale();
 
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -70,10 +71,12 @@ export const SubscriptionForm = () => {
     try {
       setSubmitStatus("loading");
 
+      // The locale travels in the body: this request goes to an unprefixed
+      // /api path, so the confirmation email cannot read it from the route.
       const response = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, locale }),
       });
 
       const result = await response.json();
