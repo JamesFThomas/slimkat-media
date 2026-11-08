@@ -5,6 +5,11 @@ import { SubmissionNotificationEmail } from "./SubmissionNotificationEmail";
  * In order to answer an enquiry without watching the spreadsheet,
  * James and Kayla want an email naming what was submitted.
  *
+ * Scenario: The site's accent marks which site the submission came from
+ *   Given the template is rendered
+ *   When the notification is open beside another site's notification
+ *   Then an accent bar and an accent heading should identify the site
+ *
  * Scenario: Every submitted field appears
  *   Given a heading and a set of label and value rows
  *   When the template is rendered
@@ -21,6 +26,15 @@ import { SubmissionNotificationEmail } from "./SubmissionNotificationEmail";
  *   Then the newlines should render as line breaks
  */
 describe("SubmissionNotificationEmail", () => {
+  it("marks the notification with the site accent", () => {
+    const html = SubmissionNotificationEmail("New Slim Kat Contact", [
+      { label: "Email", value: "visitor@example.com" },
+    ]);
+
+    expect(html).toContain("background-color: #3aafa0");
+    expect(html).toContain("color: #1f6f67");
+  });
+
   it("renders every label and value it is given", () => {
     const html = SubmissionNotificationEmail("New contact submission", [
       { label: "Name", value: "James Thomas" },
