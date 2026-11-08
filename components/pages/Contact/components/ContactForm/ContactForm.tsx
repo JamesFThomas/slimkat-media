@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
+import { HONEYPOT_FIELD } from "@/lib/security/formGuards";
 
 type ServiceOption = "documentary" | "speaking" | "";
 
@@ -49,10 +50,11 @@ const isValidPhone = (value: string): boolean => {
 };
 
 // ─── Isolated data-writing layer ─────────────────────────────────────────────
-// Swap this function's internals when migrating from Google Sheets → Azure DB.
-// The rest of the form never needs to change.
+// Swap this function's internals when submissions move from Google Sheets to a
+// database. The rest of the form never needs to change.
 function writeContactSubmission(
-  payload: FormFields & { locale: string },
+  payload: FormFields &
+    Record<typeof HONEYPOT_FIELD, string> & { locale: string },
 ): Promise<Response> {
   return fetch("/api/contact", {
     method: "POST",
@@ -111,8 +113,12 @@ export const ContactForm = () => {
   const [errors, setErrors] = useState<FormErrors>(initialErrors);
   const [touched, setTouched] = useState<FormTouched>(initialTouched);
   const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "loading" | "success" | "error"
+    "idle" | "loading" | "success" | "error" | "rateLimited"
   >("idle");
+
+  // Carries the honeypot value so it travels with the submission. A visitor
+  // never reaches the input, so this stays empty for them.
+  const [honeypot, setHoneypot] = useState("");
 
   // ─── Validators ────────────────────────────────────────────────────────────
 
@@ -224,7 +230,22 @@ export const ContactForm = () => {
       // The locale travels in the body: this request goes to an unprefixed
       // /api path, so it is not in the URL. The route uses it to localize the
       // confirmation email.
-      const response = await writeContactSubmission({ ...submission, locale });
+      const response = await writeContactSubmission({
+        ...submission,
+        locale,
+        [HONEYPOT_FIELD]: honeypot,
+      });
+
+      // Status before body: a blocked request is answered by the edge with a
+      // body that is not JSON, so parsing first would throw and the visitor
+      // would see the generic error rather than the real reason. Nothing is
+      // cleared, so retrying costs them no retyping.
+      if (response.status === 429) {
+        setSubmitStatus("rateLimited");
+        resetSubmitStatus();
+        return;
+      }
+
       const result = await response.json();
 
       if (response.ok && result.status === "success") {
@@ -478,6 +499,23 @@ export const ContactForm = () => {
             )}
           </div>
 
+          {/*
+            Honeypot. Positioned off screen rather than hidden, so a bot
+            reading the DOM fills it like any other input, and kept out of
+            the tab order and away from assistive technology so a visitor
+            can never reach it.
+          */}
+          <input
+            type="text"
+            name={HONEYPOT_FIELD}
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="absolute left-[-9999px] h-px w-px overflow-hidden"
+          />
+
           {/* Submit */}
           <button
             type="submit"
@@ -518,6 +556,11 @@ export const ContactForm = () => {
           {submitStatus === "error" && (
             <p className="mt-4 text-sm text-(--error) font-semibold">
               {t("status.error")}
+            </p>
+          )}
+          {submitStatus === "rateLimited" && (
+            <p className="mt-4 text-sm text-(--error) font-semibold">
+              {t("status.rateLimited")}
             </p>
           )}
         </div>

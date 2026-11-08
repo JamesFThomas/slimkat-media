@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { HONEYPOT_FIELD } from "@/lib/security/formGuards";
 
 export const SubscriptionForm = () => {
   const t = useTranslations("SubscriptionForm");
@@ -14,8 +15,12 @@ export const SubscriptionForm = () => {
   });
 
   const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error" | "loading"
+    "idle" | "success" | "error" | "loading" | "rateLimited"
   >("idle");
+
+  // Carries the honeypot value so it travels with the submission. A visitor
+  // never reaches the input, so this stays empty for them.
+  const [honeypot, setHoneypot] = useState("");
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -76,8 +81,20 @@ export const SubscriptionForm = () => {
       const response = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, locale }),
+        body: JSON.stringify({ email, locale, [HONEYPOT_FIELD]: honeypot }),
       });
+
+      // Status before body: a blocked request is answered by the edge with a
+      // body that is not JSON, so parsing first would throw and the visitor
+      // would see the generic error rather than the real reason. Nothing is
+      // cleared, so retrying costs them no retyping.
+      if (response.status === 429) {
+        setSubmitStatus("rateLimited");
+
+        resetSubmitStatus();
+
+        return;
+      }
 
       const result = await response.json();
 
@@ -153,6 +170,23 @@ export const SubscriptionForm = () => {
             {t("labels.submit")}
           </button>
         </div>
+        {/*
+          Honeypot. Positioned off screen rather than hidden, so a bot
+          reading the DOM fills it like any other input, and kept out of the
+          tab order and away from assistive technology so a visitor can never
+          reach it.
+        */}
+        <input
+          type="text"
+          name={HONEYPOT_FIELD}
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="absolute left-[-9999px] h-px w-px overflow-hidden"
+        />
+
         <div id="email-error-container">
           {touched.email && emailError && (
             <p className={errorClass}>{emailError}</p>
@@ -173,6 +207,12 @@ export const SubscriptionForm = () => {
       {submitStatus === "error" && (
         <p className={`${statusClass} text-(--error)`}>
           {t("status.error")}
+        </p>
+      )}
+
+      {submitStatus === "rateLimited" && (
+        <p className={`${statusClass} text-(--error)`}>
+          {t("status.rateLimited")}
         </p>
       )}
     </div>

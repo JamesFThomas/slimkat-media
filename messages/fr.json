@@ -522,7 +522,8 @@
     "status": {
       "loading": "Envoi en cours...",
       "success": "Merci ! Nous vous contacterons bientôt.",
-      "error": "Une erreur s'est produite. Veuillez réessayer."
+      "error": "Une erreur s'est produite. Veuillez réessayer.",
+      "rateLimited": "Trop de tentatives. Veuillez patienter quelques minutes et réessayer."
     }
   },
   "ContactConfirmationEmail": {
@@ -549,7 +550,8 @@
     "status": {
       "loading": "Envoi en cours...",
       "success": "Merci pour votre abonnement !",
-      "error": "Une erreur s'est produite. Veuillez réessayer."
+      "error": "Une erreur s'est produite. Veuillez réessayer.",
+      "rateLimited": "Trop de tentatives. Veuillez patienter quelques minutes et réessayer."
     }
   },
   "SubscriptionConfirmationEmail": {

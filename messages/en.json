@@ -522,7 +522,8 @@
     "status": {
       "loading": "Submitting...",
       "success": "Thank you! We'll be in touch soon.",
-      "error": "Something went wrong. Please try again."
+      "error": "Something went wrong. Please try again.",
+      "rateLimited": "Too many attempts. Please wait a few minutes and try again."
     }
   },
   "ContactConfirmationEmail": {
@@ -549,7 +550,8 @@
     "status": {
       "loading": "Submitting...",
       "success": "Thanks for subscribing!",
-      "error": "Something went wrong. Please try again."
+      "error": "Something went wrong. Please try again.",
+      "rateLimited": "Too many attempts. Please wait a few minutes and try again."
     }
   },
   "SubscriptionConfirmationEmail": {
