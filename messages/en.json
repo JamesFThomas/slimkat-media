@@ -7,7 +7,7 @@
       "studioImage2Alt": "Podcast Studio Image 2"
     },
     "about": {
-      "aboutLine1": "We're SlimKat Media — a studio",
+      "aboutLine1": "We're Slim Kat Media — a studio",
       "aboutLine2": "producing high-quality documentaries",
       "aboutLine3": "and developing content creators."
     },
@@ -526,14 +526,14 @@
     }
   },
   "ContactConfirmationEmail": {
-    "subject": "SlimKat Media: we received your inquiry",
-    "logoAlt": "SlimKat Media Logo",
+    "subject": "Slim Kat Media LLC: we received your inquiry",
+    "logoAlt": "Slim Kat Media Logo",
     "heading": "We received your inquiry, {firstName}!",
     "greeting": "Hi {firstName},",
-    "intro": "Thank you for reaching out to SlimKat Media. We've received your inquiry regarding {service} and will be in touch with you shortly.",
+    "intro": "Thank you for reaching out to Slim Kat Media LLC. We've received your inquiry regarding {service} and will be in touch with you shortly.",
     "appreciation": "We appreciate your interest and look forward to connecting with you soon.",
     "signOff": "Talk soon,",
-    "team": "SlimKat Media"
+    "team": "Slim Kat Media LLC"
   },
   "SubscriptionForm": {
     "labels": {
@@ -553,12 +553,12 @@
     }
   },
   "SubscriptionConfirmationEmail": {
-    "subject": "SlimKat Media: you're subscribed",
-    "logoAlt": "SlimKat Media Logo",
+    "subject": "Slim Kat Media LLC: you're subscribed",
+    "logoAlt": "Slim Kat Media Logo",
     "heading": "Thanks for subscribing.",
     "intro": "You're on the list. As Kayla's work takes her to new screenings, panels and speaking engagements, we'll send word so you can be there.",
     "assurance": "No fixed schedule, no spam, and your address goes nowhere else.",
     "signOff": "Talk soon,",
-    "team": "SlimKat Media"
+    "team": "Slim Kat Media LLC"
   }
 }

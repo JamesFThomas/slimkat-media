@@ -8,12 +8,12 @@ export const Footer = () => {
       <div className="container mx-auto">
         <Image
           src="/logo/SlimKat_Logo.png"
-          alt="SlimKat Media Logo"
+          alt="Slim Kat Media Logo"
           width={200}
           height={100}
         />
         <div className="mt-8">
-          &copy; {new Date().getFullYear()} SlimKat Media. All rights reserved.
+          &copy; {new Date().getFullYear()} Slim Kat Media LLC. All rights reserved.
         </div>
       </div>
     </footer>

@@ -26,7 +26,7 @@ const submissionType = "slimkat_contact";
 const googleSheetsEndpoint =
   "https://script.google.com/macros/s/AKfycbxMKuWhC3PoJjj1t00WmwRaBy3K-a37eDx6x1D3gmCYdNEvDcBRBr1Dp1RYc8Z_yvoDCg/exec";
 
-const sender = "SlimKat Media LLC. <no-reply@slimkatmedia.com>";
+const sender = "Slim Kat Media LLC <no-reply@slimkatmedia.com>";
 
 // Attached and referenced by content id rather than by URL, so the logo
 // always renders even in clients that block remote images.
