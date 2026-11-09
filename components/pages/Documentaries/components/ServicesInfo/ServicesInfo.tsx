@@ -35,12 +35,9 @@ export const ServicesInfo = ({ service }: ServicesInfoProps) => {
       {/* Header row */}
       <div className="flex flex-row justify-between items-end pb-6 border-b border-gray-200">
         <span className="text-xs font-semibold tracking-widest uppercase text-gray-400">
-          {t("services.pricingFeatures")}
+          {t("services.packageFeatures")}
         </span>
-        <div className="flex flex-col items-end gap-1">
-          <span className="text-xs text-gray-400">{service.title}</span>
-          <span className="text-xl font-bold">{service.price}</span>
-        </div>
+        <span className="text-xs text-gray-400">{service.title}</span>
       </div>
 
       {/* Grid rows */}

@@ -9,7 +9,6 @@ export interface InfoRow {
 
 export interface ServiceItem {
   title: string;
-  price: string;
   description: string;
   features: string[];
   infoGrid: InfoRow[];
