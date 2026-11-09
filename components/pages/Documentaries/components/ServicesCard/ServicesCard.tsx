@@ -28,9 +28,6 @@ export const ServicesCard = ({ service }: ServicesCardProps) => {
         {service.title}
       </span>
 
-      {/* Price */}
-      <p className="text-4xl font-bold">{service.price}</p>
-
       {/* Description */}
       <p className="text-sm text-gray-600 leading-relaxed">
         {service.description}
